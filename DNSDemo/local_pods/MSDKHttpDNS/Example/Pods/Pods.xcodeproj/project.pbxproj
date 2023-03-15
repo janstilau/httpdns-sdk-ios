@@ -1,0 +1,776 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0BD02840CF906266EEE8C29E113E0CD3 /* Pods-MSDKHttpDNS_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EFECF2EC13640FDD98DF8FE40C8A6BFC /* Pods-MSDKHttpDNS_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		14FA7F55799E4A4BE79B2ADCDB62DEB7 /* Pods-MSDKHttpDNS_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 867C869BBDCEBDFB91703F80B39C0909 /* Pods-MSDKHttpDNS_Tests-dummy.m */; };
+		5A3F3A01ECF3B5475B520372354A00B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		871E0473E86BDC249D8FE81E4F445BDF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		99E9117369301F4E538D5B0FEFB81337 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		A1A08D70F354B694322E2675BCC7282D /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A227EBE4EB7406C640151E661E65CEA /* ReplaceMe.swift */; };
+		B124548E9E4379E58D8824C5A3B902B2 /* MSDKHttpDNS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C3DAABB1FD659324961CFE44E2820F /* MSDKHttpDNS-dummy.m */; };
+		CB0DCFD7E0C6016262536D1B1819152C /* MSDKHttpDNS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EB1825043C4B5ED6C6493F1AB464066A /* MSDKHttpDNS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F59457A6FD706B0315A18B882E4BD8BD /* Pods-MSDKHttpDNS_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C191D7118F927194B66460031D6C604 /* Pods-MSDKHttpDNS_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FE0A1D6C35E4A24E831F7C30F0641762 /* Pods-MSDKHttpDNS_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B663139C79A02036E4DEC695DF3D352 /* Pods-MSDKHttpDNS_Example-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1C3FEF391E6828493BA2001F0133F2AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 06F5E61C1F2FAE1043D614AC1E782DDB;
+			remoteInfo = MSDKHttpDNS;
+		};
+		90F232776B50DBE426B9877BB30AABC3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5148F7112C7DD7943A90B740B25AF708;
+			remoteInfo = "Pods-MSDKHttpDNS_Example";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3A16F8F1CEF99A6B20A7F5F4EE426222 /* MSDKHttpDNS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MSDKHttpDNS.release.xcconfig; sourceTree = "<group>"; };
+		3A227EBE4EB7406C640151E661E65CEA /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaceMe.swift; path = MSDKHttpDNS/Classes/ReplaceMe.swift; sourceTree = "<group>"; };
+		3F56F815260AD84519ACB672A77FFB35 /* Pods-MSDKHttpDNS_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MSDKHttpDNS_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		50447572824D9D08A6C2B56047C8EE43 /* Pods-MSDKHttpDNS_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MSDKHttpDNS_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		50C3DAABB1FD659324961CFE44E2820F /* MSDKHttpDNS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MSDKHttpDNS-dummy.m"; sourceTree = "<group>"; };
+		5DACA90B7101517B96E9F8E5663690E2 /* Pods-MSDKHttpDNS_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MSDKHttpDNS_Example-Info.plist"; sourceTree = "<group>"; };
+		63D841C3B44C76575D3DA5C7C7F0A9D0 /* Pods-MSDKHttpDNS_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MSDKHttpDNS_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		68C79B8795477664949D003A38AB6423 /* MSDKHttpDNS.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = MSDKHttpDNS.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		6B663139C79A02036E4DEC695DF3D352 /* Pods-MSDKHttpDNS_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MSDKHttpDNS_Example-dummy.m"; sourceTree = "<group>"; };
+		6E9246582BA6F311CA1286D686E2A639 /* Pods-MSDKHttpDNS_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MSDKHttpDNS_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		7397CEDBF35F0EA79B71617DBCA000C3 /* MSDKHttpDNS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MSDKHttpDNS.modulemap; sourceTree = "<group>"; };
+		79911B8A1E0A06E96B125D32EE9A7D19 /* MSDKHttpDNS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MSDKHttpDNS.debug.xcconfig; sourceTree = "<group>"; };
+		81D5BD7DB5F4F92D2CBDE5FC6C7F390A /* Pods-MSDKHttpDNS_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MSDKHttpDNS_Example.modulemap"; sourceTree = "<group>"; };
+		867C869BBDCEBDFB91703F80B39C0909 /* Pods-MSDKHttpDNS_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MSDKHttpDNS_Tests-dummy.m"; sourceTree = "<group>"; };
+		8C191D7118F927194B66460031D6C604 /* Pods-MSDKHttpDNS_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MSDKHttpDNS_Tests-umbrella.h"; sourceTree = "<group>"; };
+		8C52684B680F5C425CFA85BDEA62C73A /* MSDKHttpDNS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MSDKHttpDNS-Info.plist"; sourceTree = "<group>"; };
+		9917C3F7D9F1A9CD5BF659A40C752894 /* Pods-MSDKHttpDNS_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MSDKHttpDNS_Example-frameworks.sh"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9DB2AB695B3CE4C31FDAD4DF8B809202 /* Pods-MSDKHttpDNS_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MSDKHttpDNS_Tests-Info.plist"; sourceTree = "<group>"; };
+		A41CC4CF8CC79C3CDE6B7E00350B46F4 /* Pods-MSDKHttpDNS_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-MSDKHttpDNS_Example"; path = Pods_MSDKHttpDNS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE5B46D60270FC424993077C67260D00 /* Pods-MSDKHttpDNS_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-MSDKHttpDNS_Tests"; path = Pods_MSDKHttpDNS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C628CFB1CA88DA7ACAC6AB06CB1B2B19 /* Pods-MSDKHttpDNS_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MSDKHttpDNS_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		C93C0D181ADF021EF3D632863A937FFE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		CA04CDE4EEB9B4060CB41B33E858E472 /* Pods-MSDKHttpDNS_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MSDKHttpDNS_Tests.modulemap"; sourceTree = "<group>"; };
+		CD7A12A228092684EC5CE0334CD876DD /* Pods-MSDKHttpDNS_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MSDKHttpDNS_Example.release.xcconfig"; sourceTree = "<group>"; };
+		D0A92AD47049A05D174D3ACB9ABDE505 /* Pods-MSDKHttpDNS_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MSDKHttpDNS_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D26277F2B724F784873EAEDFBE08DF2A /* MSDKHttpDNS */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MSDKHttpDNS; path = MSDKHttpDNS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E22310A69772791AA3BFAB13B4C1CCE9 /* MSDKHttpDNS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MSDKHttpDNS-prefix.pch"; sourceTree = "<group>"; };
+		EB1825043C4B5ED6C6493F1AB464066A /* MSDKHttpDNS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MSDKHttpDNS-umbrella.h"; sourceTree = "<group>"; };
+		EC3F9149B56ADF74F27D9F1E93F6D380 /* Pods-MSDKHttpDNS_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MSDKHttpDNS_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		EFECF2EC13640FDD98DF8FE40C8A6BFC /* Pods-MSDKHttpDNS_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MSDKHttpDNS_Example-umbrella.h"; sourceTree = "<group>"; };
+		F7AD0D46B8E54D952789E90701FF35B6 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		098D78D271821888BC2F85CCF68373E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99E9117369301F4E538D5B0FEFB81337 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73E52606183BD3334335BA2499BA1CFC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				871E0473E86BDC249D8FE81E4F445BDF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79FEAEECA2DEB6CC84451966FE09CE15 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A3F3A01ECF3B5475B520372354A00B1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		202BDE4F44380B937BD9182AD1B9AEA1 /* Pods-MSDKHttpDNS_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				CA04CDE4EEB9B4060CB41B33E858E472 /* Pods-MSDKHttpDNS_Tests.modulemap */,
+				D0A92AD47049A05D174D3ACB9ABDE505 /* Pods-MSDKHttpDNS_Tests-acknowledgements.markdown */,
+				50447572824D9D08A6C2B56047C8EE43 /* Pods-MSDKHttpDNS_Tests-acknowledgements.plist */,
+				867C869BBDCEBDFB91703F80B39C0909 /* Pods-MSDKHttpDNS_Tests-dummy.m */,
+				9DB2AB695B3CE4C31FDAD4DF8B809202 /* Pods-MSDKHttpDNS_Tests-Info.plist */,
+				8C191D7118F927194B66460031D6C604 /* Pods-MSDKHttpDNS_Tests-umbrella.h */,
+				C628CFB1CA88DA7ACAC6AB06CB1B2B19 /* Pods-MSDKHttpDNS_Tests.debug.xcconfig */,
+				63D841C3B44C76575D3DA5C7C7F0A9D0 /* Pods-MSDKHttpDNS_Tests.release.xcconfig */,
+			);
+			name = "Pods-MSDKHttpDNS_Tests";
+			path = "Target Support Files/Pods-MSDKHttpDNS_Tests";
+			sourceTree = "<group>";
+		};
+		34A3F73B3DB0A3640ED6A4BC750C7F7E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D26277F2B724F784873EAEDFBE08DF2A /* MSDKHttpDNS */,
+				A41CC4CF8CC79C3CDE6B7E00350B46F4 /* Pods-MSDKHttpDNS_Example */,
+				BE5B46D60270FC424993077C67260D00 /* Pods-MSDKHttpDNS_Tests */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3B42C24081E4A51022D0F96AA268AEF9 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7397CEDBF35F0EA79B71617DBCA000C3 /* MSDKHttpDNS.modulemap */,
+				50C3DAABB1FD659324961CFE44E2820F /* MSDKHttpDNS-dummy.m */,
+				8C52684B680F5C425CFA85BDEA62C73A /* MSDKHttpDNS-Info.plist */,
+				E22310A69772791AA3BFAB13B4C1CCE9 /* MSDKHttpDNS-prefix.pch */,
+				EB1825043C4B5ED6C6493F1AB464066A /* MSDKHttpDNS-umbrella.h */,
+				79911B8A1E0A06E96B125D32EE9A7D19 /* MSDKHttpDNS.debug.xcconfig */,
+				3A16F8F1CEF99A6B20A7F5F4EE426222 /* MSDKHttpDNS.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/MSDKHttpDNS";
+			sourceTree = "<group>";
+		};
+		4F9DF75BFDEE3D8BE847574001021F51 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				501E26ACC6E1F0E290C71370F1FE5475 /* Pods-MSDKHttpDNS_Example */,
+				202BDE4F44380B937BD9182AD1B9AEA1 /* Pods-MSDKHttpDNS_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		501E26ACC6E1F0E290C71370F1FE5475 /* Pods-MSDKHttpDNS_Example */ = {
+			isa = PBXGroup;
+			children = (
+				81D5BD7DB5F4F92D2CBDE5FC6C7F390A /* Pods-MSDKHttpDNS_Example.modulemap */,
+				EC3F9149B56ADF74F27D9F1E93F6D380 /* Pods-MSDKHttpDNS_Example-acknowledgements.markdown */,
+				3F56F815260AD84519ACB672A77FFB35 /* Pods-MSDKHttpDNS_Example-acknowledgements.plist */,
+				6B663139C79A02036E4DEC695DF3D352 /* Pods-MSDKHttpDNS_Example-dummy.m */,
+				9917C3F7D9F1A9CD5BF659A40C752894 /* Pods-MSDKHttpDNS_Example-frameworks.sh */,
+				5DACA90B7101517B96E9F8E5663690E2 /* Pods-MSDKHttpDNS_Example-Info.plist */,
+				EFECF2EC13640FDD98DF8FE40C8A6BFC /* Pods-MSDKHttpDNS_Example-umbrella.h */,
+				6E9246582BA6F311CA1286D686E2A639 /* Pods-MSDKHttpDNS_Example.debug.xcconfig */,
+				CD7A12A228092684EC5CE0334CD876DD /* Pods-MSDKHttpDNS_Example.release.xcconfig */,
+			);
+			name = "Pods-MSDKHttpDNS_Example";
+			path = "Target Support Files/Pods-MSDKHttpDNS_Example";
+			sourceTree = "<group>";
+		};
+		54078F9016ED0BB0CE60E869590DEC78 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DE0C8432F5E44B15C1FB0CB337564659 /* MSDKHttpDNS */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				54078F9016ED0BB0CE60E869590DEC78 /* Development Pods */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				34A3F73B3DB0A3640ED6A4BC750C7F7E /* Products */,
+				4F9DF75BFDEE3D8BE847574001021F51 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DE0C8432F5E44B15C1FB0CB337564659 /* MSDKHttpDNS */ = {
+			isa = PBXGroup;
+			children = (
+				3A227EBE4EB7406C640151E661E65CEA /* ReplaceMe.swift */,
+				F2C476519BEB1655F7223FFEB1362D0F /* Pod */,
+				3B42C24081E4A51022D0F96AA268AEF9 /* Support Files */,
+			);
+			name = MSDKHttpDNS;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		F2C476519BEB1655F7223FFEB1362D0F /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				C93C0D181ADF021EF3D632863A937FFE /* LICENSE */,
+				68C79B8795477664949D003A38AB6423 /* MSDKHttpDNS.podspec */,
+				F7AD0D46B8E54D952789E90701FF35B6 /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		281E8E2AC6E704676DA33602F8946F77 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB0DCFD7E0C6016262536D1B1819152C /* MSDKHttpDNS-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		527892B0F3053F4B6E304257120BEBB3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0BD02840CF906266EEE8C29E113E0CD3 /* Pods-MSDKHttpDNS_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDE846ED8B328749D511E8F8217AEBA3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F59457A6FD706B0315A18B882E4BD8BD /* Pods-MSDKHttpDNS_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		06F5E61C1F2FAE1043D614AC1E782DDB /* MSDKHttpDNS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 29A6782C7B97F9E5A0AF14D6100B4B23 /* Build configuration list for PBXNativeTarget "MSDKHttpDNS" */;
+			buildPhases = (
+				281E8E2AC6E704676DA33602F8946F77 /* Headers */,
+				93D75A8E3EDE4B47345982F7C82424C7 /* Sources */,
+				098D78D271821888BC2F85CCF68373E0 /* Frameworks */,
+				A4310C2841879BA92E29C9E91A6CB8D7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MSDKHttpDNS;
+			productName = MSDKHttpDNS;
+			productReference = D26277F2B724F784873EAEDFBE08DF2A /* MSDKHttpDNS */;
+			productType = "com.apple.product-type.framework";
+		};
+		4FCE98790630FD21714F57D2F19B2446 /* Pods-MSDKHttpDNS_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 33820DE981C9781AEEC04980F8E9301C /* Build configuration list for PBXNativeTarget "Pods-MSDKHttpDNS_Tests" */;
+			buildPhases = (
+				CDE846ED8B328749D511E8F8217AEBA3 /* Headers */,
+				52BF929A6EA4BC51C61B04CF0DAA5BD7 /* Sources */,
+				73E52606183BD3334335BA2499BA1CFC /* Frameworks */,
+				3B55FDBE963066297B25E145C35043E8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				194FB3F84B4AF72A492BA1BBCEB1927E /* PBXTargetDependency */,
+			);
+			name = "Pods-MSDKHttpDNS_Tests";
+			productName = Pods_MSDKHttpDNS_Tests;
+			productReference = BE5B46D60270FC424993077C67260D00 /* Pods-MSDKHttpDNS_Tests */;
+			productType = "com.apple.product-type.framework";
+		};
+		5148F7112C7DD7943A90B740B25AF708 /* Pods-MSDKHttpDNS_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC6EB0F73D23D5F7906E8F3684EF56C8 /* Build configuration list for PBXNativeTarget "Pods-MSDKHttpDNS_Example" */;
+			buildPhases = (
+				527892B0F3053F4B6E304257120BEBB3 /* Headers */,
+				786D58D003A596978FAFC82C2B656FDB /* Sources */,
+				79FEAEECA2DEB6CC84451966FE09CE15 /* Frameworks */,
+				19A7CFD5864A5AE815C214355D373305 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				244F3E49F627F608678E2CA01762153A /* PBXTargetDependency */,
+			);
+			name = "Pods-MSDKHttpDNS_Example";
+			productName = Pods_MSDKHttpDNS_Example;
+			productReference = A41CC4CF8CC79C3CDE6B7E00350B46F4 /* Pods-MSDKHttpDNS_Example */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 34A3F73B3DB0A3640ED6A4BC750C7F7E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				06F5E61C1F2FAE1043D614AC1E782DDB /* MSDKHttpDNS */,
+				5148F7112C7DD7943A90B740B25AF708 /* Pods-MSDKHttpDNS_Example */,
+				4FCE98790630FD21714F57D2F19B2446 /* Pods-MSDKHttpDNS_Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		19A7CFD5864A5AE815C214355D373305 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B55FDBE963066297B25E145C35043E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4310C2841879BA92E29C9E91A6CB8D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		52BF929A6EA4BC51C61B04CF0DAA5BD7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14FA7F55799E4A4BE79B2ADCDB62DEB7 /* Pods-MSDKHttpDNS_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		786D58D003A596978FAFC82C2B656FDB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE0A1D6C35E4A24E831F7C30F0641762 /* Pods-MSDKHttpDNS_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93D75A8E3EDE4B47345982F7C82424C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B124548E9E4379E58D8824C5A3B902B2 /* MSDKHttpDNS-dummy.m in Sources */,
+				A1A08D70F354B694322E2675BCC7282D /* ReplaceMe.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		194FB3F84B4AF72A492BA1BBCEB1927E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-MSDKHttpDNS_Example";
+			target = 5148F7112C7DD7943A90B740B25AF708 /* Pods-MSDKHttpDNS_Example */;
+			targetProxy = 90F232776B50DBE426B9877BB30AABC3 /* PBXContainerItemProxy */;
+		};
+		244F3E49F627F608678E2CA01762153A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MSDKHttpDNS;
+			target = 06F5E61C1F2FAE1043D614AC1E782DDB /* MSDKHttpDNS */;
+			targetProxy = 1C3FEF391E6828493BA2001F0133F2AD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1480809BBC0AD99290C0A5C19EDBAB91 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD7A12A228092684EC5CE0334CD876DD /* Pods-MSDKHttpDNS_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-MSDKHttpDNS_Example/Pods-MSDKHttpDNS_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MSDKHttpDNS_Example/Pods-MSDKHttpDNS_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		35FDD70428704A3D509716311A20A117 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C628CFB1CA88DA7ACAC6AB06CB1B2B19 /* Pods-MSDKHttpDNS_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-MSDKHttpDNS_Tests/Pods-MSDKHttpDNS_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MSDKHttpDNS_Tests/Pods-MSDKHttpDNS_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3A19FD9E05B9B4725A3508C342263AD7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E9246582BA6F311CA1286D686E2A639 /* Pods-MSDKHttpDNS_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-MSDKHttpDNS_Example/Pods-MSDKHttpDNS_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MSDKHttpDNS_Example/Pods-MSDKHttpDNS_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4EC4ADDDAD46BF4E7213999F7C6F83A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A16F8F1CEF99A6B20A7F5F4EE426222 /* MSDKHttpDNS.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MSDKHttpDNS/MSDKHttpDNS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MSDKHttpDNS/MSDKHttpDNS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MSDKHttpDNS/MSDKHttpDNS.modulemap";
+				PRODUCT_MODULE_NAME = MSDKHttpDNS;
+				PRODUCT_NAME = MSDKHttpDNS;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7EE7A78859F657F6BEFC651185B43192 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		8CCAA34350BF0C7C36AD722F8E29A509 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79911B8A1E0A06E96B125D32EE9A7D19 /* MSDKHttpDNS.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MSDKHttpDNS/MSDKHttpDNS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MSDKHttpDNS/MSDKHttpDNS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MSDKHttpDNS/MSDKHttpDNS.modulemap";
+				PRODUCT_MODULE_NAME = MSDKHttpDNS;
+				PRODUCT_NAME = MSDKHttpDNS;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D299434AB35E7FD6F7921C8EF24742FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		EDE1A8BA376907DE73521C6DE2EAA92D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63D841C3B44C76575D3DA5C7C7F0A9D0 /* Pods-MSDKHttpDNS_Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-MSDKHttpDNS_Tests/Pods-MSDKHttpDNS_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MSDKHttpDNS_Tests/Pods-MSDKHttpDNS_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		29A6782C7B97F9E5A0AF14D6100B4B23 /* Build configuration list for PBXNativeTarget "MSDKHttpDNS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CCAA34350BF0C7C36AD722F8E29A509 /* Debug */,
+				4EC4ADDDAD46BF4E7213999F7C6F83A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		33820DE981C9781AEEC04980F8E9301C /* Build configuration list for PBXNativeTarget "Pods-MSDKHttpDNS_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				35FDD70428704A3D509716311A20A117 /* Debug */,
+				EDE1A8BA376907DE73521C6DE2EAA92D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D299434AB35E7FD6F7921C8EF24742FF /* Debug */,
+				7EE7A78859F657F6BEFC651185B43192 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC6EB0F73D23D5F7906E8F3684EF56C8 /* Build configuration list for PBXNativeTarget "Pods-MSDKHttpDNS_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A19FD9E05B9B4725A3508C342263AD7 /* Debug */,
+				1480809BBC0AD99290C0A5C19EDBAB91 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
