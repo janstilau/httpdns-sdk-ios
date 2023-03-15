@@ -117,7 +117,6 @@
 		502422EB2140073F0094403C /* MSDKDnsParamsManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSDKDnsParamsManager.m; sourceTree = "<group>"; };
 		504F54381ECAF89F001BD7A9 /* MSDKDnsHttpMessageTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSDKDnsHttpMessageTools.h; sourceTree = "<group>"; };
 		504F54391ECAF89F001BD7A9 /* MSDKDnsHttpMessageTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSDKDnsHttpMessageTools.m; sourceTree = "<group>"; };
-		54EA81F1275478D1005F68A9 /* httpdnsIps.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = httpdnsIps.h; sourceTree = "<group>"; };
 		54EA82202760890B005F68A9 /* AttaReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttaReport.h; sourceTree = "<group>"; };
 		54EA82212760890B005F68A9 /* AttaReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttaReport.m; sourceTree = "<group>"; };
 		5F1E287B28B72A7D00AD0D9F /* HTTPDNSORM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPDNSORM.m; sourceTree = "<group>"; };
@@ -178,7 +177,6 @@
 		44224FC21B312DD6003497C4 /* MSDKDns */ = {
 			isa = PBXGroup;
 			children = (
-				54EA81F1275478D1005F68A9 /* httpdnsIps.h */,
 				4455D15C1B3A5B90005BF126 /* MSDKDns.h */,
 				4455D15D1B3A5B90005BF126 /* MSDKDns.m */,
 				444044F71B3133A30010F5D5 /* MSDKDnsService.h */,
@@ -404,6 +402,7 @@
 				TargetAttributes = {
 					44224FBF1B312DD6003497C4 = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = GAJJ4F72ZK;
 					};
 				};
 			};
@@ -697,6 +696,7 @@
 				CURRENT_PROJECT_VERSION = 1107;
 				DEAD_CODE_STRIPPING = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = GAJJ4F72ZK;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				ENABLE_BITCODE = YES;
@@ -720,6 +720,7 @@
 				);
 				PRIVATE_HEADERS_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Versions/A/PrivateHeaders";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tencent.$(PRODUCT_NAME:rfc1034identifier)";
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = "com.tencent.MSDKDns-yami";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Versions/A/Headers";
 				SDKROOT = iphoneos;
@@ -739,6 +740,7 @@
 				CURRENT_PROJECT_VERSION = 1107;
 				DEAD_CODE_STRIPPING = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = GAJJ4F72ZK;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				ENABLE_BITCODE = YES;
@@ -761,6 +763,7 @@
 				);
 				PRIVATE_HEADERS_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Versions/A/PrivateHeaders";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tencent.$(PRODUCT_NAME:rfc1034identifier)";
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = "com.tencent.MSDKDns-yami";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Versions/A/Headers";
 				SDKROOT = iphoneos;
