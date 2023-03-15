@@ -6,6 +6,7 @@
 #define HttpsDnsResolver_h
 
 #import "MSDKDnsResolver.h"
+#import "msdkdns_local_ip_stack.h"
 
 @interface HttpsDnsResolver : MSDKDnsResolver
 

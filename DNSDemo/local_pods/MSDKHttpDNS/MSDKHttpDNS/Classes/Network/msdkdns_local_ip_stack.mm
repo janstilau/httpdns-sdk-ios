@@ -67,7 +67,7 @@ static int msdkdns_have_ipv6() {
     bzero(sin6_test.sin6_addr.s6_addr, sizeof(sin6_test.sin6_addr.s6_addr));
     sin6_test.sin6_addr.s6_addr[0] = 0x20;
     // union
-     msdkdns_sockaddr_union addr = {.msdkdns_in6 = sin6_test};
+    msdkdns_sockaddr_union addr = {.msdkdns_in6 = sin6_test};
     return msdkdns_test_connect(PF_INET6, &addr.msdkdns_generic, sizeof(addr.msdkdns_in6));
 }
 
@@ -78,11 +78,11 @@ static int msdkdns_have_ipv4() {
     sin_test.sin_port = 80;
     sin_test.sin_addr.s_addr = htonl(0x08080808L); // 8.8.8.8
     // union
-     msdkdns_sockaddr_union addr = {.msdkdns_in = sin_test};
+    msdkdns_sockaddr_union addr = {.msdkdns_in = sin_test};
     return msdkdns_test_connect(PF_INET, &addr.msdkdns_generic, sizeof(addr.msdkdns_in));
 }
 
- MSDKDNS_TLocalIPStack  msdkdns_detect_local_ip_stack() {
+MSDKDNS_TLocalIPStack  msdkdns_detect_local_ip_stack() {
     MSDKDNSLOG(@"detect local ip stack");
     int have_ipv4 = msdkdns_have_ipv4();
     int have_ipv6 = msdkdns_have_ipv6();

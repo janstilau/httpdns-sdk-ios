@@ -16,9 +16,9 @@
 #include <netinet/in.h>
 #include <sys/socket.h>
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+//#ifdef __cplusplus
+//extern "C" {
+//#endif
 
 
 typedef union msdkdns_sockaddr_union {
@@ -28,12 +28,18 @@ typedef union msdkdns_sockaddr_union {
 } msdkdns_sockaddr_union;
 
 // 注意该ENUM数值改动时需要同步更改JAVA层相应的的Stack定义
-enum MSDKDNS_TLocalIPStack {
+//enum MSDKDNS_TLocalIPStack {
+//    MSDKDNS_ELocalIPStack_None = 0,
+//    MSDKDNS_ELocalIPStack_IPv4 = 1,
+//    MSDKDNS_ELocalIPStack_IPv6 = 2,
+//    MSDKDNS_ELocalIPStack_Dual = 3,
+//};
+typedef enum : NSUInteger {
     MSDKDNS_ELocalIPStack_None = 0,
     MSDKDNS_ELocalIPStack_IPv4 = 1,
     MSDKDNS_ELocalIPStack_IPv6 = 2,
     MSDKDNS_ELocalIPStack_Dual = 3,
-};
+} MSDKDNS_TLocalIPStack;
 
 const char * const MSDKDNS_TLocalIPStackStr[] = {
     "MSDKDNS_ELocalIPStack_None",
@@ -44,9 +50,9 @@ const char * const MSDKDNS_TLocalIPStackStr[] = {
 
 MSDKDNS_TLocalIPStack msdkdns_detect_local_ip_stack();
 
-#ifdef __cplusplus
-}
-#endif
+//#ifdef __cplusplus
+//}
+//#endif
 
 
 #endif /* MSDKDNS_NETWORK_LOCAL_IP_STACK */

@@ -6,6 +6,7 @@
 #import "MSDKDnsLog.h"
 #import <arpa/inet.h>
 #import <netdb.h>
+#import "msdkdns_local_ip_stack.h"
 
 @implementation MSDKDnsResolver
 
@@ -16,7 +17,7 @@
     [self setDelegate:nil];
 }
 
-- (void)startWithDomains:(NSArray *)domains TimeOut:(float)timeOut DnsId:(int)dnsId DnsKey:(NSString *)dnsKey NetStack:( MSDKDNS_TLocalIPStack)netStack {
+- (void)startWithDomains:(NSArray *)domains TimeOut:(float)timeOut DnsId:(int)dnsId DnsKey:(NSString *)dnsKey NetStack:(MSDKDNS_TLocalIPStack)netStack {
     self.startDate = [NSDate date];
 }
 

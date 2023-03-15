@@ -1,9 +1,8 @@
 CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/MSDKDns_C11" "${PODS_XCFRAMEWORKS_BUILD_DIR}/MSDKDns_C11"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AFNetworking" "${PODS_ROOT}/Headers/Public/MSDKHttpDNS" "${PODS_ROOT}/Headers/Public/SQLiteRepairKit" "${PODS_ROOT}/Headers/Public/WCDB" "${PODS_ROOT}/Headers/Public/WCDBOptimizedSQLCipher"
-LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking" "${PODS_CONFIGURATION_BUILD_DIR}/MSDKHttpDNS" "${PODS_CONFIGURATION_BUILD_DIR}/SQLiteRepairKit" "${PODS_CONFIGURATION_BUILD_DIR}/WCDB" "${PODS_CONFIGURATION_BUILD_DIR}/WCDBOptimizedSQLCipher"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"AFNetworking" -l"MSDKHttpDNS" -l"SQLiteRepairKit" -l"WCDB" -l"WCDBOptimizedSQLCipher" -l"c++" -l"sqlite3" -l"z" -framework "CoreFoundation" -framework "CoreGraphics" -framework "CoreTelephony" -framework "Foundation" -framework "MSDKDns_C11" -framework "Security" -framework "SystemConfiguration" -framework "UIKit"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AFNetworking" "${PODS_ROOT}/Headers/Public/MSDKHttpDNS"
+LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking" "${PODS_CONFIGURATION_BUILD_DIR}/MSDKHttpDNS"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"AFNetworking" -l"MSDKHttpDNS" -l"c++" -l"z"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.

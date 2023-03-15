@@ -69,7 +69,7 @@ static MSDKDnsManager * _sharedInstance = nil;
 // 同步获取 Ip 数据的方法. 
 - (NSDictionary *)getHostsByNames:(NSArray *)domains verbose:(BOOL)verbose {
     // 获取当前ipv4/ipv6/双栈网络环境
-    msdkdns::MSDKDNS_TLocalIPStack netStack = [self detectAddressType];
+    MSDKDNS_TLocalIPStack netStack = [self detectAddressType];
     __block float timeOut = 2.0;
     __block NSDictionary * cacheDomainDict = nil;
     dispatch_sync([MSDKDnsInfoTool msdkdns_queue], ^{
@@ -140,7 +140,7 @@ static MSDKDnsManager * _sharedInstance = nil;
 // 
 - (NSDictionary *)getHostsByNamesEnableExpired:(NSArray *)domains verbose:(BOOL)verbose {
     // 获取当前ipv4/ipv6/双栈网络环境
-    msdkdns::MSDKDNS_TLocalIPStack netStack = [self detectAddressType];
+     MSDKDNS_TLocalIPStack netStack = [self detectAddressType];
     __block float timeOut = 2.0;
     __block NSDictionary * cacheDomainDict = nil;
     dispatch_sync([MSDKDnsInfoTool msdkdns_queue], ^{
@@ -204,7 +204,7 @@ static MSDKDnsManager * _sharedInstance = nil;
                 verbose:(BOOL)verbose
               returnIps:(void (^)(NSDictionary * ipsDict))handler {
     // 获取当前ipv4/ipv6/双栈网络环境
-    msdkdns::MSDKDNS_TLocalIPStack netStack = [self detectAddressType];
+     MSDKDNS_TLocalIPStack netStack = [self detectAddressType];
     __block float timeOut = 2.0;
     __block NSDictionary * cacheDomainDict = nil;
     dispatch_sync([MSDKDnsInfoTool msdkdns_queue], ^{
@@ -271,7 +271,7 @@ static MSDKDnsManager * _sharedInstance = nil;
 
 - (void)refreshCacheDelay:(NSArray *)domains clearDispatchTag:(BOOL)needClear {
     // 获取当前ipv4/ipv6/双栈网络环境
-    msdkdns::MSDKDNS_TLocalIPStack netStack = [self detectAddressType];
+     MSDKDNS_TLocalIPStack netStack = [self detectAddressType];
     __block float timeOut = 2.0;
     timeOut = [[MSDKDnsParamsManager shareInstance] msdkDnsGetMTimeOut];
     //进行httpdns请求
@@ -570,7 +570,7 @@ static MSDKDnsManager * _sharedInstance = nil;
 }
 
 #pragma mark - uploadReport
-- (void)uploadReport:(BOOL)isFromCache Domain:(NSString *)domain NetStack:(msdkdns::MSDKDNS_TLocalIPStack)netStack {
+- (void)uploadReport:(BOOL)isFromCache Domain:(NSString *)domain NetStack:( MSDKDNS_TLocalIPStack)netStack {
     Class beaconClass = NSClassFromString(@"BeaconBaseInterface");
     if (beaconClass == 0x0) {
         MSDKDNSLOG(@"Beacon framework is not imported");
@@ -603,7 +603,7 @@ static MSDKDnsManager * _sharedInstance = nil;
     MSDKDNSLOG(@"ReportingEvent, name:%@, events:%@", eventName, params);
 }
 
-- (NSMutableDictionary *)formatParams:(BOOL)isFromCache Domain:(NSString *)domain NetStack:(msdkdns::MSDKDNS_TLocalIPStack)netStack {
+- (NSMutableDictionary *)formatParams:(BOOL)isFromCache Domain:(NSString *)domain NetStack:( MSDKDNS_TLocalIPStack)netStack {
     MSDKDNSLOG(@"uploadReport %@",domain);
     //dns结束时上报结果
     NSMutableDictionary * params = [NSMutableDictionary new];
@@ -890,20 +890,20 @@ static MSDKDnsManager * _sharedInstance = nil;
 }
 
 # pragma mark - detect address type
-- (msdkdns::MSDKDNS_TLocalIPStack)detectAddressType {
-    msdkdns::MSDKDNS_TLocalIPStack netStack = msdkdns::MSDKDNS_ELocalIPStack_None;
+- ( MSDKDNS_TLocalIPStack)detectAddressType {
+     MSDKDNS_TLocalIPStack netStack =  MSDKDNS_ELocalIPStack_None;
     switch ([[MSDKDnsParamsManager shareInstance] msdkDnsGetAddressType]) {
         case HttpDnsAddressTypeIPv4:
-            netStack = msdkdns::MSDKDNS_ELocalIPStack_IPv4;
+            netStack =  MSDKDNS_ELocalIPStack_IPv4;
             break;
         case HttpDnsAddressTypeIPv6:
-            netStack = msdkdns::MSDKDNS_ELocalIPStack_IPv6;
+            netStack =  MSDKDNS_ELocalIPStack_IPv6;
             break;
         case HttpDnsAddressTypeDual:
-            netStack = msdkdns::MSDKDNS_ELocalIPStack_Dual;
+            netStack =  MSDKDNS_ELocalIPStack_Dual;
             break;
         default:
-            netStack = msdkdns::msdkdns_detect_local_ip_stack();
+            netStack =  msdkdns_detect_local_ip_stack();
             break;
     }
     return netStack;
