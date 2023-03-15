@@ -4,6 +4,6 @@ platform :ios, "11.0"
 target 'DNSDemo' do
 
   pod "AFNetworking" 
-#  pod "MSDKHttpDNS", :path => "local_pods/MSDKHttpDNS"
+  pod "MSDKHttpDNS", :path => "local_pods/MSDKHttpDNS"
   pod 'MSDKDns_C11'
 end
