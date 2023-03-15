@@ -34,6 +34,7 @@ static MSDKDnsNetworkManager *manager = nil;
     [self setNetworkType:nil];
 }
 
+// 这个类方法, 其实就是触发单例的创建.
 + (void)start
 {
     [MSDKDnsNetworkManager shareInstance];
@@ -56,6 +57,7 @@ static MSDKDnsNetworkManager *manager = nil;
 {
     @synchronized(self)
     {
+        // 多线程环境下的 Double Check 机制.
         if (manager)
         {
             return manager;
@@ -63,7 +65,9 @@ static MSDKDnsNetworkManager *manager = nil;
         
         if (self = [super init])
         {
+            // 还能这么写....
             manager = self;
+            // 在这里, 监听了网络连接状况的改变.
             [NSNotificationCenter.defaultCenter addObserverForName:kMSDKDnsReachabilityChangedNotification
                                                             object:nil
                                                              queue:nil
@@ -142,6 +146,8 @@ static SCNetworkConnectionFlags ana_connectionFlags;
     //
     //	SCNetworkReachabilityRef defaultRouteReachablilty = SCNetworkReachabilityCreateWithAddress(kCFAllocatorDefault, (struct sockaddr *)&ipAddress);
     SCNetworkReachabilityRef defaultRouteReachablilty = SCNetworkReachabilityCreateWithName(kCFAllocatorDefault, "www.qq.com");
+    // Determines if the specified network target is reachable using the current network configuration.
+    // 使用 www.qq.com 来进行当前的网络判断. 屮.
     BOOL didRetrieveFlags = SCNetworkReachabilityGetFlags(defaultRouteReachablilty, &ana_connectionFlags);
     
     CFRelease(defaultRouteReachablilty);

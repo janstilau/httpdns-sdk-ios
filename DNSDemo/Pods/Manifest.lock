@@ -16,6 +16,7 @@ PODS:
     - AFNetworking/NSURLSession
   - MSDKDns_C11 (1.6.0):
     - WCDB (= 1.0.7.5)
+  - MSDKHttpDNS (0.1.0)
   - SQLiteRepairKit (1.2.2):
     - WCDBOptimizedSQLCipher (~> 1.2.0)
   - WCDB (1.0.7.5):
@@ -26,6 +27,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - MSDKDns_C11
+  - MSDKHttpDNS (from `local_pods/MSDKHttpDNS`)
 
 SPEC REPOS:
   trunk:
@@ -35,13 +37,18 @@ SPEC REPOS:
     - WCDB
     - WCDBOptimizedSQLCipher
 
+EXTERNAL SOURCES:
+  MSDKHttpDNS:
+    :path: local_pods/MSDKHttpDNS
+
 SPEC CHECKSUMS:
   AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
   MSDKDns_C11: 401f3a103e861784542931d7bfbada3e68c321cd
+  MSDKHttpDNS: 8ef4dd48523475764c1a185391e35c2cdc03221e
   SQLiteRepairKit: 35aaae5a8838adb85f5b1eb4d796055be6060a4b
   WCDB: 8e90babdeb7784c569353a4bd22a66c0a175a882
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
 
-PODFILE CHECKSUM: 62de68d7e0d1a388b3617b5615743023528df14e
+PODFILE CHECKSUM: a565794910238dc46342170f48bc958faa80a983
 
 COCOAPODS: 1.11.3

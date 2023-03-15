@@ -11,7 +11,7 @@
 
 @property (nonatomic, assign) NSInteger statusCode;
 
-- (void)startWithDomains:(NSArray *)domains TimeOut:(float)timeOut DnsId:(int)dnsId DnsKey:(NSString *)dnsKey NetStack:(msdkdns::MSDKDNS_TLocalIPStack)netStack encryptType:(NSInteger)encryptType;
+- (void)startWithDomains:(NSArray *)domains TimeOut:(float)timeOut DnsId:(int)dnsId DnsKey:(NSString *)dnsKey NetStack:( MSDKDNS_TLocalIPStack)netStack encryptType:(NSInteger)encryptType;
 
 @end
 

@@ -9,6 +9,8 @@
 
 #import <Foundation/Foundation.h>
 
+// 这个类里面, 定义了所有的对外接口. 
+
 typedef enum {
     HttpDnsEncryptTypeDES = 0,
     HttpDnsEncryptTypeAES = 1,

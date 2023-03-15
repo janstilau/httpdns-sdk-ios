@@ -20,31 +20,29 @@
 extern "C" {
 #endif
 
-namespace msdkdns {
 
-    typedef union msdkdns_sockaddr_union {
-        struct sockaddr msdkdns_generic;
-        struct sockaddr_in msdkdns_in;
-        struct sockaddr_in6 msdkdns_in6;
-    } msdkdns_sockaddr_union;
+typedef union msdkdns_sockaddr_union {
+    struct sockaddr msdkdns_generic;
+    struct sockaddr_in msdkdns_in;
+    struct sockaddr_in6 msdkdns_in6;
+} msdkdns_sockaddr_union;
 
-    // 注意该ENUM数值改动时需要同步更改JAVA层相应的的Stack定义
-    enum MSDKDNS_TLocalIPStack {
-        MSDKDNS_ELocalIPStack_None = 0,
-        MSDKDNS_ELocalIPStack_IPv4 = 1,
-        MSDKDNS_ELocalIPStack_IPv6 = 2,
-        MSDKDNS_ELocalIPStack_Dual = 3,
-    };
+// 注意该ENUM数值改动时需要同步更改JAVA层相应的的Stack定义
+enum MSDKDNS_TLocalIPStack {
+    MSDKDNS_ELocalIPStack_None = 0,
+    MSDKDNS_ELocalIPStack_IPv4 = 1,
+    MSDKDNS_ELocalIPStack_IPv6 = 2,
+    MSDKDNS_ELocalIPStack_Dual = 3,
+};
 
-    const char * const MSDKDNS_TLocalIPStackStr[] = {
-            "MSDKDNS_ELocalIPStack_None",
-            "MSDKDNS_ELocalIPStack_IPv4",
-            "MSDKDNS_ELocalIPStack_IPv6",
-            "MSDKDNS_ELocalIPStack_Dual",
-    };
+const char * const MSDKDNS_TLocalIPStackStr[] = {
+    "MSDKDNS_ELocalIPStack_None",
+    "MSDKDNS_ELocalIPStack_IPv4",
+    "MSDKDNS_ELocalIPStack_IPv6",
+    "MSDKDNS_ELocalIPStack_Dual",
+};
 
-    MSDKDNS_TLocalIPStack msdkdns_detect_local_ip_stack();
-}
+MSDKDNS_TLocalIPStack msdkdns_detect_local_ip_stack();
 
 #ifdef __cplusplus
 }

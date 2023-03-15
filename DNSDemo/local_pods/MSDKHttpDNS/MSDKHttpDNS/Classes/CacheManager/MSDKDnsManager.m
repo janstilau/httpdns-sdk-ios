@@ -66,6 +66,7 @@ static MSDKDnsManager * _sharedInstance = nil;
 
 #pragma mark sync
 
+// 同步获取 Ip 数据的方法. 
 - (NSDictionary *)getHostsByNames:(NSArray *)domains verbose:(BOOL)verbose {
     // 获取当前ipv4/ipv6/双栈网络环境
     msdkdns::MSDKDNS_TLocalIPStack netStack = [self detectAddressType];

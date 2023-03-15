@@ -280,6 +280,7 @@ static MSDKDnsParamsManager * _sharedInstance = nil;
 }
 
 - (BOOL)msdkDnsGetExpiredIPEnabled {
+    // _expiredIPEnabled 这个值就没有 YES 过, 所有这个方法就是返回 NO
     return _expiredIPEnabled;
 }
 

@@ -23,7 +23,7 @@
 @property (strong, nonatomic) LocalDnsResolver * localDnsResolver;
 @property (nonatomic, strong) void (^ completionHandler)();
 @property (atomic, assign) BOOL isCallBack;
-@property (nonatomic) msdkdns::MSDKDNS_TLocalIPStack netStack;
+@property (nonatomic)  MSDKDNS_TLocalIPStack netStack;
 @property (nonatomic, assign) int httpdnsFailCount;
 @property (nonatomic, assign) float timeOut;
 @property (nonatomic, assign) int dnsId;
@@ -42,12 +42,12 @@
 }
 
 
-- (void)getHostByName:(NSString *)domain TimeOut:(float)timeOut DnsId:(int)dnsId DnsKey:(NSString *)dnsKey NetStack:(msdkdns::MSDKDNS_TLocalIPStack)netStack encryptType:(NSInteger)encryptType returnIps:(void (^)())handler
+- (void)getHostByName:(NSString *)domain TimeOut:(float)timeOut DnsId:(int)dnsId DnsKey:(NSString *)dnsKey NetStack:( MSDKDNS_TLocalIPStack)netStack encryptType:(NSInteger)encryptType returnIps:(void (^)())handler
 {
     [self getHostsByNames:@[domain] TimeOut:timeOut DnsId:dnsId DnsKey:dnsKey NetStack:netStack encryptType:encryptType returnIps:handler];
 }
 
-- (void)getHostsByNames:(NSArray *)domains TimeOut:(float)timeOut DnsId:(int)dnsId DnsKey:(NSString *)dnsKey NetStack:(msdkdns::MSDKDNS_TLocalIPStack)netStack encryptType:(NSInteger)encryptType returnIps:(void (^)())handler
+- (void)getHostsByNames:(NSArray *)domains TimeOut:(float)timeOut DnsId:(int)dnsId DnsKey:(NSString *)dnsKey NetStack:( MSDKDNS_TLocalIPStack)netStack encryptType:(NSInteger)encryptType returnIps:(void (^)())handler
 {
     self.completionHandler = handler;
     self.toCheckDomains = domains;
@@ -71,7 +71,7 @@
         return;
     }
     
-    if (_netStack == msdkdns::MSDKDNS_ELocalIPStack_None) {
+    if (_netStack ==  MSDKDNS_ELocalIPStack_None) {
         MSDKDNSLOG(@"No network stack, please check your network setting!");
         [self callNotify];
         return;
@@ -82,19 +82,19 @@
     self.dnsKey = dnsKey;
     self.encryptType = encryptType;
     
-    if (_netStack == msdkdns::MSDKDNS_ELocalIPStack_IPv6) {
+    if (_netStack ==  MSDKDNS_ELocalIPStack_IPv6) {
         dispatch_async([MSDKDnsInfoTool msdkdns_resolver_queue], ^{
             [self startHttpDns_4A:timeOut DnsId:dnsId DnsKey:dnsKey encryptType:encryptType];
         });
     }
     
-    if (_netStack == msdkdns::MSDKDNS_ELocalIPStack_IPv4) {
+    if (_netStack ==  MSDKDNS_ELocalIPStack_IPv4) {
         dispatch_async([MSDKDnsInfoTool msdkdns_resolver_queue], ^{
             [self startHttpDns:timeOut DnsId:dnsId DnsKey:dnsKey encryptType:encryptType];
         });
     }
     
-    if (_netStack == msdkdns::MSDKDNS_ELocalIPStack_Dual) {
+    if (_netStack ==  MSDKDNS_ELocalIPStack_Dual) {
         dispatch_async([MSDKDnsInfoTool msdkdns_resolver_queue], ^{
             [self startHttpDnsBoth:timeOut DnsId:dnsId DnsKey:dnsKey encryptType:encryptType];
         });
@@ -120,7 +120,7 @@
     MSDKDNSLOG(@"%@ StartHttpDns!", self.toCheckDomains);
     self.httpDnsResolver_BOTH = [[HttpsDnsResolver alloc] init];
     self.httpDnsResolver_BOTH.delegate = self;
-    [self.httpDnsResolver_BOTH startWithDomains:self.toCheckDomains TimeOut:timeOut DnsId:dnsId DnsKey:dnsKey NetStack:msdkdns::MSDKDNS_ELocalIPStack_Dual encryptType:encryptType];
+    [self.httpDnsResolver_BOTH startWithDomains:self.toCheckDomains TimeOut:timeOut DnsId:dnsId DnsKey:dnsKey NetStack: MSDKDNS_ELocalIPStack_Dual encryptType:encryptType];
 }
 
 //进行httpdns ipv4请求
@@ -129,7 +129,7 @@
     MSDKDNSLOG(@"%@ StartHttpDns!", self.toCheckDomains);
     self.httpDnsResolver_A = [[HttpsDnsResolver alloc] init];
     self.httpDnsResolver_A.delegate = self;
-    [self.httpDnsResolver_A startWithDomains:self.toCheckDomains TimeOut:timeOut DnsId:dnsId DnsKey:dnsKey NetStack:msdkdns::MSDKDNS_ELocalIPStack_IPv4 encryptType:encryptType];
+    [self.httpDnsResolver_A startWithDomains:self.toCheckDomains TimeOut:timeOut DnsId:dnsId DnsKey:dnsKey NetStack: MSDKDNS_ELocalIPStack_IPv4 encryptType:encryptType];
 }
 
 //进行httpdns ipv6请求
@@ -138,7 +138,7 @@
     MSDKDNSLOG(@"%@ StartHttpDns!", self.toCheckDomains);
     self.httpDnsResolver_4A = [[HttpsDnsResolver alloc] init];
     self.httpDnsResolver_4A.delegate = self;
-    [self.httpDnsResolver_4A startWithDomains:self.toCheckDomains TimeOut:timeOut DnsId:dnsId DnsKey:dnsKey NetStack:msdkdns::MSDKDNS_ELocalIPStack_IPv6 encryptType:encryptType];
+    [self.httpDnsResolver_4A startWithDomains:self.toCheckDomains TimeOut:timeOut DnsId:dnsId DnsKey:dnsKey NetStack: MSDKDNS_ELocalIPStack_IPv6 encryptType:encryptType];
 }
 
 //进行localdns请求

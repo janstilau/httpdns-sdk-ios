@@ -1,0 +1,1 @@
+../../../../local_pods/MSDKHttpDNS/MSDKHttpDNS/Classes/MSDKDnsPrivate.h

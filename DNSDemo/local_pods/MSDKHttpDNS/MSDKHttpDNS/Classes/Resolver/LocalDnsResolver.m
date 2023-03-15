@@ -18,7 +18,7 @@
 
 @implementation LocalDnsResolver
 
-- (void)startWithDomains:(NSArray *)domains TimeOut:(float)timeOut DnsId:(int)dnsId DnsKey:(NSString *)dnsKey NetStack:(msdkdns::MSDKDNS_TLocalIPStack)netStack {
+- (void)startWithDomains:(NSArray *)domains TimeOut:(float)timeOut DnsId:(int)dnsId DnsKey:(NSString *)dnsKey NetStack:( MSDKDNS_TLocalIPStack)netStack {
     [super startWithDomains:domains TimeOut:timeOut DnsId:dnsId DnsKey:dnsKey NetStack:netStack];
     MSDKDNSLOG(@"LocalDns TimeOut is %f", timeOut);
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, timeOut * NSEC_PER_SEC), [MSDKDnsInfoTool msdkdns_local_queue], ^{
@@ -31,7 +31,7 @@
     [self getLocalDnsWithDomains:domains NetStack:netStack];
 }
 
-- (void)getLocalDnsWithDomains:(NSArray *)domains NetStack:(msdkdns::MSDKDNS_TLocalIPStack)netStack {
+- (void)getLocalDnsWithDomains:(NSArray *)domains NetStack:( MSDKDNS_TLocalIPStack)netStack {
     MSDKDNSLOG(@"getLocalDnsWithDomains: %@", domains);
     NSMutableDictionary *domainInfo = [NSMutableDictionary dictionary];
     for(int i = 0; i < [domains count]; i++) {
@@ -70,7 +70,7 @@
     }
 }
 
-- (NSArray *)addressesForHostname:(NSString *)hostname NetStack:(msdkdns::MSDKDNS_TLocalIPStack)netStack {
+- (NSArray *)addressesForHostname:(NSString *)hostname NetStack:( MSDKDNS_TLocalIPStack)netStack {
     const char * hostnameC = [hostname UTF8String];
     
     struct addrinfo hints, * res, * res0;
@@ -88,10 +88,10 @@
     //AI_NUMERICSERV, AI_PASSIVE, OR AI_V4MAPPED
     
     switch (netStack) {
-        case msdkdns::MSDKDNS_ELocalIPStack_IPv6:
+        case  MSDKDNS_ELocalIPStack_IPv6:
             hints.ai_family = AF_INET6;
             break;
-        case msdkdns::MSDKDNS_ELocalIPStack_IPv4:
+        case  MSDKDNS_ELocalIPStack_IPv4:
             hints.ai_family = AF_INET;
             break;
         default:

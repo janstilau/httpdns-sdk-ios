@@ -28,7 +28,7 @@
     [self setConnection:nil];
 }
 
-- (void)startWithDomains:(NSArray *)domains TimeOut:(float)timeOut DnsId:(int)dnsId DnsKey:(NSString *)dnsKey NetStack:(msdkdns::MSDKDNS_TLocalIPStack)netStack encryptType:(NSInteger)encryptType
+- (void)startWithDomains:(NSArray *)domains TimeOut:(float)timeOut DnsId:(int)dnsId DnsKey:(NSString *)dnsKey NetStack:( MSDKDNS_TLocalIPStack)netStack encryptType:(NSInteger)encryptType
 {
     [super startWithDomains:domains TimeOut:timeOut DnsId:dnsId DnsKey:dnsKey NetStack:netStack];
     NSString *domainStr = [domains componentsJoinedByString:@","];
@@ -51,9 +51,9 @@
     self.encryptType = encryptType;
     MSDKDNSLOG(@"HttpDns startWithDomain: %@!", domains);
     self.ipType = HttpDnsTypeIPv4;
-    if (netStack == msdkdns::MSDKDNS_ELocalIPStack_IPv6) {
+    if (netStack ==  MSDKDNS_ELocalIPStack_IPv6) {
         self.ipType = HttpDnsTypeIPv6;
-    }else if (netStack == msdkdns::MSDKDNS_ELocalIPStack_Dual) {
+    }else if (netStack ==  MSDKDNS_ELocalIPStack_Dual) {
         self.ipType = HttpDnsTypeDual;
     }
     
