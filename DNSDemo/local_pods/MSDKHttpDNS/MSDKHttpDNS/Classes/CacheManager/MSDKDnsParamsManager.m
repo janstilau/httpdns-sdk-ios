@@ -12,7 +12,9 @@
     #endif
 #endif
 
-
+/*
+ 这就是一个纯纯的数据类, 在进行数据改变的时候, 有着线程控制.
+ */
 @interface MSDKDnsParamsManager()
 
 @property (strong, nonatomic, readwrite) NSString * msdkDnsIp;
@@ -68,11 +70,13 @@ static MSDKDnsParamsManager * _sharedInstance = nil;
 
 #pragma mark - setter
 
+// 这个值也是外界传入的. 也就是用户设置.
 - (void)msdkDnsSetMDnsIp:(NSString *) msdkDnsIp {
     dispatch_async([MSDKDnsInfoTool msdkdns_queue], ^{
         self.msdkDnsIp = msdkDnsIp;
         self.serverArray = [NSArray arrayWithObjects:msdkDnsIp, nil];
 
+        // 实际上, 可以有很多的 Ip 来当做 DNS 解析. 
         if (self.backupServerIps && [self.backupServerIps count] > 0) {
             self.serverArray = [self.serverArray arrayByAddingObjectsFromArray:self.backupServerIps];
         } else {
@@ -158,6 +162,7 @@ static MSDKDnsParamsManager * _sharedInstance = nil;
     });
 }
 
+// 赋值的时候, 进行了队列控制.
 - (void)msdkDnsSetAddressType: (HttpDnsAddressType)addressType {
     dispatch_async([MSDKDnsInfoTool msdkdns_queue], ^{
         self.msdkAddressType = addressType;
@@ -194,6 +199,7 @@ static MSDKDnsParamsManager * _sharedInstance = nil;
     });
 }
 
+// 但是 get 的时候, 其实都没有进行队列控制 .
 #pragma mark - getter
 
 - (BOOL)msdkDnsGetHttpOnly {
@@ -224,6 +230,7 @@ static MSDKDnsParamsManager * _sharedInstance = nil;
     return [_msdkDnsKey copy];
 }
 
+// 这里存储了获取 DNS 的最大时长. 
 - (float) msdkDnsGetMTimeOut {
     float timeOut = 0;
     if (_msdkDnsTimeOut > 0) {

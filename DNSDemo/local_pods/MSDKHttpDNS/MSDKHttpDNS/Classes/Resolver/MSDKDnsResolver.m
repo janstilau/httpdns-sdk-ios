@@ -18,6 +18,7 @@
 }
 
 - (void)startWithDomains:(NSArray *)domains TimeOut:(float)timeOut DnsId:(int)dnsId DnsKey:(NSString *)dnsKey NetStack:(MSDKDNS_TLocalIPStack)netStack {
+    // 仅仅进行了时间的记录而已. 
     self.startDate = [NSDate date];
 }
 

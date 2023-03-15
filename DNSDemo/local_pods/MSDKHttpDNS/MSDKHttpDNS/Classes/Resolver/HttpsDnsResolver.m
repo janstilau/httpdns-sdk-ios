@@ -8,6 +8,7 @@
 #import "MSDKDnsLog.h"
 #import "MSDKDnsInfoTool.h"
 
+// 居然用了 NSURLConnectionDelegate 来进行的. 
 @interface HttpsDnsResolver() <NSURLConnectionDelegate,NSURLConnectionDataDelegate>
 
 @property (strong, nonatomic) NSMutableData * responseData;
@@ -63,6 +64,7 @@
         NSURLRequest * request = [NSURLRequest requestWithURL:httpDnsUrl cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:timeOut];
         self.connection = [NSURLConnection connectionWithRequest:request delegate:self];
         [self.connection start];
+        // 使用 NSURLConnection 进行了真正的网络请求.
         self.rl = CFRunLoopGetCurrent();
         CFRunLoopRun();
     } else {
@@ -78,6 +80,7 @@
 
 #pragma mark - NSURLConnectionDelegate
 
+// 实际上, 这里的代码只是为了处理获取 dns 解析的. 并不是业务数据.
 - (void)connection:(NSURLConnection *)connection willSendRequestForAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
     MSDKDNSLOG(@"https willSendRequestForAuthenticationChallenge");
     if (!challenge) {
@@ -147,6 +150,7 @@
     return (result == kSecTrustResultUnspecified || result == kSecTrustResultProceed);
 }
 
+// 从这个时候开始, 进行 data 的拼接.
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
     MSDKDNSLOG(@"HttpDnsResolver didReceiveResponse!");
     self.responseData = nil;
@@ -280,7 +284,7 @@
                     if (result) {
                         [bothIPDict setObject:result forKey:@"ipv6"];
                     }
-                   
+                    
                 }
                 return bothIPDict;
             } else {

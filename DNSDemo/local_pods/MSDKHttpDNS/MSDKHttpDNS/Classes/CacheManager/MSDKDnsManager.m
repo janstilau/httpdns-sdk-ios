@@ -12,14 +12,15 @@
 #import "MSDKDnsNetworkManager.h"
 #import "msdkdns_local_ip_stack.h"
 #if defined(__has_include)
-    #if __has_include("httpdnsIps.h")
-        #include "httpdnsIps.h"
-    #endif
+#if __has_include("httpdnsIps.h")
+#include "httpdnsIps.h"
+#endif
 #endif
 
 @interface MSDKDnsManager ()
 
 @property (strong, nonatomic, readwrite) NSMutableArray * serviceArray;
+// 最重要的成员变量, 数据的展示. 
 @property (strong, nonatomic, readwrite) NSMutableDictionary * domainDict;
 @property (nonatomic, assign, readwrite) int serverIndex;
 @property (nonatomic, strong, readwrite) NSDate *firstFailTime; // 记录首次失败的时间
@@ -78,9 +79,12 @@ static MSDKDnsManager * _sharedInstance = nil;
         }
         timeOut = [[MSDKDnsParamsManager shareInstance] msdkDnsGetMTimeOut];
     });
+    
+    
     // 待查询数组
     NSMutableArray *toCheckDomains = [NSMutableArray array];
     // 查找缓存，缓存中有HttpDns数据且ttl未超时则直接返回结果,不存在或者ttl超时则放入待查询数组
+    // 所以其实会有缓存的策略在这里.
     for (int i = 0; i < [domains count]; i++) {
         NSString *domain = [domains objectAtIndex:i];
         if (![self domianCache:cacheDomainDict hit:domain]) {
@@ -92,27 +96,35 @@ static MSDKDnsManager * _sharedInstance = nil;
             });
         }
     }
+    
+    
     // 全部有缓存时，直接返回
     if([toCheckDomains count] == 0) {
         // NSLog(@"有缓存");
         NSDictionary * result = verbose ?
-            [self fullResultDictionary:domains fromCache:cacheDomainDict] :
-            [self resultDictionary:domains fromCache:cacheDomainDict];
+        [self fullResultDictionary:domains fromCache:cacheDomainDict] :
+        [self resultDictionary:domains fromCache:cacheDomainDict];
         return result;
     }
+    
+    // 同步就是使用信号量卡住了当前的线程而已.
     dispatch_semaphore_t sema = dispatch_semaphore_create(0);
     dispatch_async([MSDKDnsInfoTool msdkdns_queue], ^{
         if (!_serviceArray) {
             self.serviceArray = [[NSMutableArray alloc] init];
         }
+        
+        
         int dnsId = [[MSDKDnsParamsManager shareInstance] msdkDnsGetMDnsId];
         NSString * dnsKey = [[MSDKDnsParamsManager shareInstance] msdkDnsGetMDnsKey];
         HttpDnsEncryptType encryptType = [[MSDKDnsParamsManager shareInstance] msdkDnsGetEncryptType];
+        
         //进行httpdns请求
         MSDKDnsService * dnsService = [[MSDKDnsService alloc] init];
         [self.serviceArray addObject:dnsService];
+        
         __weak __typeof__(self) weakSelf = self;
-        // NSLog(@"%@, MSDKDns Result is toCheckDomains",toCheckDomains);
+        // 实际上工具类接口还是异步设计的, 只是在这里, 进行了信号量同步操作.
         [dnsService getHostsByNames:toCheckDomains TimeOut:timeOut DnsId:dnsId DnsKey:dnsKey NetStack:netStack encryptType:encryptType returnIps:^() {
             __strong __typeof(self) strongSelf = weakSelf;
             if (strongSelf) {
@@ -124,23 +136,25 @@ static MSDKDnsManager * _sharedInstance = nil;
             dispatch_semaphore_signal(sema);
         }];
     });
+    //
     dispatch_semaphore_wait(sema, dispatch_time(DISPATCH_TIME_NOW, timeOut * NSEC_PER_SEC));
     cacheDomainDict = nil;
+    // 之所以这样写, 是因为 dnsService getHostsByNames 方法, 必定是操作了 _domainDict. 所以这里从新从单例里面获取数据.
     dispatch_sync([MSDKDnsInfoTool msdkdns_queue], ^{
         if (domains && [domains count] > 0 && _domainDict) {
             cacheDomainDict = [[NSDictionary alloc] initWithDictionary:_domainDict];
         }
     });
     NSDictionary * result = verbose?
-        [self fullResultDictionary:domains fromCache:cacheDomainDict] :
-        [self resultDictionary:domains fromCache:cacheDomainDict];
+    [self fullResultDictionary:domains fromCache:cacheDomainDict] :
+    [self resultDictionary:domains fromCache:cacheDomainDict];
     return result;
 }
 
-// 
+// 这里的代码, 和上面没有鸟的区别.
 - (NSDictionary *)getHostsByNamesEnableExpired:(NSArray *)domains verbose:(BOOL)verbose {
     // 获取当前ipv4/ipv6/双栈网络环境
-     MSDKDNS_TLocalIPStack netStack = [self detectAddressType];
+    MSDKDNS_TLocalIPStack netStack = [self detectAddressType];
     __block float timeOut = 2.0;
     __block NSDictionary * cacheDomainDict = nil;
     dispatch_sync([MSDKDnsInfoTool msdkdns_queue], ^{
@@ -168,6 +182,8 @@ static MSDKDnsManager * _sharedInstance = nil;
             });
         }
     }
+    
+    
     // 当待查询数组中存在数据的时候，就开启异步线程执行解析操作，并且更新缓存
     if (toCheckDomains && [toCheckDomains count] != 0) {
         dispatch_async([MSDKDnsInfoTool msdkdns_queue], ^{
@@ -193,8 +209,8 @@ static MSDKDnsManager * _sharedInstance = nil;
         });
     }
     NSDictionary * result = verbose?
-        [self fullResultDictionaryEnableExpired:domains fromCache:cacheDomainDict toEmpty:toEmptyDomains] :
-        [self resultDictionaryEnableExpired:domains fromCache:cacheDomainDict toEmpty:toEmptyDomains];
+    [self fullResultDictionaryEnableExpired:domains fromCache:cacheDomainDict toEmpty:toEmptyDomains] :
+    [self resultDictionaryEnableExpired:domains fromCache:cacheDomainDict toEmpty:toEmptyDomains];
     return result;
 }
 
@@ -204,8 +220,9 @@ static MSDKDnsManager * _sharedInstance = nil;
                 verbose:(BOOL)verbose
               returnIps:(void (^)(NSDictionary * ipsDict))handler {
     // 获取当前ipv4/ipv6/双栈网络环境
-     MSDKDNS_TLocalIPStack netStack = [self detectAddressType];
+    MSDKDNS_TLocalIPStack netStack = [self detectAddressType];
     __block float timeOut = 2.0;
+    // 注意, 这里 cacheDomainDict 是一个深拷贝. 这样 _domainDict 里面的可以在之后正常修改.
     __block NSDictionary * cacheDomainDict = nil;
     dispatch_sync([MSDKDnsInfoTool msdkdns_queue], ^{
         if (domains && [domains count] > 0 && _domainDict) {
@@ -230,17 +247,21 @@ static MSDKDnsManager * _sharedInstance = nil;
     // 全部有缓存时，直接返回
     if([toCheckDomains count] == 0) {
         NSDictionary * result = verbose ?
-            [self fullResultDictionary:domains fromCache:cacheDomainDict] :
-            [self resultDictionary:domains fromCache:cacheDomainDict];
+        [self fullResultDictionary:domains fromCache:cacheDomainDict] :
+        [self resultDictionary:domains fromCache:cacheDomainDict];
         if (handler) {
             handler(result);
         }
+        // 缓存都有, 直接返回.
         return;
     }
+    
     dispatch_async([MSDKDnsInfoTool msdkdns_queue], ^{
         if (!_serviceArray) {
             self.serviceArray = [[NSMutableArray alloc] init];
         }
+        
+        
         int dnsId = [[MSDKDnsParamsManager shareInstance] msdkDnsGetMDnsId];
         NSString * dnsKey = [[MSDKDnsParamsManager shareInstance] msdkDnsGetMDnsKey];
         //进行httpdns请求
@@ -256,8 +277,8 @@ static MSDKDnsManager * _sharedInstance = nil;
                 }];
                 [strongSelf dnsHasDone:dnsService];
                 NSDictionary * result = verbose ?
-                    [strongSelf fullResultDictionary:domains fromCache:_domainDict] :
-                    [strongSelf resultDictionary:domains fromCache:_domainDict];
+                [strongSelf fullResultDictionary:domains fromCache:_domainDict] :
+                [strongSelf resultDictionary:domains fromCache:_domainDict];
                 if (handler) {
                     handler(result);
                 }
@@ -271,7 +292,7 @@ static MSDKDnsManager * _sharedInstance = nil;
 
 - (void)refreshCacheDelay:(NSArray *)domains clearDispatchTag:(BOOL)needClear {
     // 获取当前ipv4/ipv6/双栈网络环境
-     MSDKDNS_TLocalIPStack netStack = [self detectAddressType];
+    MSDKDNS_TLocalIPStack netStack = [self detectAddressType];
     __block float timeOut = 2.0;
     timeOut = [[MSDKDnsParamsManager shareInstance] msdkDnsGetMTimeOut];
     //进行httpdns请求
@@ -289,10 +310,11 @@ static MSDKDnsManager * _sharedInstance = nil;
     }];
 }
 
+// 就是提前请求, 访问一下.
 - (void)preResolveDomains {
     __block NSArray * domains = nil;
     dispatch_sync([MSDKDnsInfoTool msdkdns_queue], ^{
-       domains = [[MSDKDnsParamsManager shareInstance] msdkDnsGetPreResolvedDomains];
+        domains = [[MSDKDnsParamsManager shareInstance] msdkDnsGetPreResolvedDomains];
     });
     if (domains && [domains count] > 0) {
         MSDKDNSLOG(@"preResolve domains: %@", [domains componentsJoinedByString:@","] );
@@ -532,6 +554,7 @@ static MSDKDnsManager * _sharedInstance = nil;
 
 #pragma mark - clear cache
 
+// 存值的统一入口.
 - (void)cacheDomainInfo:(NSDictionary *)domainInfo Domain:(NSString *)domain {
     if (domain && domain.length > 0 && domainInfo && domainInfo.count > 0) {
         MSDKDNSLOG(@"Cache domain:%@ %@", domain, domainInfo);
@@ -570,37 +593,16 @@ static MSDKDnsManager * _sharedInstance = nil;
 }
 
 #pragma mark - uploadReport
+// 这里是使用另外的一个库, 进行上报.
+// 使用了 NSInvocation 来完成对应方法的调用. 这需要另外的那个库, 保持接口不变.
+// 说实话, 不如 YDK 的设计理念, 定义一个通道接口, 使用 Dic 将所有的数据传递出去.
 - (void)uploadReport:(BOOL)isFromCache Domain:(NSString *)domain NetStack:( MSDKDNS_TLocalIPStack)netStack {
     Class beaconClass = NSClassFromString(@"BeaconBaseInterface");
     if (beaconClass == 0x0) {
         MSDKDNSLOG(@"Beacon framework is not imported");
         return;
     }
-
-    // 反射调用
-    // [BeaconBaseInterface onUserAction:MSDKDnsEventName isSucceed:YES elapse:0 size:0 params:params];
-    SEL methodSelector = NSSelectorFromString(@"onUserAction:isSucceed:elapse:size:params:");
-    NSMethodSignature *methodSignature = [beaconClass methodSignatureForSelector:methodSelector];
-    NSInvocation *myInvocation = [NSInvocation invocationWithMethodSignature:methodSignature];
-    [myInvocation setTarget:beaconClass];
-    [myInvocation setSelector:methodSelector];
-    // 接口传参
-    NSString *eventName = MSDKDnsEventName;
-    [myInvocation setArgument:&eventName atIndex:2];
-    BOOL success = YES;
-    [myInvocation setArgument:&success atIndex:3];
-    NSUInteger elapse = 0;
-    [myInvocation setArgument:&elapse atIndex:4];
-    NSUInteger size = 0;
-    [myInvocation setArgument:&size atIndex:5];
-    NSMutableDictionary *params = [self formatParams:isFromCache Domain:domain NetStack:netStack];
-    [myInvocation setArgument:&params atIndex:6];
-    // 在调用结束前，保持参数
-    [myInvocation retainArguments];
-
-    [myInvocation invoke];
-
-    MSDKDNSLOG(@"ReportingEvent, name:%@, events:%@", eventName, params);
+    // 真正的实现都删除了.
 }
 
 - (NSMutableDictionary *)formatParams:(BOOL)isFromCache Domain:(NSString *)domain NetStack:( MSDKDNS_TLocalIPStack)netStack {
@@ -642,8 +644,8 @@ static MSDKDnsManager * _sharedInstance = nil;
     [params setValue:networkType forKey:kMSDKDnsNetType];
     
     //SSID
-//    NSString * ssid = [MSDKDnsInfoTool wifiSSID];
-//    [params setValue:ssid forKey:kMSDKDnsSSID];
+    //    NSString * ssid = [MSDKDnsInfoTool wifiSSID];
+    //    [params setValue:ssid forKey:kMSDKDnsSSID];
     
     //domain
     NSString * domain_string = HTTP_DNS_UNKNOWN_STR;
@@ -802,7 +804,7 @@ static MSDKDnsManager * _sharedInstance = nil;
     //dns
     [params setValue:dns_A forKey:kMSDKDns_DNS_A_IP];
     [params setValue:dns_4A forKey:kMSDKDns_DNS_4A_IP];
-
+    
     return params;
 }
 
@@ -891,7 +893,7 @@ static MSDKDnsManager * _sharedInstance = nil;
 
 # pragma mark - detect address type
 - ( MSDKDNS_TLocalIPStack)detectAddressType {
-     MSDKDNS_TLocalIPStack netStack =  MSDKDNS_ELocalIPStack_None;
+    MSDKDNS_TLocalIPStack netStack =  MSDKDNS_ELocalIPStack_None;
     switch ([[MSDKDnsParamsManager shareInstance] msdkDnsGetAddressType]) {
         case HttpDnsAddressTypeIPv4:
             netStack =  MSDKDNS_ELocalIPStack_IPv4;
@@ -903,6 +905,7 @@ static MSDKDnsManager * _sharedInstance = nil;
             netStack =  MSDKDNS_ELocalIPStack_Dual;
             break;
         default:
+            // msdkdns_detect_local_ip_stack 里面, 可以判断当前系统是否支持 ipv6
             netStack =  msdkdns_detect_local_ip_stack();
             break;
     }
@@ -923,6 +926,7 @@ static MSDKDnsManager * _sharedInstance = nil;
     if (self.waitToSwitch) {
         return;
     }
+    // 都是这样做的, 使用一个 Bool 来防止重复操作.
     self.waitToSwitch = YES;
     dispatch_async([MSDKDnsInfoTool msdkdns_queue], ^{
         if (self.serverIndex < [[[MSDKDnsParamsManager shareInstance] msdkDnsGetServerIps] count] - 1) {

@@ -7,6 +7,7 @@
 
 @interface MSDKDnsInfoTool : NSObject
 
+// 居然把各种 quque 定义到了这. 
 + (dispatch_queue_t) msdkdns_queue;
 + (dispatch_queue_t) msdkdns_resolver_queue;
 + (dispatch_queue_t) msdkdns_local_queue;

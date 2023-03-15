@@ -25,6 +25,7 @@
  */
 static const unsigned int kMaxLoopCount = 10;
 
+// 使用了 socket 的连接, 来进行对应 iP 是否可以连接的判断. 
 static int msdkdns_test_connect(int pf, struct sockaddr * addr, size_t addrlen) {
     int s = socket(pf, SOCK_DGRAM, IPPROTO_UDP);
     if (s < 0) {

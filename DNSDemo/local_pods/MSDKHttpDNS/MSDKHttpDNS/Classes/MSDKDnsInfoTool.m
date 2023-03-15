@@ -414,6 +414,8 @@ char MSDKDnsHexCharToChar(char high, char low) {
         return nil;
     }
     
+    
+    
     //域名需加密，内外部加密秘钥以及url字段需要区分
     NSString *domainEncrypStr = nil;
     NSString *protocol = @"http";
@@ -434,6 +436,7 @@ char MSDKDnsHexCharToChar(char high, char low) {
         if (!httpServer || httpServer.length == 0) {
             httpServer = serviceIp;
         }
+        // 说到底, 就是进行 URL 的拼接而已. 
         NSString * urlStr = [NSString stringWithFormat:@"%@://%@/d?dn=%@&clientip=1&ttl=1&query=1&id=%d", protocol, httpServer, domainEncrypStr, dnsId];
         if (ipType == HttpDnsTypeIPv6) {
             urlStr = [urlStr stringByAppendingString:@"&type=aaaa"];
@@ -448,6 +451,7 @@ char MSDKDnsHexCharToChar(char high, char low) {
         if (routeIp && routeIp.length > 0) {
             urlStr = [urlStr stringByAppendingFormat:@"&ip=%@", routeIp];
         }
+        // 最终有效的部分.
         NSURL * url = [NSURL URLWithString:urlStr];
         MSDKDNSLOG(@"httpdns service url: %@",url);
         return url;

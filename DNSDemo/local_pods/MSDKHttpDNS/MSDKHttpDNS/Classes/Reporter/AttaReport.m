@@ -20,6 +20,7 @@
     #endif
 #endif
 
+// 专门做数据上报的一个类. 
 @interface AttaReport ()
 @property (strong, nonatomic) NSURLSession * session;
 @property (strong, nonatomic) NSString *attaid;

@@ -21,6 +21,7 @@
 
 @implementation MSDKDnsDB
 
+// 这里的实现, 实在是太奇怪了. 
 #pragma mark - init
 
 static MSDKDnsDB * _sharedInstance = nil;

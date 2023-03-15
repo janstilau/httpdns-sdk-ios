@@ -47,6 +47,7 @@
     [self getHostsByNames:@[domain] TimeOut:timeOut DnsId:dnsId DnsKey:dnsKey NetStack:netStack encryptType:encryptType returnIps:handler];
 }
 
+// 这是一个工具类. 我们平时写的 progress, completion handler, 一定都是由这样的一个工具类进行保存的了.
 - (void)getHostsByNames:(NSArray *)domains TimeOut:(float)timeOut DnsId:(int)dnsId DnsKey:(NSString *)dnsKey NetStack:( MSDKDNS_TLocalIPStack)netStack encryptType:(NSInteger)encryptType returnIps:(void (^)())handler
 {
     self.completionHandler = handler;
@@ -62,6 +63,7 @@
 {
     MSDKDNSLOG(@"%@, MSDKDns startCheck", self.toCheckDomains);
     //查询前清除缓存
+    //在这个 Service 里面, 直接进行了相应的单例数据的修改.
     [[MSDKDnsManager shareInstance] clearCacheForDomains:self.toCheckDomains];
     
     //无网络直接返回
@@ -106,6 +108,7 @@
             [self startLocalDns:timeOut DnsId:dnsId DnsKey:dnsKey];
         });
     }
+    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, timeOut * NSEC_PER_SEC), [MSDKDnsInfoTool msdkdns_queue], ^{
         if(!self.isCallBack) {
             MSDKDNSLOG(@"DnsService TimeOut!");
@@ -114,6 +117,7 @@
     });
 }
 
+// 其实都是 HttpsDnsResolver 对象啊, 只是最终的查询参数不同了.
 //进行httpdns ipv4和ipv6合并请求
 - (void)startHttpDnsBoth:(float)timeOut DnsId:(int)dnsId DnsKey:(NSString *)dnsKey encryptType:(NSInteger)encryptType
 {
@@ -151,11 +155,13 @@
 
 #pragma mark - MSDKDnsResolverDelegate
 
+// 成功了.
 - (void)resolver:(MSDKDnsResolver *)resolver didGetDomainInfo:(NSDictionary *)domainInfo {
     MSDKDNSLOG(@"%@ %@ domainInfo = %@", self.toCheckDomains, [resolver class], domainInfo);
     // 结果存缓存
     dispatch_async([MSDKDnsInfoTool msdkdns_queue], ^{
         [self cacheDomainInfo:resolver];
+        
         NSDictionary * info = @{kDnsErrCode:MSDKDns_Success, kDnsErrMsg:@"", kDnsRetry:@"0"};
         [self callBack:resolver Info:info];
         if (resolver == self.httpDnsResolver_A || resolver == self.httpDnsResolver_4A || resolver == self.httpDnsResolver_BOTH) {
@@ -260,7 +266,7 @@
     
     // 正常解析结果上报，上报解析耗时
     if (resolver == self.httpDnsResolver_A || resolver == self.httpDnsResolver_4A || resolver == self.httpDnsResolver_BOTH) {
-      if ([[MSDKDnsParamsManager shareInstance] msdkDnsGetEnableReport] && [[AttaReport sharedInstance] shoulReportDnsSpend]) {
+        if ([[MSDKDnsParamsManager shareInstance] msdkDnsGetEnableReport] && [[AttaReport sharedInstance] shoulReportDnsSpend]) {
             NSDictionary *domainDic = [domainInfo objectForKey:[self.toCheckDomains firstObject]];
             NSString* routeip = [[MSDKDnsParamsManager shareInstance] msdkDnsGetRouteIp];
             if (!routeip) {
@@ -282,12 +288,12 @@
                     timeConsuming = [domainDic objectForKey:kDnsTimeConsuming];
                 }
             }
-           NSString *req_type = @"a";
-           if (resolver == self.httpDnsResolver_4A) {
-               req_type = @"aaaa";
-           }else if (resolver == self.httpDnsResolver_BOTH) {
-               req_type = @"addrs";
-           }
+            NSString *req_type = @"a";
+            if (resolver == self.httpDnsResolver_4A) {
+                req_type = @"aaaa";
+            }else if (resolver == self.httpDnsResolver_BOTH) {
+                req_type = @"addrs";
+            }
             [[AttaReport sharedInstance] reportEvent:@{
                 @"eventName": MSDKDnsEventHttpDnsSpend,
                 @"dnsIp": [[MSDKDnsManager shareInstance] currentDnsServer],
@@ -300,8 +306,8 @@
                 @"spend": timeConsuming,
                 @"statusCode": @(httpResolver.statusCode),
             }];
-       }
-   }
+        }
+    }
 }
 
 - (void)aysncUpdateIPRankingWithResult:(NSArray *)IPStrings forHost:(NSString *)host {
@@ -323,10 +329,10 @@
         NSDictionary * tempDict = [[[MSDKDnsManager shareInstance] domainDict] objectForKey:host];
         NSMutableDictionary *cacheDict;
         
-                  
+        
         if (tempDict) {
             cacheDict = [NSMutableDictionary dictionaryWithDictionary:tempDict];
-
+            
             if (self.httpDnsResolver_A && self.httpDnsResolver_A.domainInfo) {
                 
                 NSDictionary *cacheValue = [self.httpDnsResolver_A.domainInfo objectForKey:host];
@@ -365,7 +371,6 @@
             [self callBack:resolver Info:info];
         });
     }
-    
 }
 
 #pragma mark - retry
@@ -539,6 +544,7 @@
         }
         
         if (cacheDict && domain) {
+            // 在这里, 将本次请求的结果, 在 MSDKDnsManager 中进行了体现.
             [[MSDKDnsManager shareInstance] cacheDomainInfo:cacheDict Domain:domain];
             BOOL persistCacheIPEnabled = [[MSDKDnsParamsManager shareInstance] msdkDnsGetPersistCacheIPEnabled];
             if (resolver && resolver != self.localDnsResolver && persistCacheIPEnabled){
