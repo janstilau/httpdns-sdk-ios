@@ -52,15 +52,38 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     DnsConfig *config = new DnsConfig();
-    config->dnsIp = @"HTTPDNS 服务器IP";
-    config->dnsId = 12;
-    config->dnsKey = @"加密密钥";
-    config->encryptType = HttpDnsEncryptTypeDES;
+    config->dnsIp = @"119.29.29.99";
+    config->dnsId = 7330;
+    config->token = @"711886787";
+    config->encryptType = HttpDnsEncryptTypeHTTPS;
     config->debug = YES;
+    config->addressType = HttpDnsAddressTypeDual;
     config->timeout = 2000;
-    config->routeIp = @"查询线路ip";
+//    config->routeIp = @"查询线路ip";
     [[MSDKDns sharedInstance] initConfig: config];
     
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self asyncGet];
+}
+
+- (void)syncGet {
+    NSArray *youdaoResult =  [[MSDKDns sharedInstance] WGGetHostByName:@"youdao.com"];
+    NSLog(@"单个得到结果 %@", youdaoResult);
+    
+    NSDictionary *multiResult = [[MSDKDns sharedInstance] WGGetHostsByNames:@[@"hardware.youdao.com", @"youdao.com", @"qq.com"]];
+    NSLog(@"多个得到结果 %@", multiResult);
+}
+
+- (void)asyncGet {
+    [[MSDKDns sharedInstance] WGGetHostByNameAsync:@"hardware.youdao.com" returnIps:^(NSArray *ipsArray) {
+        NSLog(@"异步获取单个结果, %@", ipsArray);
+    }];
+    
+    [[MSDKDns sharedInstance] WGGetHostsByNamesAsync:@[@"hardware.youdao.com", @"youdao.com", @"qq.com"] returnIps:^(NSDictionary *ipsDictionary) {
+        NSLog(@"异步获取多个结果, %@", ipsDictionary);
+    }];
 }
 
 
