@@ -26,6 +26,7 @@ static MSDKDnsLog * _sharedInstance = nil;
     return self;
 }
 
+// 感觉这不是真正的代码, 应该有存储才对. 
 - (void)msdkDnsLog:(NSString *)format {
     @synchronized(self) {
         if (format && _enableLog) {

@@ -73,6 +73,9 @@ static MSDKDnsNetworkManager *manager = nil;
                                                              queue:nil
                                                         usingBlock:^(NSNotification *note)
              {
+                // 这里的代码, 都是网络发生变化了做的情况.
+                
+                // 首先是清除缓存. 文档建议是, 网络发生变化, 直接清理, 不要复用.
                 BOOL expiredIPEnabled = [[MSDKDnsParamsManager shareInstance] msdkDnsGetExpiredIPEnabled];
                 if (!expiredIPEnabled) {
                     MSDKDNSLOG(@"Network did changed,clear MSDKDns cache");
@@ -80,6 +83,7 @@ static MSDKDnsNetworkManager *manager = nil;
                     [[MSDKDnsManager shareInstance] clearAllCache];
                 }
                 //对保活域名发送解析请求
+                // 然后是对保活的域名, 重新进行请求.
                 [self getHostsByKeepAliveDomains];
                 //重置ip指针
                 [[MSDKDnsManager shareInstance] switchToMainServer];
@@ -113,6 +117,7 @@ static MSDKDnsNetworkManager *manager = nil;
             _reachability = [MSDKDnsReachability reachabilityForInternetConnection];
             [_reachability startNotifier];
         }
+        // 通过以上的监控, 至少在 APP 的相应事件, 完成了 IP 的刷新. 
         
         return self;
     }

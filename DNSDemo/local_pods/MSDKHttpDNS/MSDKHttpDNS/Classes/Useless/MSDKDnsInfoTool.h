@@ -20,5 +20,6 @@
 
 + (NSString *)encryptUseAES:(NSString *)plainText key:(NSString *)key;
 + (NSString *)decryptUseAES:(NSString *)cipherString key:(NSString *)key;
+// 这个函数, 就是在做字符串的拼接而已. 
 + (NSURL *) httpsUrlWithDomain:(NSString *)domain DnsId:(int)dnsId DnsKey:(NSString *)dnsKey IPType:(HttpDnsIPType)ipType encryptType:(NSInteger)encryptType; //encryptType: 0 des,1 aes
 @end

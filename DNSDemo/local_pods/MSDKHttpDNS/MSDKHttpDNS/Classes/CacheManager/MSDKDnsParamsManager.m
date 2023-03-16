@@ -106,7 +106,7 @@ static MSDKDnsParamsManager * _sharedInstance = nil;
     });
 }
 
-
+// 这些值都是用户主动设置过来的. 
 - (void)msdkDnsSetMDnsId:(int) mdnsId MDnsKey:(NSString *)mdnsKey MToken:(NSString* )mdnsToken{
     dispatch_async([MSDKDnsInfoTool msdkdns_queue], ^{
         self.msdkDnsId = mdnsId;

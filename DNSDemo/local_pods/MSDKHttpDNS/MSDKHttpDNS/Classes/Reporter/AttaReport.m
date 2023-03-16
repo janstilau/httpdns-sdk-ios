@@ -97,6 +97,7 @@ static AttaReport * _sharedInstance = nil;
     return res;
 }
 
+// 上报数据给腾讯. 
 - (void)reportEvent:(NSDictionary *)params {
     NSURL *url = [NSURL URLWithString:_reportUrl];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];

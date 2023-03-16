@@ -255,10 +255,10 @@ char MSDKDnsHexCharToChar(char high, char low) {
         return nil;
     }
     NSString *ivStr = [self generateRandom];
-//    plainText = @"t.tt";
-//    ivStr = @"d3ddee42c7e6f08a1077abc4f7a59d6c";
-//    Byte bytes[] = {0xd3,0xdd,0xee,0x42,0xc7,0xe6,0xf0,0x8a,0x10,0x77,0xab,0xc4,0xf7,0xa5,0x9d,0x6c};
-//    MSDKDNSLOG(@"bytes 的16进制数为:%@",[self hexStringFromBytes:bytes length:16]);
+    //    plainText = @"t.tt";
+    //    ivStr = @"d3ddee42c7e6f08a1077abc4f7a59d6c";
+    //    Byte bytes[] = {0xd3,0xdd,0xee,0x42,0xc7,0xe6,0xf0,0x8a,0x10,0x77,0xab,0xc4,0xf7,0xa5,0x9d,0x6c};
+    //    MSDKDNSLOG(@"bytes 的16进制数为:%@",[self hexStringFromBytes:bytes length:16]);
     NSData *ivByte = [self bytesFromHexString:ivStr length:16];
     if (!ivStr) {
         return nil;
@@ -266,7 +266,7 @@ char MSDKDnsHexCharToChar(char high, char low) {
     NSData *encryData = [self aesCryptWithKey:AES_ENCRYPT src:(unsigned char *)plainText.UTF8String srcLen:(int)plainText.length key:(unsigned char *)key.UTF8String aesIv:(unsigned char *)[ivByte bytes]];//(unsigned char *)temphead.bytes];
     NSString *encryString = MSDKDnsDataToHexString(encryData);
     
-//    MSDKDNSLOG(@"加密 ||| realText:%@ encryString：%@，iv：%@",plainText,encryString,ivStr);
+    //    MSDKDNSLOG(@"加密 ||| realText:%@ encryString：%@，iv：%@",plainText,encryString,ivStr);
     return [ivStr stringByAppendingString:encryString];
 }
 
@@ -279,7 +279,7 @@ char MSDKDnsHexCharToChar(char high, char low) {
     
     NSString *ivStr = [cipherString substringWithRange:NSMakeRange(0, 32)];
     NSData *ivByte = [self bytesFromHexString:ivStr length:16];
-
+    
     NSString *realContent = [cipherString substringWithRange:NSMakeRange(32, cipherString.length - 32)];
     NSData *encryData = MSDKDNSHexStringToData(realContent);
     if (!encryData) {
@@ -291,8 +291,8 @@ char MSDKDnsHexCharToChar(char high, char low) {
     }
     NSString *dencryString = [[NSString alloc] initWithData:dencryData encoding:NSUTF8StringEncoding];
     
-//    MSDKDNSLOG(@"解密 === realContent：%@，iv：%@   dencryString:%@",realContent,ivStr,dencryString);
-
+    //    MSDKDNSLOG(@"解密 === realContent：%@，iv：%@   dencryString:%@",realContent,ivStr,dencryString);
+    
     return dencryString;
 }
 
@@ -303,7 +303,7 @@ char MSDKDnsHexCharToChar(char high, char low) {
                       aesIv:(unsigned char *)AES_IV
 {
     int res_len = self_dns::AesGetOutLen(src_len, mode);
-    unsigned char *res_buf = nullptr;
+    unsigned char *res_buf = NULL;
     // 注意这里是非字符串，二进制形式，不需要额外加一，留给\0
     if (res_len > 0) {
         res_buf = (unsigned char *)calloc(res_len, sizeof(unsigned char));
@@ -327,7 +327,7 @@ char MSDKDnsHexCharToChar(char high, char low) {
         for (int i = 0; i < size; i++) {
             [randomString appendFormat:@"%02x", randomBytes[i]];
         }
-
+        
         return randomString;
     } else {
         return nil;
@@ -359,32 +359,32 @@ char MSDKDnsHexCharToChar(char high, char low) {
     for(int i=0;i<[hexString length];i++)
     {
         int int_ch;  /// 两位16进制数转化后的10进制数
-
+        
         unichar hex_char1 = [hexString characterAtIndex:i]; ////两位16进制数中的第一位(高位*16)
         int int_ch1;
         if(hex_char1 >= '0' && hex_char1 <='9')
-        int_ch1 = (hex_char1-48)*16;   //// 0 的Ascll - 48
+            int_ch1 = (hex_char1-48)*16;   //// 0 的Ascll - 48
         else if(hex_char1 >= 'A' && hex_char1 <='F')
-        int_ch1 = (hex_char1-55)*16; //// A 的Ascll - 65
+            int_ch1 = (hex_char1-55)*16; //// A 的Ascll - 65
         else
-        int_ch1 = (hex_char1-87)*16; //// a 的Ascll - 97
+            int_ch1 = (hex_char1-87)*16; //// a 的Ascll - 97
         i++;
-
+        
         unichar hex_char2 = [hexString characterAtIndex:i]; ///两位16进制数中的第二位(低位)
         int int_ch2;
         if(hex_char2 >= '0' && hex_char2 <='9')
-        int_ch2 = (hex_char2-48); //// 0 的Ascll - 48
+            int_ch2 = (hex_char2-48); //// 0 的Ascll - 48
         else if(hex_char1 >= 'A' && hex_char1 <='F')
-        int_ch2 = hex_char2-55; //// A 的Ascll - 65
+            int_ch2 = hex_char2-55; //// A 的Ascll - 65
         else
-        int_ch2 = hex_char2-87; //// a 的Ascll - 97
-
+            int_ch2 = hex_char2-87; //// a 的Ascll - 97
+        
         int_ch = int_ch1+int_ch2;
         bytes[j] = int_ch;  ///将转化后的数放入Byte数组里
         j++;
     }
     NSData *newData = [[NSData alloc] initWithBytes:bytes length:len];
-//    MSDKDNSLOG(@"newData=%@",newData);
+    //    MSDKDNSLOG(@"newData=%@",newData);
     return newData;
 }
 
@@ -404,7 +404,7 @@ char MSDKDnsHexCharToChar(char high, char low) {
         MSDKDNSLOG(@"DnsId cannot be empty! Please check your dns config params.");
         return nil;
     }
-        
+    
     NSString *token =  [[MSDKDnsParamsManager shareInstance] msdkDnsGetMToken];
     if (encryptType != HttpDnsEncryptTypeHTTPS && (!dnsKey || dnsKey.length == 0)) {
         MSDKDNSLOG(@"DnsKey cannot be empty! Please check your dns config params");
@@ -413,8 +413,6 @@ char MSDKDnsHexCharToChar(char high, char low) {
         MSDKDNSLOG(@"Token cannot be empty! Please check your dns config params");
         return nil;
     }
-    
-    
     
     //域名需加密，内外部加密秘钥以及url字段需要区分
     NSString *domainEncrypStr = nil;
@@ -427,7 +425,7 @@ char MSDKDnsHexCharToChar(char high, char low) {
         domainEncrypStr = [domain copy];
         protocol = @"https";
     }
-
+    
     NSString *serviceIp = [[MSDKDnsManager shareInstance] currentDnsServer];
     NSString *routeIp = [[MSDKDnsParamsManager shareInstance] msdkDnsGetRouteIp];
     
@@ -436,7 +434,7 @@ char MSDKDnsHexCharToChar(char high, char low) {
         if (!httpServer || httpServer.length == 0) {
             httpServer = serviceIp;
         }
-        // 说到底, 就是进行 URL 的拼接而已. 
+        // 说到底, 就是进行 URL 的拼接而已.
         NSString * urlStr = [NSString stringWithFormat:@"%@://%@/d?dn=%@&clientip=1&ttl=1&query=1&id=%d", protocol, httpServer, domainEncrypStr, dnsId];
         if (ipType == HttpDnsTypeIPv6) {
             urlStr = [urlStr stringByAppendingString:@"&type=aaaa"];

@@ -58,10 +58,11 @@
         self.ipType = HttpDnsTypeDual;
     }
     
-    NSURL * httpDnsUrl = [MSDKDnsInfoTool httpsUrlWithDomain:domainStr DnsId:dnsId DnsKey:_dnsKey IPType:self.ipType encryptType:_encryptType];
+    NSURL *httpDnsUrl = [MSDKDnsInfoTool httpsUrlWithDomain:domainStr DnsId:dnsId DnsKey:_dnsKey IPType:self.ipType encryptType:_encryptType];
     if (httpDnsUrl) {
         MSDKDNSLOG(@"HttpDns TimeOut is %f", timeOut);
         NSURLRequest * request = [NSURLRequest requestWithURL:httpDnsUrl cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:timeOut];
+        // 使用了非常古老的技术, 来进行了网络通信.
         self.connection = [NSURLConnection connectionWithRequest:request delegate:self];
         [self.connection start];
         // 使用 NSURLConnection 进行了真正的网络请求.
@@ -86,7 +87,6 @@
     if (!challenge) {
         return;
     }
-    
     /*
      * URL里面的host在使用HTTPDNS的情况下被设置成了IP，此处从HTTP Header中获取真实域名
      */
@@ -166,11 +166,13 @@
     }
 }
 
+// 接口请求结束了, 在这里进行结果的获取.
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     MSDKDNSLOG(@"connectionDidFinishLoading: %@", self.responseData);
     NSString * errorInfo = @"";
     if (self.responseData.length > 0) {
         NSString * decryptStr = nil;
+        // 从 HTTP Body 里面, 获取到最终的响应体. 然后进行解析.
         NSString * responseStr = [[NSString alloc] initWithData:self.responseData encoding:NSUTF8StringEncoding];
         MSDKDNSLOG(@"The httpdns responseStr:%@", responseStr);
         if (_encryptType != 2 && _dnsKey && _dnsKey.length > 0) {
@@ -222,7 +224,8 @@
     CFRunLoopStop(self.rl);
 }
 
-#pragma mark -
+#pragma mark - 解析流程
+
 - (NSString *)getQueryDomain:(NSString *)str {
     // 删除域名后面添加的.
     if ([[str substringFromIndex:str.length - 1]  isEqual: @"."]) {

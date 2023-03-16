@@ -21,6 +21,7 @@
 - (void)startWithDomains:(NSArray *)domains TimeOut:(float)timeOut DnsId:(int)dnsId DnsKey:(NSString *)dnsKey NetStack:( MSDKDNS_TLocalIPStack)netStack {
     [super startWithDomains:domains TimeOut:timeOut DnsId:dnsId DnsKey:dnsKey NetStack:netStack];
     MSDKDNSLOG(@"LocalDns TimeOut is %f", timeOut);
+    // 这种超时都是这样, 使用 after 类似的函数, 进行提前的返回.
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, timeOut * NSEC_PER_SEC), [MSDKDnsInfoTool msdkdns_local_queue], ^{
         [self localDnsTimeout];
     });
@@ -36,6 +37,7 @@
     NSMutableDictionary *domainInfo = [NSMutableDictionary dictionary];
     for(int i = 0; i < [domains count]; i++) {
         NSString *domain = [domains objectAtIndex:i];
+        // LocalDNS 查询, 就在 [self addressesForHostname:domain NetStack:netStack] 中.
         NSArray * ipsArray = [self addressesForHostname:domain NetStack:netStack];
         NSString *timeConsuming = [NSString stringWithFormat:@"%d", [self dnsTimeConsuming]];
         [domainInfo setObject:@{kIP:ipsArray, kDnsTimeConsuming:timeConsuming} forKey:domain];
@@ -99,6 +101,11 @@
             break;
     }
     
+    /*
+     getaddrinfo是一个用于获取主机名对应的IP地址信息的函数。它通过查询DNS服务器来获取这些信息。如果操作系统缓存了DNS查询结果，那么getaddrinfo可能会直接从缓存中获取结果，而不是再次向DNS服务器发送查询请求。
+
+     当你调用getaddrinfo时，它会首先检查操作系统的DNS缓存，看看是否已经有了主机名对应的IP地址信息。如果没有，它会向配置的DNS服务器发送查询请求，并将结果存储在操作系统的DNS缓存中以备将来使用。
+     */
     retval = getaddrinfo(hostnameC, NULL, &hints, &res0);
     if (retval == 0) {
         result = [[NSMutableArray alloc] init];

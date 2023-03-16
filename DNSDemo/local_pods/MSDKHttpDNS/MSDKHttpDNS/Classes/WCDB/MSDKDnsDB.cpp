@@ -87,6 +87,7 @@ static MSDKDnsDB * _sharedInstance = nil;
         
     [httpDnsData setValue:[domain copy] forKey:@"domain"];
     
+    // 直接使用了 KVC 来进行对应的数据赋值操作.
     if (hresultDict_A){
         [httpDnsData setValue:hresultDict_A[kChannel] forKey:@"httpDnsIPV4Channel"];
         [httpDnsData setValue:hresultDict_A[kClientIP] forKey:@"httpDnsIPV4ClientIP"];
@@ -111,6 +112,10 @@ static MSDKDnsDB * _sharedInstance = nil;
         @try {
             IMP imp = [_database methodForSelector:insertOrReplaceObjectSEL];
             using insertData = BOOL (*)(id, SEL, id, NSString *);
+            // _database self
+            // insertOrReplaceObjectSEL SEL
+            // httpDnsData model
+            // _tableName 表
             BOOL success = ((insertData) imp)(_database, insertOrReplaceObjectSEL, httpDnsData, _tableName);
             if (!success) {
                 MSDKDNSLOG(@"Failed to insert data into database");

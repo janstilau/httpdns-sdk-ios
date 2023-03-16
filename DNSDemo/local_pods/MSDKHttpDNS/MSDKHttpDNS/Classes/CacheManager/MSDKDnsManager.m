@@ -314,6 +314,7 @@ static MSDKDnsManager * _sharedInstance = nil;
 - (void)preResolveDomains {
     __block NSArray * domains = nil;
     dispatch_sync([MSDKDnsInfoTool msdkdns_queue], ^{
+        // 在这里获取, 需要提前解析的 domains.
         domains = [[MSDKDnsParamsManager shareInstance] msdkDnsGetPreResolvedDomains];
     });
     if (domains && [domains count] > 0) {
@@ -568,7 +569,6 @@ static MSDKDnsManager * _sharedInstance = nil;
 
 - (void)clearCacheForDomain:(NSString *)domain {
     if (domain && domain.length > 0) {
-        MSDKDNSLOG(@"Clear cache for domain:%@",domain);
         if (self.domainDict) {
             [self.domainDict removeObjectForKey:domain];
         }

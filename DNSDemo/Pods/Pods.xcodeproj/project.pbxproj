@@ -104,10 +104,10 @@
 /* Begin PBXFileReference section */
 		0188D344CD3EDB28D9E56235269DBC91 /* AFNetworking-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AFNetworking-prefix.pch"; sourceTree = "<group>"; };
 		046CD02FAD2B558A3DA06E40F8B9AF51 /* aes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = aes.h; path = MSDKHttpDNS/Classes/aes.h; sourceTree = "<group>"; };
-		062E0CAEE3335262C62FF018F5A03BC0 /* MSDKDnsInfoTool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MSDKDnsInfoTool.m; path = MSDKHttpDNS/Classes/MSDKDnsInfoTool.m; sourceTree = "<group>"; };
+		062E0CAEE3335262C62FF018F5A03BC0 /* MSDKDnsInfoTool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MSDKDnsInfoTool.m; sourceTree = "<group>"; };
 		0F4198AB4949AE1A20112A82574433F3 /* Pods-DNSDemo */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "Pods-DNSDemo"; path = "libPods-DNSDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		14A5AD7590FC85044B4F35912B5E985C /* AFAutoPurgingImageCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFAutoPurgingImageCache.h; path = "UIKit+AFNetworking/AFAutoPurgingImageCache.h"; sourceTree = "<group>"; };
-		159E124A293C536844C2DF420811341F /* MSDKDnsLog.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MSDKDnsLog.h; path = MSDKHttpDNS/Classes/MSDKDnsLog.h; sourceTree = "<group>"; };
+		159E124A293C536844C2DF420811341F /* MSDKDnsLog.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MSDKDnsLog.h; sourceTree = "<group>"; };
 		1974F82D0F1E552ADDFF6C0BC912FA06 /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkActivityIndicatorManager.h; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.h"; sourceTree = "<group>"; };
 		1C5CA54C022E4555E76F1871A9FE2BC3 /* AFNetworking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AFNetworking.debug.xcconfig; sourceTree = "<group>"; };
 		1F208B3FFC53C4FD68715730883E7642 /* AFNetworking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AFNetworking.release.xcconfig; sourceTree = "<group>"; };
@@ -137,7 +137,7 @@
 		58CCD2FBCA5681FD6FA9A170FE61DBF2 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLResponseSerialization.m; path = AFNetworking/AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		5C28135DCBE71497BB52CE3CF8A1E536 /* AFNetworking-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AFNetworking-dummy.m"; sourceTree = "<group>"; };
 		5EDAFEDB5C3A086D44D49E2514307C3E /* AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworking.h; path = AFNetworking/AFNetworking.h; sourceTree = "<group>"; };
-		5F18E3CDF1DADD820C02583C9F886C1B /* MSDKDnsInfoTool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MSDKDnsInfoTool.h; path = MSDKHttpDNS/Classes/MSDKDnsInfoTool.h; sourceTree = "<group>"; };
+		5F18E3CDF1DADD820C02583C9F886C1B /* MSDKDnsInfoTool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MSDKDnsInfoTool.h; sourceTree = "<group>"; };
 		64C9C4403D49A8F0D4BEDF84EBAE5291 /* AFURLSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLSessionManager.m; path = AFNetworking/AFURLSessionManager.m; sourceTree = "<group>"; };
 		693CE794132353A5CC0B1AF5AFF694D8 /* MSDKHttpDNS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MSDKHttpDNS-dummy.m"; sourceTree = "<group>"; };
 		6B93FFCFCFD816B3DE4A403338B1FDFC /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+AFNetworking.h"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
@@ -158,8 +158,8 @@
 		A39F92AC2F967465209571235EE89469 /* UIProgressView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIProgressView+AFNetworking.h"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.h"; sourceTree = "<group>"; };
 		A44C509B7102206875C4FD95B7373CFF /* MSDKHttpDNS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MSDKHttpDNS.debug.xcconfig; sourceTree = "<group>"; };
 		A4FA15D44DF6BAC7550EDEED10862AA3 /* AFNetworking */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = AFNetworking; path = libAFNetworking.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		A8B4A3C3078FF34DAA394A65E08F25AB /* MSDKDnsTCPSpeedTester.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MSDKDnsTCPSpeedTester.h; path = MSDKHttpDNS/Classes/MSDKDnsTCPSpeedTester.h; sourceTree = "<group>"; };
-		A9A84F6EDBCCE6DD047D569EC8DAF904 /* MSDKDnsTCPSpeedTester.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MSDKDnsTCPSpeedTester.m; path = MSDKHttpDNS/Classes/MSDKDnsTCPSpeedTester.m; sourceTree = "<group>"; };
+		A8B4A3C3078FF34DAA394A65E08F25AB /* MSDKDnsTCPSpeedTester.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MSDKDnsTCPSpeedTester.h; sourceTree = "<group>"; };
+		A9A84F6EDBCCE6DD047D569EC8DAF904 /* MSDKDnsTCPSpeedTester.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MSDKDnsTCPSpeedTester.m; sourceTree = "<group>"; };
 		AB5352D1066739CB302AC01FAC3B4171 /* MSDKDnsDB.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MSDKDnsDB.h; sourceTree = "<group>"; };
 		ABED5599CC81F6C8E86CD2D9114ABAB7 /* MSDKDnsHttpMessageTools.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MSDKDnsHttpMessageTools.m; path = MSDKHttpDNS/Classes/MSDKDnsHttpMessageTools.m; sourceTree = "<group>"; };
 		AFFE28FD03CF9731B29E0362FF4EE819 /* AFImageDownloader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFImageDownloader.m; path = "UIKit+AFNetworking/AFImageDownloader.m"; sourceTree = "<group>"; };
@@ -174,14 +174,14 @@
 		C66C2223D27A96AC28D94035BC1979E6 /* LocalDnsResolver.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = LocalDnsResolver.m; sourceTree = "<group>"; };
 		C7E868AED79C53BFC32C144D98C62C8C /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLRequestSerialization.m; path = AFNetworking/AFURLRequestSerialization.m; sourceTree = "<group>"; };
 		C977B44012B152508C5C742BC1FCB675 /* AFImageDownloader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFImageDownloader.h; path = "UIKit+AFNetworking/AFImageDownloader.h"; sourceTree = "<group>"; };
-		CC6254AD3C993AF978E437699DE6951D /* MSDKDnsLog.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MSDKDnsLog.m; path = MSDKHttpDNS/Classes/MSDKDnsLog.m; sourceTree = "<group>"; };
+		CC6254AD3C993AF978E437699DE6951D /* MSDKDnsLog.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MSDKDnsLog.m; sourceTree = "<group>"; };
 		D0E6FF79756F5C22E043108B1D99F800 /* MSDKDnsParamsManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MSDKDnsParamsManager.m; sourceTree = "<group>"; };
 		D18D598CA104AB45904D387A2462C986 /* MSDKDnsHttpMessageTools.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MSDKDnsHttpMessageTools.h; path = MSDKHttpDNS/Classes/MSDKDnsHttpMessageTools.h; sourceTree = "<group>"; };
 		D26277F2B724F784873EAEDFBE08DF2A /* MSDKHttpDNS */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = MSDKHttpDNS; path = libMSDKHttpDNS.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7A10922D87358C7535C032A683AD425 /* LocalDnsResolver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = LocalDnsResolver.h; sourceTree = "<group>"; };
 		D7E87CC0942E1DD203A1A4306FD15C18 /* UIRefreshControl+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIRefreshControl+AFNetworking.h"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.h"; sourceTree = "<group>"; };
 		D8BD3732D601AC1C5AB7AEF2B4A7286A /* MSDKDnsReachability.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MSDKDnsReachability.h; sourceTree = "<group>"; };
-		E32846DD63EFCF1907721E2A7225D18F /* MSDKDnsSpeedTester.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MSDKDnsSpeedTester.h; path = MSDKHttpDNS/Classes/MSDKDnsSpeedTester.h; sourceTree = "<group>"; };
+		E32846DD63EFCF1907721E2A7225D18F /* MSDKDnsSpeedTester.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MSDKDnsSpeedTester.h; sourceTree = "<group>"; };
 		E43F9CAC5C21F795950501AA0D7EBB0A /* MSDKDnsResolver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MSDKDnsResolver.h; sourceTree = "<group>"; };
 		E46131A0F95591D8306D3E0A57CA6996 /* MSDKHttpDNS.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = MSDKHttpDNS.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		EDA5D35BEE467ED7C05390A8E3A6BF1E /* MSDKDns.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MSDKDns.h; path = MSDKHttpDNS/Classes/MSDKDns.h; sourceTree = "<group>"; };
@@ -394,16 +394,9 @@
 				B46E0AA6A53AE9F28520FEEE34EB1954 /* MSDKDns.mm */,
 				D18D598CA104AB45904D387A2462C986 /* MSDKDnsHttpMessageTools.h */,
 				ABED5599CC81F6C8E86CD2D9114ABAB7 /* MSDKDnsHttpMessageTools.m */,
-				5F18E3CDF1DADD820C02583C9F886C1B /* MSDKDnsInfoTool.h */,
-				062E0CAEE3335262C62FF018F5A03BC0 /* MSDKDnsInfoTool.m */,
-				159E124A293C536844C2DF420811341F /* MSDKDnsLog.h */,
-				CC6254AD3C993AF978E437699DE6951D /* MSDKDnsLog.m */,
 				B7BF1719ECC0C957CEBA5D25202B5C77 /* MSDKDnsPrivate.h */,
 				32D514B4D72CA1AD7BE5EF670D2B40C5 /* MSDKDnsService.h */,
 				BF376F788C6F96BEE3D2606D6E7649CF /* MSDKDnsService.m */,
-				E32846DD63EFCF1907721E2A7225D18F /* MSDKDnsSpeedTester.h */,
-				A8B4A3C3078FF34DAA394A65E08F25AB /* MSDKDnsTCPSpeedTester.h */,
-				A9A84F6EDBCCE6DD047D569EC8DAF904 /* MSDKDnsTCPSpeedTester.m */,
 				57566587EC4B128E0E918495E308AC82 /* CacheManager */,
 				3563344E0CF61F6628C6419BF3C949C6 /* Network */,
 				B27A40B0DA400706149C239D2876A18D /* Pod */,
@@ -415,6 +408,21 @@
 			);
 			name = MSDKHttpDNS;
 			path = ../local_pods/MSDKHttpDNS;
+			sourceTree = "<group>";
+		};
+		AAF377B229C390C8001A7076 /* Useless */ = {
+			isa = PBXGroup;
+			children = (
+				159E124A293C536844C2DF420811341F /* MSDKDnsLog.h */,
+				CC6254AD3C993AF978E437699DE6951D /* MSDKDnsLog.m */,
+				E32846DD63EFCF1907721E2A7225D18F /* MSDKDnsSpeedTester.h */,
+				A8B4A3C3078FF34DAA394A65E08F25AB /* MSDKDnsTCPSpeedTester.h */,
+				A9A84F6EDBCCE6DD047D569EC8DAF904 /* MSDKDnsTCPSpeedTester.m */,
+				5F18E3CDF1DADD820C02583C9F886C1B /* MSDKDnsInfoTool.h */,
+				062E0CAEE3335262C62FF018F5A03BC0 /* MSDKDnsInfoTool.m */,
+			);
+			name = Useless;
+			path = ../local_pods/MSDKHttpDNS/MSDKHttpDNS/Classes/Useless;
 			sourceTree = "<group>";
 		};
 		B27A40B0DA400706149C239D2876A18D /* Pod */ = {
@@ -500,6 +508,7 @@
 		E5F9B932729094B1FAB3311AF3A2882A /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
+				AAF377B229C390C8001A7076 /* Useless */,
 				A639B6E2ACC5BD77AF7A202E5B9BB6C8 /* MSDKHttpDNS */,
 			);
 			name = "Development Pods";

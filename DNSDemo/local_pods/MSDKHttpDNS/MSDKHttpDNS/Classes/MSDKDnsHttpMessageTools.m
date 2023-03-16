@@ -36,12 +36,14 @@ static NSString *const kAnchorAlreadyAdded = @"AnchorAlreadyAdded";
     if ([NSURLProtocol propertyForKey:protocolKey inRequest:request]) {
         return NO;
     }
+    
     NSString * url = request.URL.absoluteString;
     NSString * domain = [request.allHTTPHeaderFields objectForKey:@"host"];
     
     NSArray * hijackDomainArray = [[[MSDKDnsParamsManager shareInstance] hijackDomainArray] copy];
     NSArray * noHijackDomainArray = [[[MSDKDnsParamsManager shareInstance] noHijackDomainArray] copy];
     
+    // 劫持 hijack
     if (hijackDomainArray && (hijackDomainArray.count > 0)) {
         if ([url hasPrefix:@"https"] && [hijackDomainArray containsObject:domain]) {
             return YES;
@@ -49,11 +51,13 @@ static NSString *const kAnchorAlreadyAdded = @"AnchorAlreadyAdded";
             return NO;
         }
     }
+    
     if (noHijackDomainArray && (noHijackDomainArray.count > 0)) {
         if ([noHijackDomainArray containsObject:domain]) {
             return NO;
         }
     }
+    
     // 如果url以https开头，且不为httpdns服务器ip，则进行拦截处理，否则不处理
     NSString *dnsIp = [[MSDKDnsManager shareInstance] currentDnsServer];
     if ([url hasPrefix:@"https"] && ![url containsString:dnsIp]) {
@@ -95,10 +99,11 @@ static NSString *const kAnchorAlreadyAdded = @"AnchorAlreadyAdded";
 /**
  * 使用CFHTTPMessage转发请求
  */
+/*
+ 这段代码看起来是用 Objective-C 编写的，它使用 CFNetwork 框架创建了一个 HTTP 请求。首先，它从 _curRequest 对象中获取头字段并设置请求正文（如果存在）。然后，它使用指定的方法和版本从请求 URL 创建 CFURLRef 和 CFHTTPMessageRef。接下来，代码设置消息正文并添加任何不是 "originalBody" 的头字段。之后，它为 HTTP 请求创建读取流并为其设置 SSL 属性。最后，它为输入流设置代理，在运行循环中调度它，并打开它。
+ */
 - (void)startRequest {
-    // 原请求的header信息
     NSDictionary *headFields = _curRequest.allHTTPHeaderFields;
-    // 添加http post请求所附带的数据
     CFStringRef requestBody = CFSTR("");
     CFDataRef bodyData = CFStringCreateExternalRepresentation(kCFAllocatorDefault, requestBody, kCFStringEncodingUTF8, 0);
     if (_curRequest.HTTPBody) {
@@ -107,17 +112,12 @@ static NSString *const kAnchorAlreadyAdded = @"AnchorAlreadyAdded";
         // 使用NSURLSession发POST请求时，将原始HTTPBody从header中取出
         bodyData = (__bridge_retained CFDataRef) [headFields[@"originalBody"] dataUsingEncoding:NSUTF8StringEncoding];
     }
-    
     CFStringRef url = (__bridge CFStringRef) [_curRequest.URL absoluteString];
     CFURLRef requestURL = CFURLCreateWithString(kCFAllocatorDefault, url, NULL);
-    
-    // 原请求所使用的方法，GET或POST
     CFStringRef requestMethod = (__bridge_retained CFStringRef) _curRequest.HTTPMethod;
-    
     // 根据请求的url、方法、版本创建CFHTTPMessageRef对象
     CFHTTPMessageRef cfrequest = CFHTTPMessageCreateRequest(kCFAllocatorDefault, requestMethod, requestURL, kCFHTTPVersion1_1);
     CFHTTPMessageSetBody(cfrequest, bodyData);
-    
     // copy原请求的header信息
     for (NSString *header in headFields) {
         if (![header isEqualToString:@"originalBody"]) {
@@ -127,11 +127,9 @@ static NSString *const kAnchorAlreadyAdded = @"AnchorAlreadyAdded";
             CFHTTPMessageSetHeaderFieldValue(cfrequest, requestHeader, requestHeaderValue);
         }
     }
-    
     // 创建CFHTTPMessage对象的输入流
     CFReadStreamRef readStream = CFReadStreamCreateForHTTPRequest(kCFAllocatorDefault, cfrequest);
     self.inputStream = (__bridge_transfer NSInputStream *) readStream;
-    
     // 设置SNI host信息，关键步骤
     NSString *host = [_curRequest.allHTTPHeaderFields objectForKey:@"host"];
     if (!host) {
@@ -141,9 +139,7 @@ static NSString *const kAnchorAlreadyAdded = @"AnchorAlreadyAdded";
     NSDictionary *sslProperties = [[NSDictionary alloc] initWithObjectsAndKeys: host, (__bridge id) kCFStreamSSLPeerName, nil];
     [_inputStream setProperty:sslProperties forKey:(__bridge_transfer NSString *) kCFStreamPropertySSLSettings];
     [_inputStream setDelegate:self];
-    
     if (!_curRunLoop)
-        // 保存当前线程的runloop，这对于重定向的请求很关键
         self.curRunLoop = [NSRunLoop currentRunLoop];
     // 将请求放入当前runloop的事件队列
     [_inputStream scheduleInRunLoop:_curRunLoop forMode:NSRunLoopCommonModes];

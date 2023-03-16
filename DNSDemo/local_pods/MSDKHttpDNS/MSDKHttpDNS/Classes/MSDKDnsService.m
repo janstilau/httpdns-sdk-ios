@@ -61,7 +61,6 @@
 
 - (void)startCheck:(float)timeOut DnsId:(int)dnsId DnsKey:(NSString *)dnsKey encryptType:(NSInteger)encryptType
 {
-    MSDKDNSLOG(@"%@, MSDKDns startCheck", self.toCheckDomains);
     //查询前清除缓存
     //在这个 Service 里面, 直接进行了相应的单例数据的修改.
     [[MSDKDnsManager shareInstance] clearCacheForDomains:self.toCheckDomains];
@@ -109,6 +108,7 @@
         });
     }
     
+    // 在这里, 进行了超时预先设置.
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, timeOut * NSEC_PER_SEC), [MSDKDnsInfoTool msdkdns_queue], ^{
         if(!self.isCallBack) {
             MSDKDNSLOG(@"DnsService TimeOut!");
@@ -155,7 +155,6 @@
 
 #pragma mark - MSDKDnsResolverDelegate
 
-// 成功了.
 - (void)resolver:(MSDKDnsResolver *)resolver didGetDomainInfo:(NSDictionary *)domainInfo {
     MSDKDNSLOG(@"%@ %@ domainInfo = %@", self.toCheckDomains, [resolver class], domainInfo);
     // 结果存缓存
@@ -164,7 +163,10 @@
         
         NSDictionary * info = @{kDnsErrCode:MSDKDns_Success, kDnsErrMsg:@"", kDnsRetry:@"0"};
         [self callBack:resolver Info:info];
+        
+        // 这些都是网络的获取结果.
         if (resolver == self.httpDnsResolver_A || resolver == self.httpDnsResolver_4A || resolver == self.httpDnsResolver_BOTH) {
+            // WGSetKeepAliveDomains
             NSArray *keepAliveDomains = [[MSDKDnsParamsManager shareInstance] msdkDnsGetKeepAliveDomains];
             BOOL enableKeepDomainsAlive = [[MSDKDnsParamsManager shareInstance] msdkDnsGetEnableKeepDomainsAlive];
             // 获取延迟记录字典
@@ -221,6 +223,7 @@
                 }
             }];
         }
+        
         
         if (resolver == self.httpDnsResolver_A || resolver == self.httpDnsResolver_BOTH) {
             NSDictionary *IPRankData = [[MSDKDnsParamsManager shareInstance] msdkDnsGetIPRankData];
@@ -496,6 +499,7 @@
 #pragma mark - cacheDomainInfo
 
 // 解析结果存缓存
+
 - (void)cacheDomainInfo:(MSDKDnsResolver *)resolver {
     MSDKDNSLOG(@"cacheDomainInfo: %@", self.toCheckDomains);
     for(int i = 0; i < [self.toCheckDomains count]; i++) {
@@ -543,8 +547,8 @@
             }
         }
         
+        // 上面得到从各个 Resolver 得到的数据之后, 在这里, 重新设置到 MSDKDnsManager 的 domainDict 内部.
         if (cacheDict && domain) {
-            // 在这里, 将本次请求的结果, 在 MSDKDnsManager 中进行了体现.
             [[MSDKDnsManager shareInstance] cacheDomainInfo:cacheDict Domain:domain];
             BOOL persistCacheIPEnabled = [[MSDKDnsParamsManager shareInstance] msdkDnsGetPersistCacheIPEnabled];
             if (resolver && resolver != self.localDnsResolver && persistCacheIPEnabled){

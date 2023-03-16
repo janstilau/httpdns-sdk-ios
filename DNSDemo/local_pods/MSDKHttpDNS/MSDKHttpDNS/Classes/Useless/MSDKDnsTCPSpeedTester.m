@@ -79,6 +79,16 @@ static NSString *const ipKey = @"ip";
 /**
  *  @return 测速结果，单位时毫秒，MSDKDns_SOCKET_CONNECT_TIMEOUT_RTT 代表超时。
  */
+/*
+ 这段代码是用来测量连接到指定IP地址和端口的时间
+ 。它创建一个套接字并尝试连接到指定的IP地址和端口。连接时间被记录并返回作为往返时间（RTT）。如果连接超时，则返回预定义的超时RTT值。
+ 
+ 当然。这段代码首先创建一个套接字，然后使用 connect 函数尝试连接到指定的IP地址和端口。如果连接成功，connect 函数将返回0，并且代码将关闭套接字并返回1。
+
+ 如果连接不成功，则代码将使用 select 函数等待连接完成或超时。如果 select 函数返回0，则表示连接超时，代码将关闭套接字并返回预定义的超时RTT值。
+
+ 如果 select 函数返回一个正值，则表示连接已完成。代码将使用 getsockopt 函数检查是否有错误。如果没有错误，则计算连接时间并将其作为RTT值返回。否则，代码将关闭套接字并返回0。
+ */
 - (float)testSpeedOf:(NSString *)ip port:(int16_t)port {
     NSString *oldIp = ip;
     //request time out
@@ -88,11 +98,12 @@ static NSString *const ipKey = @"ip";
     struct sockaddr_in saddr;
     saddr.sin_family = AF_INET;
     saddr.sin_port = htons(port);
-    saddr.sin_addr.s_addr = inet_addr([ip UTF8String]);
+    saddr.sin_addr.s_addr = inet_addr([ip UTF8String]); // 套接字的地址.
     if( (s=socket(AF_INET, SOCK_STREAM, 0)) < 0) {
         MSDKDNSLOG(@"ERROR:%s:%d, create socket failed.",__FUNCTION__,__LINE__);
         return 0;
     }
+    
     NSDate *startTime = [NSDate date];
     NSDate *endTime;
     //为了设置connect超时 把socket设置称为非阻塞
