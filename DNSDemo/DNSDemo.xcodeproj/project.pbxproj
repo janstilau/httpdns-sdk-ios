@@ -32,6 +32,8 @@
 		067C00A329C1CA9A0095AF64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		067C00A429C1CA9A0095AF64 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		067C00AB29C1CB190095AF64 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		067C00AD29C1F4B60095AF64 /* wisdom_result.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = wisdom_result.h; sourceTree = "<group>"; };
+		067C00AE29C1F6A00095AF64 /* 原理.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "原理.h"; sourceTree = "<group>"; };
 		0F4EE5424A44140F943A6553 /* libPods-DNSDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DNSDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F18A2D7FE51D7EAFBBEED4C /* Pods-DNSDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DNSDemo.debug.xcconfig"; path = "Target Support Files/Pods-DNSDemo/Pods-DNSDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		88BCC6104DD1CF0246180A6D /* Pods-DNSDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DNSDemo.release.xcconfig"; path = "Target Support Files/Pods-DNSDemo/Pods-DNSDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -53,6 +55,8 @@
 		067C008629C1CA980095AF64 = {
 			isa = PBXGroup;
 			children = (
+				067C00AE29C1F6A00095AF64 /* 原理.h */,
+				067C00AD29C1F4B60095AF64 /* wisdom_result.h */,
 				067C009129C1CA980095AF64 /* DNSDemo */,
 				067C009029C1CA980095AF64 /* Products */,
 				6E832B343FF82C7DD804B7CF /* Pods */,
