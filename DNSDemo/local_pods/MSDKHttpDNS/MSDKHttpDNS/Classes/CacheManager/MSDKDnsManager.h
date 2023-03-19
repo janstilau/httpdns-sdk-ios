@@ -1,19 +1,15 @@
-/**
- * Copyright (c) Tencent. All rights reserved.
- */
-
 #import <objc/runtime.h>
 #import <Foundation/Foundation.h>
 #import "MSDKDnsPrivate.h"
 
 #if defined(__has_include)
-    #if __has_include(<MSDK/BeaconBaseInterface.h>)
-        #include <MSDK/BeaconBaseInterface.h>
-    #endif
+#if __has_include(<MSDK/BeaconBaseInterface.h>)
+#include <MSDK/BeaconBaseInterface.h>
+#endif
 
-    #if __has_include("BeaconAPI_Base/BeaconBaseInterface.h")
-        #include "BeaconAPI_Base/BeaconBaseInterface.h"
-    #endif
+#if __has_include("BeaconAPI_Base/BeaconBaseInterface.h")
+#include "BeaconAPI_Base/BeaconBaseInterface.h"
+#endif
 #endif
 
 @class MSDKDnsService;

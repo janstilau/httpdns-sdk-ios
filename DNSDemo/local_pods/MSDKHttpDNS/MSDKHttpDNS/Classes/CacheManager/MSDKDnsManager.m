@@ -89,11 +89,6 @@ static MSDKDnsManager * _sharedInstance = nil;
         NSString *domain = [domains objectAtIndex:i];
         if (![self domianCache:cacheDomainDict hit:domain]) {
             [toCheckDomains addObject:domain];
-        } else {
-            MSDKDNSLOG(@"%@ TTL has not expiried,return result from cache directly!", domain);
-            dispatch_async([MSDKDnsInfoTool msdkdns_queue], ^{
-                [self uploadReport:YES Domain:domain NetStack:netStack];
-            });
         }
     }
     
@@ -128,9 +123,6 @@ static MSDKDnsManager * _sharedInstance = nil;
         [dnsService getHostsByNames:toCheckDomains TimeOut:timeOut DnsId:dnsId DnsKey:dnsKey NetStack:netStack encryptType:encryptType returnIps:^() {
             __strong __typeof(self) strongSelf = weakSelf;
             if (strongSelf) {
-                [toCheckDomains enumerateObjectsUsingBlock:^(id _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                    [strongSelf uploadReport:NO Domain:obj NetStack:netStack];
-                }];
                 [strongSelf dnsHasDone:dnsService];
             }
             dispatch_semaphore_signal(sema);
@@ -175,11 +167,6 @@ static MSDKDnsManager * _sharedInstance = nil;
         } else if ([[self domianCache:cacheDomainDict check:domain] isEqualToString:MSDKDnsDomainCacheExpired]) {
             [toCheckDomains addObject:domain];
             [toEmptyDomains addObject:domain];
-        } else {
-            MSDKDNSLOG(@"%@ TTL has not expiried,return result from cache directly!", domain);
-            dispatch_async([MSDKDnsInfoTool msdkdns_queue], ^{
-                [self uploadReport:YES Domain:domain NetStack:netStack];
-            });
         }
     }
     
@@ -200,9 +187,6 @@ static MSDKDnsManager * _sharedInstance = nil;
             [dnsService getHostsByNames:toCheckDomains TimeOut:timeOut DnsId:dnsId DnsKey:dnsKey NetStack:netStack encryptType:encryptType returnIps:^() {
                 __strong __typeof(self) strongSelf = weakSelf;
                 if (strongSelf) {
-                    [toCheckDomains enumerateObjectsUsingBlock:^(id _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                        [strongSelf uploadReport:NO Domain:obj NetStack:netStack];
-                    }];
                     [strongSelf dnsHasDone:dnsService];
                 }
             }];
@@ -237,11 +221,6 @@ static MSDKDnsManager * _sharedInstance = nil;
         NSString *domain = [domains objectAtIndex:i];
         if (![self domianCache:cacheDomainDict hit:domain]) {
             [toCheckDomains addObject:domain];
-        } else {
-            MSDKDNSLOG(@"%@ TTL has not expiried,return result from cache directly!", domain);
-            dispatch_async([MSDKDnsInfoTool msdkdns_queue], ^{
-                [self uploadReport:YES Domain:domain NetStack:netStack];
-            });
         }
     }
     // 全部有缓存时，直接返回
@@ -272,9 +251,6 @@ static MSDKDnsManager * _sharedInstance = nil;
         [dnsService getHostsByNames:toCheckDomains TimeOut:timeOut DnsId:dnsId DnsKey:dnsKey NetStack:netStack encryptType:encryptType returnIps:^() {
             __strong __typeof(self) strongSelf = weakSelf;
             if (strongSelf) {
-                [toCheckDomains enumerateObjectsUsingBlock:^(id _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                    [strongSelf uploadReport:NO Domain:obj NetStack:netStack];
-                }];
                 [strongSelf dnsHasDone:dnsService];
                 NSDictionary * result = verbose ?
                 [strongSelf fullResultDictionary:domains fromCache:_domainDict] :
@@ -590,222 +566,6 @@ static MSDKDnsManager * _sharedInstance = nil;
             self.domainDict = nil;
         }
     });
-}
-
-#pragma mark - uploadReport
-// 这里是使用另外的一个库, 进行上报.
-// 使用了 NSInvocation 来完成对应方法的调用. 这需要另外的那个库, 保持接口不变.
-// 说实话, 不如 YDK 的设计理念, 定义一个通道接口, 使用 Dic 将所有的数据传递出去.
-- (void)uploadReport:(BOOL)isFromCache Domain:(NSString *)domain NetStack:( MSDKDNS_TLocalIPStack)netStack {
-    Class beaconClass = NSClassFromString(@"BeaconBaseInterface");
-    if (beaconClass == 0x0) {
-        MSDKDNSLOG(@"Beacon framework is not imported");
-        return;
-    }
-    // 真正的实现都删除了.
-}
-
-- (NSMutableDictionary *)formatParams:(BOOL)isFromCache Domain:(NSString *)domain NetStack:( MSDKDNS_TLocalIPStack)netStack {
-    MSDKDNSLOG(@"uploadReport %@",domain);
-    //dns结束时上报结果
-    NSMutableDictionary * params = [NSMutableDictionary new];
-    
-    //SDKVersion
-    [params setValue:MSDKDns_Version forKey:kMSDKDnsSDK_Version];
-    
-    //appId
-    NSString * appID = [[MSDKDnsParamsManager shareInstance] msdkDnsGetMAppId];
-    if (appID) {
-        [params setValue:appID forKey:kMSDKDnsAppID];
-    } else {
-        [params setValue:HTTP_DNS_UNKNOWN_STR forKey:kMSDKDnsAppID];
-    }
-    
-    //id & key
-    int dnsID = [[MSDKDnsParamsManager shareInstance] msdkDnsGetMDnsId];
-    [params setValue:[NSString stringWithFormat:@"%d", dnsID] forKey:kMSDKDnsID];
-    NSString * dnsKeyStr = [[MSDKDnsParamsManager shareInstance] msdkDnsGetMDnsKey];
-    if (dnsKeyStr) {
-        [params setValue:dnsKeyStr forKey:kMSDKDnsKEY];
-    } else {
-        [params setValue:HTTP_DNS_UNKNOWN_STR forKey:kMSDKDnsKEY];
-    }
-    
-    //userId
-    NSString * uuidStr = [[MSDKDnsParamsManager shareInstance] msdkDnsGetMOpenId];
-    if (uuidStr) {
-        [params setValue:uuidStr forKey:kMSDKDnsUserID];
-    } else {
-        [params setValue:HTTP_DNS_UNKNOWN_STR forKey:kMSDKDnsUserID];
-    }
-    
-    //netType
-    NSString * networkType = [[MSDKDnsNetworkManager shareInstance] networkType];
-    [params setValue:networkType forKey:kMSDKDnsNetType];
-    
-    //SSID
-    //    NSString * ssid = [MSDKDnsInfoTool wifiSSID];
-    //    [params setValue:ssid forKey:kMSDKDnsSSID];
-    
-    //domain
-    NSString * domain_string = HTTP_DNS_UNKNOWN_STR;
-    if (domain) {
-        domain_string = domain;
-    }
-    [params setValue:domain_string forKey:kMSDKDnsDomain];
-    
-    //netStack
-    [params setValue:@(netStack) forKey:kMSDKDnsNet_Stack];
-    
-    //isCache
-    [params setValue:[NSNumber numberWithBool:NO] forKey:kMSDKDns_A_IsCache];
-    [params setValue:[NSNumber numberWithBool:NO] forKey:kMSDKDns_4A_IsCache];
-    
-    NSString * clientIP_A = @"";
-    NSString * clientIP_4A = @"";
-    NSString * httpDnsIP_A = @"";
-    NSString * httpDnsIP_4A = @"";
-    NSString * httpDnsTimeConsuming_A = @"";
-    NSString * httpDnsTimeConsuming_4A = @"";
-    NSString * httpDnsTTL_A = @"";
-    NSString * httpDnsTTL_4A = @"";
-    NSString * httpDnsErrCode_A = @"";
-    NSString * httpDnsErrCode_4A = @"";
-    NSString * httpDnsErrCode_BOTH = @"";
-    NSString * httpDnsErrMsg_A = @"";
-    NSString * httpDnsErrMsg_4A = @"";
-    NSString * httpDnsErrMsg_BOTH = @"";
-    NSString * httpDnsRetry_A = @"";
-    NSString * httpDnsRetry_4A = @"";
-    NSString * httpDnsRetry_BOTH = @"";
-    NSString * cache_A = @"";
-    NSString * cache_4A = @"";
-    NSString * dns_A = @"0";
-    NSString * dns_4A = @"0";
-    NSString * localDnsIPs = @"";
-    NSString * localDnsTimeConsuming = @"";
-    NSString * channel = @"";
-    
-    NSDictionary * cacheDict = [[MSDKDnsManager shareInstance] domainDict];
-    if (cacheDict && domain) {
-        NSDictionary * cacheInfo = cacheDict[domain];
-        if (cacheInfo) {
-            
-            NSDictionary * localDnsCache = cacheInfo[kMSDKLocalDnsCache];
-            if (localDnsCache) {
-                NSArray * ipsArray = localDnsCache[kIP];
-                if (ipsArray && [ipsArray count] == 2) {
-                    dns_A = ipsArray[0];
-                    dns_4A = ipsArray[1];
-                    localDnsIPs = [self getIPsStringFromIPsArray:ipsArray];
-                }
-                localDnsTimeConsuming = localDnsCache[kDnsTimeConsuming];
-            }
-            
-            NSDictionary * httpDnsCache_A = cacheInfo[kMSDKHttpDnsCache_A];
-            if (httpDnsCache_A) {
-                
-                clientIP_A = httpDnsCache_A[kClientIP];
-                NSArray * ipsArray = httpDnsCache_A[kIP];
-                if (ipsArray && [ipsArray isKindOfClass:[NSArray class]] && ipsArray.count > 0) {
-                    dns_A = ipsArray[0];
-                    httpDnsIP_A = [self getIPsStringFromIPsArray:ipsArray];
-                }
-                
-                httpDnsTimeConsuming_A = httpDnsCache_A[kDnsTimeConsuming];
-                httpDnsTTL_A = httpDnsCache_A[kTTL];
-                cache_A = @(isFromCache).stringValue;
-                channel = httpDnsCache_A[kChannel];
-                //isCache
-                [params setValue:[NSNumber numberWithBool:isFromCache] forKey:kMSDKDns_A_IsCache];
-            }
-            
-            NSDictionary * httpDnsCache_4A = cacheInfo[kMSDKHttpDnsCache_4A];
-            if (httpDnsCache_4A) {
-                
-                clientIP_4A = httpDnsCache_4A[kClientIP];
-                NSArray * ipsArray = httpDnsCache_4A[kIP];
-                if (ipsArray && [ipsArray isKindOfClass:[NSArray class]] && ipsArray.count > 0) {
-                    dns_4A = ipsArray[0];
-                    httpDnsIP_4A = [self getIPsStringFromIPsArray:ipsArray];
-                }
-                
-                httpDnsTimeConsuming_4A = httpDnsCache_4A[kDnsTimeConsuming];
-                httpDnsTTL_4A = httpDnsCache_4A[kTTL];
-                cache_4A = @(isFromCache).stringValue;
-                channel = httpDnsCache_4A[kChannel];
-                //isCache
-                [params setValue:[NSNumber numberWithBool:isFromCache] forKey:kMSDKDns_4A_IsCache];
-            }
-            
-            NSDictionary * httpDnsInfo_A = cacheInfo[kMSDKHttpDnsInfo_A];
-            if (httpDnsInfo_A) {
-                httpDnsErrCode_A = httpDnsInfo_A[kDnsErrCode];
-                httpDnsErrMsg_A = httpDnsInfo_A[kDnsErrMsg];
-                httpDnsRetry_A = httpDnsInfo_A[kDnsRetry];
-            }
-            
-            NSDictionary * httpDnsInfo_4A = cacheInfo[kMSDKHttpDnsInfo_4A];
-            if (httpDnsInfo_4A) {
-                httpDnsErrCode_4A = httpDnsInfo_A[kDnsErrCode];
-                httpDnsErrMsg_4A = httpDnsInfo_A[kDnsErrMsg];
-                httpDnsRetry_4A = httpDnsInfo_A[kDnsRetry];
-            }
-            
-            NSDictionary * httpDnsInfo_BOTH = cacheInfo[kMSDKHttpDnsInfo_BOTH];
-            if (httpDnsInfo_BOTH) {
-                httpDnsErrCode_BOTH = httpDnsInfo_BOTH[kDnsErrCode];
-                httpDnsErrMsg_BOTH = httpDnsInfo_BOTH[kDnsErrMsg];
-                httpDnsRetry_BOTH = httpDnsInfo_BOTH[kDnsRetry];
-            }
-        }
-    }
-    
-    //Channel
-    [params setValue:channel forKey:kMSDKDnsChannel];
-    
-    //clientIP
-    [params setValue:clientIP_A forKey:kMSDKDns_A_ClientIP];
-    [params setValue:clientIP_4A forKey:kMSDKDns_4A_ClientIP];
-    
-    //hdns_ip
-    [params setValue:httpDnsIP_A forKey:kMSDKDns_A_IP];
-    [params setValue:httpDnsIP_4A forKey:kMSDKDns_4A_IP];
-    
-    //ldns_ip
-    [params setValue:localDnsIPs forKey:kMSDKDnsLDNS_IP];
-    
-    //hdns_time
-    [params setValue:httpDnsTimeConsuming_A forKey:kMSDKDns_A_Time];
-    [params setValue:httpDnsTimeConsuming_4A forKey:kMSDKDns_4A_Time];
-    
-    //ldns_time
-    [params setValue:localDnsTimeConsuming forKey:kMSDKDnsLDNS_Time];
-    
-    //TTL
-    [params setValue:httpDnsTTL_A forKey:kMSDKDns_A_TTL];
-    [params setValue:httpDnsTTL_4A forKey:kMSDKDns_4A_TTL];
-    
-    //ErrCode
-    [params setValue:httpDnsErrCode_A forKey:kMSDKDns_A_ErrCode];
-    [params setValue:httpDnsErrCode_4A forKey:kMSDKDns_4A_ErrCode];
-    [params setValue:httpDnsErrCode_BOTH forKey:kMSDKDns_BOTH_ErrCode];
-    
-    //ErrMsg
-    [params setValue:httpDnsErrMsg_A forKey:kMSDKDns_A_ErrMsg];
-    [params setValue:httpDnsErrMsg_4A forKey:kMSDKDns_4A_ErrMsg];
-    [params setValue:httpDnsErrMsg_BOTH forKey:kMSDKDns_BOTH_ErrMsg];
-    
-    //Retry
-    [params setValue:httpDnsRetry_A forKey:kMSDKDns_A_Retry];
-    [params setValue:httpDnsRetry_4A forKey:kMSDKDns_4A_Retry];
-    [params setValue:httpDnsRetry_BOTH forKey:kMSDKDns_BOTH_Retry];
-    
-    //dns
-    [params setValue:dns_A forKey:kMSDKDns_DNS_A_IP];
-    [params setValue:dns_4A forKey:kMSDKDns_DNS_4A_IP];
-    
-    return params;
 }
 
 # pragma mark - check caches

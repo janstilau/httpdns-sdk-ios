@@ -7,6 +7,7 @@
 
 #import "ViewController.h"
 #import <MSDKDns_C11/MSDKDns.h>
+
 /*
  DES加密    支持中
  密钥
@@ -59,9 +60,7 @@
     config->debug = YES;
     config->addressType = HttpDnsAddressTypeDual;
     config->timeout = 2000;
-//    config->routeIp = @"查询线路ip";
     [[MSDKDns sharedInstance] initConfig: config];
-    
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -71,7 +70,6 @@
 - (void)syncGet {
     NSArray *youdaoResult =  [[MSDKDns sharedInstance] WGGetHostByName:@"youdao.com"];
     NSLog(@"单个得到结果 %@", youdaoResult);
-    
     NSDictionary *multiResult = [[MSDKDns sharedInstance] WGGetHostsByNames:@[@"hardware.youdao.com", @"youdao.com", @"qq.com"]];
     NSLog(@"多个得到结果 %@", multiResult);
 }
@@ -80,7 +78,6 @@
     [[MSDKDns sharedInstance] WGGetHostByNameAsync:@"hardware.youdao.com" returnIps:^(NSArray *ipsArray) {
         NSLog(@"异步获取单个结果, %@", ipsArray);
     }];
-    
     [[MSDKDns sharedInstance] WGGetHostsByNamesAsync:@[@"hardware.youdao.com", @"youdao.com", @"qq.com"] returnIps:^(NSDictionary *ipsDictionary) {
         NSLog(@"异步获取多个结果, %@", ipsDictionary);
     }];

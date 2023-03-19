@@ -1,7 +1,3 @@
-/**
- * Copyright (c) Tencent. All rights reserved.
- */
-
 #import "MSDKDnsNetworkManager.h"
 #import "MSDKDnsLog.h"
 #import "MSDKDnsInfoTool.h"
@@ -75,6 +71,8 @@ static MSDKDnsNetworkManager *manager = nil;
              {
                 // 这里的代码, 都是网络发生变化了做的情况.
                 
+
+                
                 // 首先是清除缓存. 文档建议是, 网络发生变化, 直接清理, 不要复用.
                 BOOL expiredIPEnabled = [[MSDKDnsParamsManager shareInstance] msdkDnsGetExpiredIPEnabled];
                 if (!expiredIPEnabled) {
@@ -82,8 +80,9 @@ static MSDKDnsNetworkManager *manager = nil;
                     //网络状态发生变化时清除缓存
                     [[MSDKDnsManager shareInstance] clearAllCache];
                 }
-                //对保活域名发送解析请求
+                // 对保活域名发送解析请求
                 // 然后是对保活的域名, 重新进行请求.
+                // 每次发生网络变化, 都是重新刷新 Domain 的 Ip 地址.
                 [self getHostsByKeepAliveDomains];
                 //重置ip指针
                 [[MSDKDnsManager shareInstance] switchToMainServer];
