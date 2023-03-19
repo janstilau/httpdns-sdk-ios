@@ -16,7 +16,7 @@
 
 @interface MSDKDnsManager : NSObject
 
-@property (strong, nonatomic, readonly) NSMutableDictionary * domainDict;
+@property (strong, nonatomic, readonly) NSMutableDictionary * allDomainToIps;
 
 + (instancetype)shareInstance;
 
@@ -34,6 +34,7 @@
 - (NSDictionary *)getDnsDetail:(NSString *)domain;
 
 - (NSString *)currentDnsServer;
+// 当获取 Domain 连续失败了几次之后, 才会调用该方法. 所以其实是一个无奈的备用方案.
 - (void)switchDnsServer;
 - (void)switchToMainServer;
 

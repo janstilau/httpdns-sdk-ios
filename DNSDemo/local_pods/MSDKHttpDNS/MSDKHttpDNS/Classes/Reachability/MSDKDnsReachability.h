@@ -26,6 +26,7 @@ typedef enum : NSInteger {
 #pragma mark IPv6 Support
 //Reachability fully support IPv6.  For full details, see ReadMe.md.
 
+// 该类主要和外界进行通信的方式, 其实就是这几个通知了. 
 extern NSString *const kMSDKDnsInternetConnection;
 extern NSString *const kMSDKDnsLocalWiFiConnection;
 extern NSString *const kMSDKDnsReachabilityChangedNotification;

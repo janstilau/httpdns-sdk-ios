@@ -49,9 +49,9 @@
 - (BOOL)msdkDnsGetEnableReport;
 - (NSArray *)msdkDnsGetPreResolvedDomains;
 - (HttpDnsAddressType)msdkDnsGetAddressType;
-- (NSArray *)msdkDnsGetKeepAliveDomains;
+- (NSArray *)allKeepAliveDomains;
 - (NSDictionary *)msdkDnsGetIPRankData;
-- (BOOL)msdkDnsGetEnableKeepDomainsAlive;
+- (BOOL)shouldRefreshAllKeepAliveDomainIps;
 - (BOOL)msdkDnsGetExpiredIPEnabled;
 - (BOOL)msdkDnsGetPersistCacheIPEnabled;
 

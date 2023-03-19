@@ -274,7 +274,7 @@ static MSDKDnsParamsManager * _sharedInstance = nil;
     return _msdkAddressType;
 }
 
-- (NSArray *)msdkDnsGetKeepAliveDomains {
+- (NSArray *)allKeepAliveDomains {
     return _keepAliveDomains;
 }
 
@@ -282,7 +282,7 @@ static MSDKDnsParamsManager * _sharedInstance = nil;
     return _IPRankData;
 }
 
-- (BOOL)msdkDnsGetEnableKeepDomainsAlive {
+- (BOOL)shouldRefreshAllKeepAliveDomainIps {
     return _enableKeepDomainsAlive;
 }
 

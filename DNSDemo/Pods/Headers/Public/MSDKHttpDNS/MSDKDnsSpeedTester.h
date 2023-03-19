@@ -1,1 +1,1 @@
-../../../../local_pods/MSDKHttpDNS/MSDKHttpDNS/Classes/MSDKDnsSpeedTester.h
+../../../../local_pods/MSDKHttpDNS/MSDKHttpDNS/Classes/Useless/MSDKDnsSpeedTester.h

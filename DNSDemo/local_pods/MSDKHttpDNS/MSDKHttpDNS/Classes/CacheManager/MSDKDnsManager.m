@@ -21,7 +21,7 @@
 
 @property (strong, nonatomic, readwrite) NSMutableArray * serviceArray;
 // 最重要的成员变量, 数据的展示. 
-@property (strong, nonatomic, readwrite) NSMutableDictionary * domainDict;
+@property (strong, nonatomic, readwrite) NSMutableDictionary * allDomainToIps;
 @property (nonatomic, assign, readwrite) int serverIndex;
 @property (nonatomic, strong, readwrite) NSDate *firstFailTime; // 记录首次失败的时间
 @property (nonatomic, assign, readwrite) BOOL waitToSwitch; // 防止连续多次切换
@@ -33,9 +33,9 @@
 @implementation MSDKDnsManager
 
 - (void)dealloc {
-    if (_domainDict) {
-        [self.domainDict removeAllObjects];
-        [self setDomainDict:nil];
+    if (_allDomainToIps) {
+        [self.allDomainToIps removeAllObjects];
+        [self setAllDomainToIps:nil];
     }
     if (_serviceArray) {
         [self.serviceArray removeAllObjects];
@@ -74,8 +74,8 @@ static MSDKDnsManager * _sharedInstance = nil;
     __block float timeOut = 2.0;
     __block NSDictionary * cacheDomainDict = nil;
     dispatch_sync([MSDKDnsInfoTool msdkdns_queue], ^{
-        if (domains && [domains count] > 0 && _domainDict) {
-            cacheDomainDict = [[NSDictionary alloc] initWithDictionary:_domainDict];
+        if (domains && [domains count] > 0 && _allDomainToIps) {
+            cacheDomainDict = [[NSDictionary alloc] initWithDictionary:_allDomainToIps];
         }
         timeOut = [[MSDKDnsParamsManager shareInstance] msdkDnsGetMTimeOut];
     });
@@ -133,8 +133,8 @@ static MSDKDnsManager * _sharedInstance = nil;
     cacheDomainDict = nil;
     // 之所以这样写, 是因为 dnsService getHostsByNames 方法, 必定是操作了 _domainDict. 所以这里从新从单例里面获取数据.
     dispatch_sync([MSDKDnsInfoTool msdkdns_queue], ^{
-        if (domains && [domains count] > 0 && _domainDict) {
-            cacheDomainDict = [[NSDictionary alloc] initWithDictionary:_domainDict];
+        if (domains && [domains count] > 0 && _allDomainToIps) {
+            cacheDomainDict = [[NSDictionary alloc] initWithDictionary:_allDomainToIps];
         }
     });
     NSDictionary * result = verbose?
@@ -150,8 +150,8 @@ static MSDKDnsManager * _sharedInstance = nil;
     __block float timeOut = 2.0;
     __block NSDictionary * cacheDomainDict = nil;
     dispatch_sync([MSDKDnsInfoTool msdkdns_queue], ^{
-        if (domains && [domains count] > 0 && _domainDict) {
-            cacheDomainDict = [[NSDictionary alloc] initWithDictionary:_domainDict];
+        if (domains && [domains count] > 0 && _allDomainToIps) {
+            cacheDomainDict = [[NSDictionary alloc] initWithDictionary:_allDomainToIps];
         }
         timeOut = [[MSDKDnsParamsManager shareInstance] msdkDnsGetMTimeOut];
     });
@@ -209,8 +209,8 @@ static MSDKDnsManager * _sharedInstance = nil;
     // 注意, 这里 cacheDomainDict 是一个深拷贝. 这样 _domainDict 里面的可以在之后正常修改.
     __block NSDictionary * cacheDomainDict = nil;
     dispatch_sync([MSDKDnsInfoTool msdkdns_queue], ^{
-        if (domains && [domains count] > 0 && _domainDict) {
-            cacheDomainDict = [[NSDictionary alloc] initWithDictionary:_domainDict];
+        if (domains && [domains count] > 0 && _allDomainToIps) {
+            cacheDomainDict = [[NSDictionary alloc] initWithDictionary:_allDomainToIps];
         }
         timeOut = [[MSDKDnsParamsManager shareInstance] msdkDnsGetMTimeOut];
     });
@@ -253,8 +253,8 @@ static MSDKDnsManager * _sharedInstance = nil;
             if (strongSelf) {
                 [strongSelf dnsHasDone:dnsService];
                 NSDictionary * result = verbose ?
-                [strongSelf fullResultDictionary:domains fromCache:_domainDict] :
-                [strongSelf resultDictionary:domains fromCache:_domainDict];
+                [strongSelf fullResultDictionary:domains fromCache:_allDomainToIps] :
+                [strongSelf resultDictionary:domains fromCache:_allDomainToIps];
                 if (handler) {
                     handler(result);
                 }
@@ -499,8 +499,8 @@ static MSDKDnsManager * _sharedInstance = nil;
 - (NSDictionary *) getDnsDetail:(NSString *) domain {
     __block NSDictionary * cacheDomainDict = nil;
     dispatch_sync([MSDKDnsInfoTool msdkdns_queue], ^{
-        if (domain && _domainDict) {
-            cacheDomainDict = [[NSDictionary alloc] initWithDictionary:_domainDict];
+        if (domain && _allDomainToIps) {
+            cacheDomainDict = [[NSDictionary alloc] initWithDictionary:_allDomainToIps];
         }
     });
     NSMutableDictionary * detailDict = [@{@"v4_ips": @"",
@@ -536,17 +536,17 @@ static MSDKDnsManager * _sharedInstance = nil;
     if (domain && domain.length > 0 && domainInfo && domainInfo.count > 0) {
         MSDKDNSLOG(@"Cache domain:%@ %@", domain, domainInfo);
         //结果存缓存
-        if (!self.domainDict) {
-            self.domainDict = [[NSMutableDictionary alloc] init];
+        if (!self.allDomainToIps) {
+            self.allDomainToIps = [[NSMutableDictionary alloc] init];
         }
-        [self.domainDict setObject:domainInfo forKey:domain];
+        [self.allDomainToIps setObject:domainInfo forKey:domain];
     }
 }
 
 - (void)clearCacheForDomain:(NSString *)domain {
     if (domain && domain.length > 0) {
-        if (self.domainDict) {
-            [self.domainDict removeObjectForKey:domain];
+        if (self.allDomainToIps) {
+            [self.allDomainToIps removeObjectForKey:domain];
         }
     }
 }
@@ -561,9 +561,9 @@ static MSDKDnsManager * _sharedInstance = nil;
 - (void)clearAllCache {
     dispatch_async([MSDKDnsInfoTool msdkdns_queue], ^{
         MSDKDNSLOG(@"MSDKDns clearCache");
-        if (self.domainDict) {
-            [self.domainDict removeAllObjects];
-            self.domainDict = nil;
+        if (self.allDomainToIps) {
+            [self.allDomainToIps removeAllObjects];
+            self.allDomainToIps = nil;
         }
     });
 }
@@ -695,7 +695,8 @@ static MSDKDnsManager * _sharedInstance = nil;
                 self.firstFailTime = [NSDate date];
                 // 一定时间后自动切回主ip
                 __weak __typeof__(self) weakSelf = self;
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW,[[MSDKDnsParamsManager shareInstance] msdkDnsGetMinutesBeforeSwitchToMain] * 60 * NSEC_PER_SEC), [MSDKDnsInfoTool msdkdns_queue], ^{
+                NSUInteger afterTime = [[MSDKDnsParamsManager shareInstance] msdkDnsGetMinutesBeforeSwitchToMain] * 60 * NSEC_PER_SEC;
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)afterTime), dispatch_get_main_queue(), ^{
                     if (weakSelf.firstFailTime && [[NSDate date] timeIntervalSinceDate:weakSelf.firstFailTime] >= [[MSDKDnsParamsManager shareInstance] msdkDnsGetMinutesBeforeSwitchToMain] * 60) {
                         MSDKDNSLOG(@"auto reset server index, use main ip now.");
                         weakSelf.serverIndex = 0;

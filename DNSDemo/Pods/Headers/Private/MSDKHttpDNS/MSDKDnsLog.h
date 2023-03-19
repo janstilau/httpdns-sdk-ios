@@ -1,1 +1,1 @@
-../../../../local_pods/MSDKHttpDNS/MSDKHttpDNS/Classes/MSDKDnsLog.h
+../../../../local_pods/MSDKHttpDNS/MSDKHttpDNS/Classes/Useless/MSDKDnsLog.h

@@ -31,6 +31,8 @@ static MSDKDns * _sharedInstance = nil;
 
 - (instancetype) init {
     if (self = [super init]) {
+        // 这个值没啥用, 其实当做标识来进行使用. 不过这是一种常见的编码技巧, 也就是使用一个值来做栅栏.
+        // 在这个栅栏值没有放开的时候, 不进行真正功能性方法的调用. 
         _msdkDnsReady = NO;
         //开启网络切换，及前后台切换的监听
         [MSDKDnsNetworkManager start];

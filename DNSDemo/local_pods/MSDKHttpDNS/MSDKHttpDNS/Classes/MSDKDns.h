@@ -44,10 +44,6 @@ typedef struct DnsConfigStruct {
     BOOL enableReport; // 是否开启解析异常上报，默认NO，不上报
 } DnsConfig;
 
-/*
- 这是一个总的入口. 
- */
-
 @interface MSDKDns : NSObject
 
 + (id) sharedInstance;
@@ -92,6 +88,9 @@ typedef struct DnsConfigStruct {
  * 设置保活的域名，设置的域名会定时更新缓存，数量不能大于8个
  */
 - (void) WGSetKeepAliveDomains:(NSArray *)domains;
+
+
+
 
 
 

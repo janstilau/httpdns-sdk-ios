@@ -83,6 +83,9 @@
     self.dnsKey = dnsKey;
     self.encryptType = encryptType;
     
+    /*
+      使用网络来获取 ip 地址. 
+     */
     if (_netStack ==  MSDKDNS_ELocalIPStack_IPv6) {
         dispatch_async([MSDKDnsInfoTool msdkdns_resolver_queue], ^{
             [self startHttpDns_4A:timeOut DnsId:dnsId DnsKey:dnsKey encryptType:encryptType];
@@ -167,8 +170,8 @@
         // 这些都是网络的获取结果.
         if (resolver == self.httpDnsResolver_A || resolver == self.httpDnsResolver_4A || resolver == self.httpDnsResolver_BOTH) {
             // WGSetKeepAliveDomains
-            NSArray *keepAliveDomains = [[MSDKDnsParamsManager shareInstance] msdkDnsGetKeepAliveDomains];
-            BOOL enableKeepDomainsAlive = [[MSDKDnsParamsManager shareInstance] msdkDnsGetEnableKeepDomainsAlive];
+            NSArray *keepAliveDomains = [[MSDKDnsParamsManager shareInstance] allKeepAliveDomains];
+            BOOL enableKeepDomainsAlive = [[MSDKDnsParamsManager shareInstance] shouldRefreshAllKeepAliveDomainIps];
             // 获取延迟记录字典
             NSMutableDictionary *domainISOpenDelayDispatch = [[MSDKDnsManager shareInstance] msdkDnsGetDomainISOpenDelayDispatch];
             [domainInfo enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull domain, id  _Nonnull obj, BOOL * _Nonnull stop) {
@@ -209,7 +212,7 @@
                         MSDKDNSLOG(@"Start the delayed execution task, it is expected to start requesting the domain name %@ after %f seconds", domain, afterTime.floatValue);
                         dispatch_after(dispatch_time(DISPATCH_TIME_NOW,afterTime.floatValue* NSEC_PER_SEC), [MSDKDnsInfoTool msdkdns_queue], ^{
                             //  NSLog(@"延时更新请求开始!请求域名为%@",domain);
-                            BOOL enableKeepDomainsAlive = [[MSDKDnsParamsManager shareInstance] msdkDnsGetEnableKeepDomainsAlive];
+                            BOOL enableKeepDomainsAlive = [[MSDKDnsParamsManager shareInstance] shouldRefreshAllKeepAliveDomainIps];
                             if (enableKeepDomainsAlive) {
                                 MSDKDNSLOG(@"The cache update request start! request domain:%@",domain);
                                 [[MSDKDnsManager shareInstance] refreshCacheDelay:@[domain] clearDispatchTag:YES];
@@ -225,6 +228,7 @@
         }
         
         
+        // IPV4 的检查, 受制于 [[MSDKDnsParamsManager shareInstance] msdkDnsGetIPRankData] 的值.
         if (resolver == self.httpDnsResolver_A || resolver == self.httpDnsResolver_BOTH) {
             NSDictionary *IPRankData = [[MSDKDnsParamsManager shareInstance] msdkDnsGetIPRankData];
             if (IPRankData) {
@@ -329,7 +333,7 @@
         return;
     }
     dispatch_async([MSDKDnsInfoTool msdkdns_queue], ^{
-        NSDictionary * tempDict = [[[MSDKDnsManager shareInstance] domainDict] objectForKey:host];
+        NSDictionary * tempDict = [[[MSDKDnsManager shareInstance] allDomainToIps] objectForKey:host];
         NSMutableDictionary *cacheDict;
         
         
@@ -438,7 +442,7 @@
     // 解析请求返回状态缓存
     for(int i = 0; i < [self.toCheckDomains count]; i++) {
         NSString *domain = [self.toCheckDomains objectAtIndex:i];
-        NSDictionary * tempDict = [[[MSDKDnsManager shareInstance] domainDict] objectForKey:domain];
+        NSDictionary * tempDict = [[[MSDKDnsManager shareInstance] allDomainToIps] objectForKey:domain];
         NSMutableDictionary *cacheDict;
         
         if (tempDict) {
@@ -504,7 +508,7 @@
     MSDKDNSLOG(@"cacheDomainInfo: %@", self.toCheckDomains);
     for(int i = 0; i < [self.toCheckDomains count]; i++) {
         NSString *domain = [self.toCheckDomains objectAtIndex:i];
-        NSDictionary * tempDict = [[[MSDKDnsManager shareInstance] domainDict] objectForKey:domain];
+        NSDictionary * tempDict = [[[MSDKDnsManager shareInstance] allDomainToIps] objectForKey:domain];
         NSMutableDictionary *cacheDict;
         
         if (tempDict) {

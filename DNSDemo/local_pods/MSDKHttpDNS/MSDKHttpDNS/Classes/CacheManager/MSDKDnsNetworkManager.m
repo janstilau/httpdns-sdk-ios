@@ -31,6 +31,7 @@ static MSDKDnsNetworkManager *manager = nil;
 }
 
 // 这个类方法, 其实就是触发单例的创建.
+// 这其实是一个很常见的代码编写方式.
 + (void)start
 {
     [MSDKDnsNetworkManager shareInstance];
@@ -61,58 +62,9 @@ static MSDKDnsNetworkManager *manager = nil;
         
         if (self = [super init])
         {
-            // 还能这么写....
             manager = self;
-            // 在这里, 监听了网络连接状况的改变.
-            [NSNotificationCenter.defaultCenter addObserverForName:kMSDKDnsReachabilityChangedNotification
-                                                            object:nil
-                                                             queue:nil
-                                                        usingBlock:^(NSNotification *note)
-             {
-                // 这里的代码, 都是网络发生变化了做的情况.
-                
-
-                
-                // 首先是清除缓存. 文档建议是, 网络发生变化, 直接清理, 不要复用.
-                BOOL expiredIPEnabled = [[MSDKDnsParamsManager shareInstance] msdkDnsGetExpiredIPEnabled];
-                if (!expiredIPEnabled) {
-                    MSDKDNSLOG(@"Network did changed,clear MSDKDns cache");
-                    //网络状态发生变化时清除缓存
-                    [[MSDKDnsManager shareInstance] clearAllCache];
-                }
-                // 对保活域名发送解析请求
-                // 然后是对保活的域名, 重新进行请求.
-                // 每次发生网络变化, 都是重新刷新 Domain 的 Ip 地址.
-                [self getHostsByKeepAliveDomains];
-                //重置ip指针
-                [[MSDKDnsManager shareInstance] switchToMainServer];
-            }];
             
-            [NSNotificationCenter.defaultCenter addObserverForName:UIApplicationDidEnterBackgroundNotification
-                                                            object:nil
-                                                             queue:nil
-                                                        usingBlock:^(NSNotification *note)
-             {
-                BOOL expiredIPEnabled = [[MSDKDnsParamsManager shareInstance] msdkDnsGetExpiredIPEnabled];
-                if (!expiredIPEnabled) {
-                    MSDKDNSLOG(@"Application did enter background,clear MSDKDns cache");
-                    //进入后台时清除缓存，暂停网络监测
-                    [[MSDKDnsManager shareInstance] clearAllCache];
-                }
-                [self.reachability stopNotifier];
-            }];
-            
-            [NSNotificationCenter.defaultCenter addObserverForName:UIApplicationWillEnterForegroundNotification
-                                                            object:nil
-                                                             queue:nil
-                                                        usingBlock:^(NSNotification *note)
-             {
-                //进入前台时，开启网络监测
-                [self.reachability startNotifier];
-                //对保活域名发送解析请求
-                [self getHostsByKeepAliveDomains];
-            }];
-            
+            [self setupObservers];
             _reachability = [MSDKDnsReachability reachabilityForInternetConnection];
             [_reachability startNotifier];
         }
@@ -120,6 +72,53 @@ static MSDKDnsNetworkManager *manager = nil;
         
         return self;
     }
+}
+
+- (void)setupObservers {
+    // 在这里, 监听了网络连接状况的改变.
+    [NSNotificationCenter.defaultCenter addObserverForName:kMSDKDnsReachabilityChangedNotification
+                                                    object:nil
+                                                     queue:nil
+                                                usingBlock:^(NSNotification *note)
+     {
+        // 这里的代码, 都是网络发生变化了做的情况.
+        // 首先是清除缓存. 文档建议是, 网络发生变化, 直接清理, 不要复用.
+        MSDKDNSLOG(@"Network did changed,clear MSDKDns cache");
+        [[MSDKDnsManager shareInstance] clearAllCache];
+        
+        // 对保活域名发送解析请求
+        // 然后是对保活的域名, 重新进行请求.
+        // 每次发生网络变化, 都是重新刷新 Domain 的 Ip 地址.
+        [self refreshAllKeepAliveDomains];
+        //重置ip指针
+        [[MSDKDnsManager shareInstance] switchToMainServer];
+    }];
+    
+    [NSNotificationCenter.defaultCenter addObserverForName:UIApplicationDidEnterBackgroundNotification
+                                                    object:nil
+                                                     queue:nil
+                                                usingBlock:^(NSNotification *note)
+     {
+        BOOL expiredIPEnabled = [[MSDKDnsParamsManager shareInstance] msdkDnsGetExpiredIPEnabled];
+        if (!expiredIPEnabled) {
+            MSDKDNSLOG(@"Application did enter background,clear MSDKDns cache");
+            //进入后台时清除缓存，暂停网络监测
+            [[MSDKDnsManager shareInstance] clearAllCache];
+        }
+        [self.reachability stopNotifier];
+    }];
+    
+    // 在重新进入前台后, 进行刷新. 
+    [NSNotificationCenter.defaultCenter addObserverForName:UIApplicationWillEnterForegroundNotification
+                                                    object:nil
+                                                     queue:nil
+                                                usingBlock:^(NSNotification *note)
+     {
+        //进入前台时，开启网络监测
+        [self.reachability startNotifier];
+        //对保活域名发送解析请求
+        [self refreshAllKeepAliveDomains];
+    }];
 }
 
 - (BOOL)networkAvailable
@@ -296,11 +295,11 @@ static SCNetworkConnectionFlags ana_connectionFlags;
     return waddr;
 }
 
-- (void)getHostsByKeepAliveDomains{
+- (void)refreshAllKeepAliveDomains{
     //对保活域名发送解析请求
     dispatch_async([MSDKDnsInfoTool msdkdns_queue], ^{
-        NSArray *keepAliveDomains = [[MSDKDnsParamsManager shareInstance] msdkDnsGetKeepAliveDomains];
-        BOOL enableKeepDomainsAlive = [[MSDKDnsParamsManager shareInstance] msdkDnsGetEnableKeepDomainsAlive];
+        NSArray *keepAliveDomains = [[MSDKDnsParamsManager shareInstance] allKeepAliveDomains];
+        BOOL enableKeepDomainsAlive = [[MSDKDnsParamsManager shareInstance] shouldRefreshAllKeepAliveDomainIps];
         if (enableKeepDomainsAlive && keepAliveDomains && keepAliveDomains.count > 0) {
             [[MSDKDnsManager shareInstance] refreshCacheDelay:keepAliveDomains clearDispatchTag:NO];
         }

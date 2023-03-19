@@ -54,11 +54,14 @@
     return msdkdns_retry_queue;
 }
 
+
+
+// 这个函数有点问题, 其实就是使用 DNS 解析获取到 IP 的内容, 可能就不是 IPV6 的地址, 这个函数, 应该作为 GetIp 来进行理解. 
 + (NSString *) getIPv6: (const char *)mHost {
-    if (NULL == mHost)
-        return nil;
+    if (NULL == mHost) return nil;
+    
     const char * newChar = "No";
-    struct addrinfo * res0;
+    struct addrinfo * res0; // 这是一个指针, 在 getaddrinfo 中传递的是它的地址. 如果他有值了, 则是在 getaddrinfo 内部进行了内存分配, 需要开发人员手动进行释放.
     struct addrinfo hints;
     struct addrinfo * res;
     int n, s;
@@ -69,6 +72,7 @@
     hints.ai_family = PF_UNSPEC;
     hints.ai_socktype = SOCK_STREAM;
     
+    // getaddrinfo 会使用原始的 DNS 解析的方式, 进行域名到 IP 的转换 . 结果会存放到 res0 中.
     n = getaddrinfo(mHost, "http", &hints, &res0);
     if (n != 0) {
         printf("getaddrinfo error: %s\n",gai_strerror(n));
@@ -81,8 +85,12 @@
     char ipbuf[32];
     s = -1;
     for (res = res0; res; res = res->ai_next) {
+        // 在这里, 原来可以直接获取到 IPV6 的地址.
         if (res->ai_family == AF_INET6) {
             addr6 = (struct sockaddr_in6 *)res->ai_addr;
+            /*
+             inet_ntop 是一个函数，它能将 IPv4 或 IPv6 的 Internet 网络地址转换为采用 Internet 标准格式的字符串。此函数的 ANSI 版本是 inet_ntop 1。它提供了与协议无关的地址到字符串转换1。
+             */
             newChar = inet_ntop(AF_INET6, &addr6->sin6_addr, ipbuf, sizeof(ipbuf));
             if (newChar != NULL) {
                 NSString * TempA = [[NSString alloc] initWithCString:(const char *)newChar encoding:NSASCIIStringEncoding];
@@ -387,6 +395,10 @@ char MSDKDnsHexCharToChar(char high, char low) {
     //    MSDKDNSLOG(@"newData=%@",newData);
     return newData;
 }
+
+
+
+
 
 + (NSURL *) httpsUrlWithDomain:(NSString *)domain DnsId:(int)dnsId DnsKey:(NSString *)dnsKey IPType:(HttpDnsIPType)ipType
 {

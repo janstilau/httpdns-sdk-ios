@@ -22,6 +22,7 @@
 
 // 专门做数据上报的一个类. 
 @interface AttaReport ()
+
 @property (strong, nonatomic) NSURLSession * session;
 @property (strong, nonatomic) NSString *attaid;
 @property (strong, nonatomic) NSString *token;
@@ -97,7 +98,7 @@ static AttaReport * _sharedInstance = nil;
     return res;
 }
 
-// 上报数据给腾讯. 
+// 使用了最原始的方式, 来完成上报.
 - (void)reportEvent:(NSDictionary *)params {
     NSURL *url = [NSURL URLWithString:_reportUrl];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];

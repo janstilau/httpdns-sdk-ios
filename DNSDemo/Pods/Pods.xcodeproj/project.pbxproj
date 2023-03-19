@@ -9,191 +9,191 @@
 /* Begin PBXBuildFile section */
 		004C62223C45721F14EE69D71195083B /* AFNetworkReachabilityManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 49F9E8DD0D8E81032405BBBFCCC0179D /* AFNetworkReachabilityManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		01366408FE4EC271F7AC9139033DB475 /* AFURLSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 3185C8B3303FD3FBD7ABBAAE0BE70C64 /* AFURLSessionManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		0349BBAF4ED1337D95CBAC84DC087E80 /* AttaReport.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B4473B03A523C552B38E8017A055DAB /* AttaReport.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		07541C15D4128018270711E8CE92CA90 /* AFNetworkActivityIndicatorManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 1974F82D0F1E552ADDFF6C0BC912FA06 /* AFNetworkActivityIndicatorManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		0A5BE8C9496480C74BE8D79FC4CCD3B9 /* MSDKDnsService.h in Headers */ = {isa = PBXBuildFile; fileRef = 32D514B4D72CA1AD7BE5EF670D2B40C5 /* MSDKDnsService.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		0A8611EB6EF67D085F06355D9010015F /* HttpsDnsResolver.h in Headers */ = {isa = PBXBuildFile; fileRef = 2996DF988151945047DC0CB98BFC42A6 /* HttpsDnsResolver.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		0BFD3AED10B677F57B3AC9E9894CA82A /* MSDKDnsDB.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F5124E3719ECC31A45FAACB6A486128 /* MSDKDnsDB.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		1059CDB250643352D11D849B7219A80B /* MSDKDnsResolver.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB6755508C16E661EBC57F5C13733A5 /* MSDKDnsResolver.m */; };
 		1832ACACF2EF6B12FBFAD3C0C5599001 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C9C4403D49A8F0D4BEDF84EBAE5291 /* AFURLSessionManager.m */; };
-		1A499AD1EF7DAD60CF84E50D589E6FA9 /* MSDKDnsReachability.h in Headers */ = {isa = PBXBuildFile; fileRef = D8BD3732D601AC1C5AB7AEF2B4A7286A /* MSDKDnsReachability.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		1A87D174F16A812176FE2A708C808CB1 /* MSDKDnsDB.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECC94F8AB230A084FB38A771B84AA5E4 /* MSDKDnsDB.cpp */; };
+		1BA5F377F5DA05F2CA1132F1DE837B3C /* MSDKDnsResolver.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C7825174A7C2065FCDCB7FA242FEA9D /* MSDKDnsResolver.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		1DE3FA63B32017400729598B3C5830DB /* MSDKHttpDNS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C78221315710EBF5D86F72F849D5E544 /* MSDKHttpDNS-dummy.m */; };
+		1E0FBBDE0ADF166003E390BCD0099E1F /* HTTPDNSORM+WCTTableCoding.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A9B022C901F97F810CE763DC5F0D7EC /* HTTPDNSORM+WCTTableCoding.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		20D9024DD6C73410BCBE844D542D42D2 /* MSDKDnsSpeedTester.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A5ED34F076B14106D1005B927C2486E /* MSDKDnsSpeedTester.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		217DD03ABD00FF511ACEC007F11472BE /* AttaReport.h in Headers */ = {isa = PBXBuildFile; fileRef = 733429E1CCF08D811AF4F16FFCEB3278 /* AttaReport.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		230B2F4C4E82727984756D5BBBF2AFE0 /* AFURLResponseSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = F7B44CEBA0DD2AD32CD150D7E867CF66 /* AFURLResponseSerialization.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		24FDBA768E6CB5CCA32B730922E9DD55 /* UIProgressView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = A39F92AC2F967465209571235EE89469 /* UIProgressView+AFNetworking.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		2764D9F92D0E9088988B68FCC95CA4E9 /* WKWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB8941118CC63E044E536130C1E925B /* WKWebView+AFNetworking.m */; };
 		2A68A9AAA8542BEC0D127F181C740647 /* AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 5EDAFEDB5C3A086D44D49E2514307C3E /* AFNetworking.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		2C5812FAA5CAEB8C4F4BCA83336487A7 /* msdkdns_local_ip_stack.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4513C938380C6AB029D5F8031C5282D5 /* msdkdns_local_ip_stack.mm */; };
 		2CE027294668B4C9C78E265D745E3474 /* UIKit+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C66A37A59100AC7B70357D9143D803A /* UIKit+AFNetworking.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		2EFB8B3A5710802BF510EF51BD406871 /* HTTPDNSORM+WCTTableCoding.h in Headers */ = {isa = PBXBuildFile; fileRef = FD5C06F1E89B0729C9A430C8500AACE6 /* HTTPDNSORM+WCTTableCoding.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		2E2D861A8AA72FE5C8E203F0904690DE /* aes.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1CAADFEC9464B7247736FE047EB5F0E4 /* aes.mm */; };
 		3372BC3C0A92AB48CC496F5B148A5C2D /* AFImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = AFFE28FD03CF9731B29E0362FF4EE819 /* AFImageDownloader.m */; };
-		39D8DF9E5ABEAF251F93E78D67ECB040 /* MSDKHttpDNS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 693CE794132353A5CC0B1AF5AFF694D8 /* MSDKHttpDNS-dummy.m */; };
-		3C849C96A433BF45697CB7F7A6D8A06D /* HttpsDnsResolver.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA036A74CEB28E38842EB36E6EB89A6 /* HttpsDnsResolver.m */; };
-		421D66154320DD76383316B299F1184C /* MSDKDnsInfoTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F18E3CDF1DADD820C02583C9F886C1B /* MSDKDnsInfoTool.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		42CC9F9BB65C8B21A9A3DA6A782E55D3 /* MSDKDnsInfoTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 062E0CAEE3335262C62FF018F5A03BC0 /* MSDKDnsInfoTool.m */; };
+		39423D0B2E8C91B6058D28CDBE1EA617 /* MSDKDnsInfoTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D4C25044D7FDC84BEE78FE14BB3DBF2 /* MSDKDnsInfoTool.m */; };
+		42B688222C4D7B964A71E74D255C68E7 /* MSDKDnsService.m in Sources */ = {isa = PBXBuildFile; fileRef = FD53CB9CB33ACAD37D0DE07C92C99B0D /* MSDKDnsService.m */; };
+		4493BB187F4E77689BCA88014904A604 /* MSDKDnsLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D3F76453FC42C5F6679BAF4BF7CF0C /* MSDKDnsLog.m */; };
 		4563374304C6A77B6333EA9C74802F23 /* AFURLRequestSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = FBF1DD48080932968D6535F5EFE9947D /* AFURLRequestSerialization.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		45AFD7E1A7C7EB1BEFE20EEC52B67682 /* MSDKDnsNetworkManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B710AED9715029CD694BF1CD7DFF5E5 /* MSDKDnsNetworkManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		46C5A55B85ACECAADD3F6EE9C2C0F894 /* HTTPDNSORM.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EE2AF87C969F4E3B972420B3C2109D1 /* HTTPDNSORM.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		4A6E28726403D314E474B41C5293787A /* MSDKDns.h in Headers */ = {isa = PBXBuildFile; fileRef = A11B8BD8E64517F31D898520E425FFC3 /* MSDKDns.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		4A9A2A206D43EF2ABA87D2FE02A1CC60 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FD7F44E15B228E6770630B9494C06F /* AFHTTPSessionManager.m */; };
 		4BB2F998149A4575929D3BE15322FEB7 /* AFAutoPurgingImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 14A5AD7590FC85044B4F35912B5E985C /* AFAutoPurgingImageCache.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		53C6655A3EE580A561A822CF00B34590 /* MSDKDnsLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 159E124A293C536844C2DF420811341F /* MSDKDnsLog.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		4BE8E69ADDDA5D427F7922E343FF7660 /* MSDKDnsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E5D53F184F70D055181E00D451BA64 /* MSDKDnsManager.m */; };
+		4D31CFEC83F5D15A62F96AB905478FF9 /* MSDKDnsTCPSpeedTester.h in Headers */ = {isa = PBXBuildFile; fileRef = 05514928B7AE7A2A0105E3789AB5574E /* MSDKDnsTCPSpeedTester.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		4F7B4F2FD716D758EABA9D9DEC32FC32 /* MSDKDnsService.h in Headers */ = {isa = PBXBuildFile; fileRef = 66EAC50B4C9A61BBA0E9789453330622 /* MSDKDnsService.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		5478E1576B0C29AE613BA5B653D8D129 /* WKWebView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 35DD48A5ED9ED73B8DFB5220735FDFBA /* WKWebView+AFNetworking.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		5A550239BE2A6DEE0489549981F0FD99 /* MSDKDnsSpeedTester.h in Headers */ = {isa = PBXBuildFile; fileRef = E32846DD63EFCF1907721E2A7225D18F /* MSDKDnsSpeedTester.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		548740325960C7AC2A6BEDD3D926C315 /* LocalDnsResolver.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C70E030D1B373C8A61FE36C88E74F91 /* LocalDnsResolver.m */; };
+		5DFEA8A685CD920847E0612E3E303928 /* MSDKDnsInfoTool.h in Headers */ = {isa = PBXBuildFile; fileRef = E9C2DF52CAFC513A4E2EBF632CA4A83B /* MSDKDnsInfoTool.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		5F32AAC445579D22F2814F64021255EE /* UIImageView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B93FFCFCFD816B3DE4A403338B1FDFC /* UIImageView+AFNetworking.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		61A7D87BBED2E25A2C2654383830288A /* UIButton+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4977CDA2A22FB2F2360D19DF35404E6F /* UIButton+AFNetworking.m */; };
+		6404C122EF16120ABDE8806395408C77 /* MSDKDnsReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A6A2C4C4B536C301BA5F4BE42287A7 /* MSDKDnsReachability.m */; };
+		658C67113BA354347B3C648ED4537046 /* MSDKDnsNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A64C87705EB5E4C3977EB6954D326F5 /* MSDKDnsNetworkManager.m */; };
 		669ED65374FA6566D6678CA514B85ABE /* AFCompatibilityMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 332CAE3D1B7CA582D78F6EC1CFA81EB5 /* AFCompatibilityMacros.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		69F117D8EEA40361E2EED6CF7626E9D5 /* AFAutoPurgingImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 21AAD85A1D0E0D27A0C40223719187D6 /* AFAutoPurgingImageCache.m */; };
-		6A76A56C06F40101EB13C7A5F5F9352D /* MSDKDnsDB.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8C2948100ACF59A45FA4278CA138400F /* MSDKDnsDB.cpp */; };
+		6B5F86FE1642A719BE40819C5757BC74 /* msdkdns_local_ip_stack.h in Headers */ = {isa = PBXBuildFile; fileRef = B992EC1AC47EA586BB6FE885039CDE95 /* msdkdns_local_ip_stack.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		7243AE03B4B6C27B99CEE875AC9DC601 /* MSDKDnsHttpMessageTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D7A3F3DA9C0083A2ABCAF49D858FF2A /* MSDKDnsHttpMessageTools.m */; };
 		743C79425F8BC9AF5CD616590D186F54 /* UIRefreshControl+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = D7E87CC0942E1DD203A1A4306FD15C18 /* UIRefreshControl+AFNetworking.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		79EBBDD4BD9FFF541D6A41F5FF8BD60F /* MSDKDns.h in Headers */ = {isa = PBXBuildFile; fileRef = EDA5D35BEE467ED7C05390A8E3A6BF1E /* MSDKDns.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		7C9729F038070230687264DB1CA3DB5B /* MSDKDnsTCPSpeedTester.h in Headers */ = {isa = PBXBuildFile; fileRef = A8B4A3C3078FF34DAA394A65E08F25AB /* MSDKDnsTCPSpeedTester.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		88E58677302E87F032CB1FF78BA6633F /* MSDKDnsDB.h in Headers */ = {isa = PBXBuildFile; fileRef = AB5352D1066739CB302AC01FAC3B4171 /* MSDKDnsDB.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		88CA3E957AA8AACA06C3FA078EA41788 /* MSDKDnsParamsManager.h in Headers */ = {isa = PBXBuildFile; fileRef = DE0C2C41D4597E45F3073F847D11CEAD /* MSDKDnsParamsManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		8969E11AE8DBFA5FCD748224BD92388D /* AFNetworking-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C28135DCBE71497BB52CE3CF8A1E536 /* AFNetworking-dummy.m */; };
-		8AB3F30D16507A2EE66865EBF5DFA87C /* MSDKDnsPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = B7BF1719ECC0C957CEBA5D25202B5C77 /* MSDKDnsPrivate.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		8BB626B23DE066E93062FE595BED734E /* MSDKDnsHttpMessageTools.h in Headers */ = {isa = PBXBuildFile; fileRef = D18D598CA104AB45904D387A2462C986 /* MSDKDnsHttpMessageTools.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		8D7DE53F26C0F9A37C12F87F1EF50ABB /* AFHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 49E9CE68E1AD6C329D0E7EBC90D71B94 /* AFHTTPSessionManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		91AFCE0FD8CE01ABE107C53D996A02F0 /* HTTPDNSORM.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF6D3264C1CB9A825A00D7739DFE07E /* HTTPDNSORM.m */; };
+		95E2A1E58E0F46CA1437FF2B9850FA5F /* aes.h in Headers */ = {isa = PBXBuildFile; fileRef = FED4E40B8D1E409B13007B164250C4BC /* aes.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		993CEE15AED3BD8D08DA2BCD78218EB0 /* UIButton+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = B80424CF8DEF643CDCB20AD0CFF2491A /* UIButton+AFNetworking.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		A080C37FA4CFBFCE0E5B605689CEA8C3 /* AttaReport.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4E58BD36B9DBEAA4F7BDF86D557F9F /* AttaReport.m */; };
+		9B591A70301BD8880BAB89F36494ED66 /* LocalDnsResolver.h in Headers */ = {isa = PBXBuildFile; fileRef = 09D44015434C5525D27415E5CC9D653B /* LocalDnsResolver.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		9B8F809CC7145DBB7448ABF6273C6E55 /* MSDKDnsNetworkManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 5EFEC9AC4C87B10B8F7BAF113CA15082 /* MSDKDnsNetworkManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		9D1D190F7C7319295E8516C37440733F /* MSDKDns.mm in Sources */ = {isa = PBXBuildFile; fileRef = 87A9B22A1C003AA4AAE2E019A19ED309 /* MSDKDns.mm */; };
 		A2FC39AC108767F51D41C869577A11CC /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F75B6A57AD7263ADAE2575DC6FA2DB /* AFNetworkActivityIndicatorManager.m */; };
-		A3126A46364AFADF7472293D7E2ECD59 /* HTTPDNSORM.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4F509F36409BEB1B3B3D440011125C /* HTTPDNSORM.m */; };
-		A4D91AA56A9B74912FD51832B97F9979 /* LocalDnsResolver.m in Sources */ = {isa = PBXBuildFile; fileRef = C66C2223D27A96AC28D94035BC1979E6 /* LocalDnsResolver.m */; };
 		A523D140C418A1E3C65471385B9D13B4 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E958D52C8BA2EEC2C46610CA58B78 /* UIProgressView+AFNetworking.m */; };
-		AAF847FA29C23F0000403892 /* aes.h in Headers */ = {isa = PBXBuildFile; fileRef = 046CD02FAD2B558A3DA06E40F8B9AF51 /* aes.h */; };
-		AAF847FB29C23F0500403892 /* aes.mm in Sources */ = {isa = PBXBuildFile; fileRef = B46A762AD25B69D861854EA1471EF1C0 /* aes.mm */; };
-		AF4ED356C9EAA2937CE0193C024E4036 /* MSDKDnsNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DA5106047C5793ADE971A6DD2E70851 /* MSDKDnsNetworkManager.m */; };
+		A7338367445D5433D4C17B183281711E /* MSDKDnsTCPSpeedTester.m in Sources */ = {isa = PBXBuildFile; fileRef = 8510896610A40B21692A96609AEA35FD /* MSDKDnsTCPSpeedTester.m */; };
+		AB241ABBAB8F110664F7926CE479810C /* msdkdns_local_ip_stack.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4C57A25A3A149248FF6DF333A191C38C /* msdkdns_local_ip_stack.mm */; };
 		B0E2026D784490A05EBC47E434700390 /* Pods-DNSDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CD1EB7D9E47B1048E5014ED93C25A0 /* Pods-DNSDemo-dummy.m */; };
-		B872BC9AD6A6DC22A4657450B5522A0E /* MSDKDnsParamsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E6FF79756F5C22E043108B1D99F800 /* MSDKDnsParamsManager.m */; };
+		B5F096676376E7B505BB55F99D39A2AA /* MSDKDnsManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F1FE75786F82B03810994084C0B5B2A /* MSDKDnsManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B73ED2095319705BAAE772B404B8F180 /* MSDKDnsReachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 4697BE63F0A0F4D842A49CD4E65E73CF /* MSDKDnsReachability.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		C3BCFCC0A79A4CBCF4BC5642BC2332AC /* AFImageDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = C977B44012B152508C5C742BC1FCB675 /* AFImageDownloader.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		C5C1F52B6929EEF159050D1AAC6614D7 /* MSDKDnsManager.h in Headers */ = {isa = PBXBuildFile; fileRef = EE9517C55939DEC0BE38ACF10FDCC8A4 /* MSDKDnsManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		C7B7F2C180369B02E6099E0D5EA902FA /* AFSecurityPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = 301933613795F65E1DA9CDC535189B0C /* AFSecurityPolicy.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		C8C03CBEE75CB7F863827F25BF32DA8B /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D70E6B3241DBAE4FF1DE67D65F8C4A8 /* AFNetworkReachabilityManager.m */; };
-		CB89FE9F9DAA27DFA74F5E5246E23966 /* MSDKDns.mm in Sources */ = {isa = PBXBuildFile; fileRef = B46E0AA6A53AE9F28520FEEE34EB1954 /* MSDKDns.mm */; };
-		D1A35143DAC8B89AE26F339EBFF24A63 /* MSDKDnsLog.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6254AD3C993AF978E437699DE6951D /* MSDKDnsLog.m */; };
+		CB131D7237148ECE47D4A444FC4D282B /* HttpsDnsResolver.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CF76E3C6A027B4B9E0669533C94040 /* HttpsDnsResolver.m */; };
 		D4E3B700E370497FD0709F2FAD02B7B5 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 560D676A28F93FC7CC8F9BC53ED279F5 /* UIImageView+AFNetworking.m */; };
 		D4F20FBCD717BC410970D70353BFB3C9 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CCD2FBCA5681FD6FA9A170FE61DBF2 /* AFURLResponseSerialization.m */; };
-		D5D04AC6DEAE0653A2F2EF45FA7B012F /* HttpsDnsResolver.h in Headers */ = {isa = PBXBuildFile; fileRef = 9449E17EE424A5327F43689061936207 /* HttpsDnsResolver.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		D6254425C515D7FB2FEDFC088B252DB7 /* msdkdns_local_ip_stack.h in Headers */ = {isa = PBXBuildFile; fileRef = 3232A59B2233EC09936AFA2B1A08BF0F /* msdkdns_local_ip_stack.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		D6DB38CC07D6CAC033B3587DD8B7D08A /* MSDKDnsParamsManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 54C895F3CE46A825BC81517BC8A0C6DD /* MSDKDnsParamsManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		DE6276C17D6A122245F9D476BBBD101A /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = F31B24708A31C79968BBAF498C13D873 /* AFSecurityPolicy.m */; };
-		E00F78C478FEB0D3B6F0F1EBD4D7B6FE /* MSDKDnsTCPSpeedTester.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A84F6EDBCCE6DD047D569EC8DAF904 /* MSDKDnsTCPSpeedTester.m */; };
-		E146C4787A031B45959B0B308FA5324F /* MSDKDnsResolver.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A00BD99CB2FC7E9C8CF2034ABDE257 /* MSDKDnsResolver.m */; };
+		E13FC245C936B37B149C4F19D927E658 /* MSDKDnsPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 48B35DF0AF8F803E4FC4FE5814D8CF4C /* MSDKDnsPrivate.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		E1B7A75C7DC9C301B7E1D4DCBEA59F43 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C2B1B8A73AB1B8CFC3B9CB439A6935 /* UIRefreshControl+AFNetworking.m */; };
-		E4E1581FF8C587327A4B8DB785DD6E0E /* MSDKDnsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F62F7D724FAAA6593D6B78DC6D16A6D3 /* MSDKDnsManager.m */; };
-		E4F34289D24F0B57A2107DDC3827A97A /* MSDKDnsHttpMessageTools.m in Sources */ = {isa = PBXBuildFile; fileRef = ABED5599CC81F6C8E86CD2D9114ABAB7 /* MSDKDnsHttpMessageTools.m */; };
+		E25D7AE0BFD755C0B9B3F9CF25ED23BF /* MSDKDnsParamsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E93276D12CAF14C218F1B2135209D0 /* MSDKDnsParamsManager.m */; };
+		E355080CFD3597E0FB833322A524BE98 /* MSDKDnsLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 264D2B6839D897021357E50FCCD2FDC9 /* MSDKDnsLog.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		E9671718C1F77C0447604AD997421145 /* UIActivityIndicatorView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = FE0C31A933499A49E2F0881F26B4B726 /* UIActivityIndicatorView+AFNetworking.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		EBDDB160E30EF95017310F71D5C4847F /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E868AED79C53BFC32C144D98C62C8C /* AFURLRequestSerialization.m */; };
-		F00D066CDBFE615F2A61BCFE4EE47C1F /* LocalDnsResolver.h in Headers */ = {isa = PBXBuildFile; fileRef = D7A10922D87358C7535C032A683AD425 /* LocalDnsResolver.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F147EBF8E07B276A0C7BF7B732A6E4F2 /* MSDKDnsResolver.h in Headers */ = {isa = PBXBuildFile; fileRef = E43F9CAC5C21F795950501AA0D7EBB0A /* MSDKDnsResolver.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F454F51D29731B25D9CBC1FA1D3F8FFB /* MSDKDnsService.m in Sources */ = {isa = PBXBuildFile; fileRef = BF376F788C6F96BEE3D2606D6E7649CF /* MSDKDnsService.m */; };
+		EF7DD24A6C6B4687B84D403A508DDD00 /* AttaReport.m in Sources */ = {isa = PBXBuildFile; fileRef = B8AA7B979104FF1097CCFF079496E4FD /* AttaReport.m */; };
 		F5B8C82F303FAEAC8AA9A70EB5074BD7 /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4627F3193F42B84A50F31F33615B36C9 /* UIActivityIndicatorView+AFNetworking.m */; };
-		FDBE9E1855A338772F0B282A505CAB2F /* MSDKDnsReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C571C98BE946B00E7BE5BCE5A7C6207 /* MSDKDnsReachability.m */; };
+		F937D5642B40BB29C17B021613E3E37A /* MSDKDnsHttpMessageTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 5399123F62CC71A56DCA3E9C76C02185 /* MSDKDnsHttpMessageTools.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		FFFEB2E767CE64226701C951E0E180D0 /* HTTPDNSORM.h in Headers */ = {isa = PBXBuildFile; fileRef = 501185D48B40C0DE4BAB11EC8E9544FD /* HTTPDNSORM.h */; settings = {ATTRIBUTES = (Project, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		F23FBE7BA614F2DAF150E588BAAB90EC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0130B3724283586C0E9D2A112D4F2AA1;
-			remoteInfo = AFNetworking;
-		};
-		F6C01FE8AF1CBB2AE6531C208DB0230A /* PBXContainerItemProxy */ = {
+		86D589F0386267BB20F511974AB530DC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 06F5E61C1F2FAE1043D614AC1E782DDB;
 			remoteInfo = MSDKHttpDNS;
 		};
+		A4FA06B06DFE972B099F58B81EB5DB6A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0130B3724283586C0E9D2A112D4F2AA1;
+			remoteInfo = AFNetworking;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0188D344CD3EDB28D9E56235269DBC91 /* AFNetworking-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AFNetworking-prefix.pch"; sourceTree = "<group>"; };
-		046CD02FAD2B558A3DA06E40F8B9AF51 /* aes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = aes.h; path = MSDKHttpDNS/Classes/aes.h; sourceTree = "<group>"; };
-		062E0CAEE3335262C62FF018F5A03BC0 /* MSDKDnsInfoTool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MSDKDnsInfoTool.m; sourceTree = "<group>"; };
+		05514928B7AE7A2A0105E3789AB5574E /* MSDKDnsTCPSpeedTester.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MSDKDnsTCPSpeedTester.h; sourceTree = "<group>"; };
+		09D44015434C5525D27415E5CC9D653B /* LocalDnsResolver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = LocalDnsResolver.h; sourceTree = "<group>"; };
+		0BE0F024AF97285E530DF040AE413509 /* MSDKHttpDNS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MSDKHttpDNS.release.xcconfig; sourceTree = "<group>"; };
 		0F4198AB4949AE1A20112A82574433F3 /* Pods-DNSDemo */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "Pods-DNSDemo"; path = "libPods-DNSDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		14A5AD7590FC85044B4F35912B5E985C /* AFAutoPurgingImageCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFAutoPurgingImageCache.h; path = "UIKit+AFNetworking/AFAutoPurgingImageCache.h"; sourceTree = "<group>"; };
-		159E124A293C536844C2DF420811341F /* MSDKDnsLog.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MSDKDnsLog.h; sourceTree = "<group>"; };
 		1974F82D0F1E552ADDFF6C0BC912FA06 /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkActivityIndicatorManager.h; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.h"; sourceTree = "<group>"; };
 		1C5CA54C022E4555E76F1871A9FE2BC3 /* AFNetworking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AFNetworking.debug.xcconfig; sourceTree = "<group>"; };
+		1CAADFEC9464B7247736FE047EB5F0E4 /* aes.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = aes.mm; path = MSDKHttpDNS/Classes/aes.mm; sourceTree = "<group>"; };
+		1CF6D3264C1CB9A825A00D7739DFE07E /* HTTPDNSORM.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HTTPDNSORM.m; sourceTree = "<group>"; };
+		1F1FE75786F82B03810994084C0B5B2A /* MSDKDnsManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MSDKDnsManager.h; sourceTree = "<group>"; };
 		1F208B3FFC53C4FD68715730883E7642 /* AFNetworking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AFNetworking.release.xcconfig; sourceTree = "<group>"; };
+		1F5124E3719ECC31A45FAACB6A486128 /* MSDKDnsDB.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MSDKDnsDB.h; sourceTree = "<group>"; };
 		21AAD85A1D0E0D27A0C40223719187D6 /* AFAutoPurgingImageCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFAutoPurgingImageCache.m; path = "UIKit+AFNetworking/AFAutoPurgingImageCache.m"; sourceTree = "<group>"; };
+		264D2B6839D897021357E50FCCD2FDC9 /* MSDKDnsLog.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MSDKDnsLog.h; sourceTree = "<group>"; };
 		28C2B1B8A73AB1B8CFC3B9CB439A6935 /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIRefreshControl+AFNetworking.m"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
 		28FD7F44E15B228E6770630B9494C06F /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPSessionManager.m; path = AFNetworking/AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		2996DF988151945047DC0CB98BFC42A6 /* HttpsDnsResolver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HttpsDnsResolver.h; sourceTree = "<group>"; };
 		29CD1EB7D9E47B1048E5014ED93C25A0 /* Pods-DNSDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DNSDemo-dummy.m"; sourceTree = "<group>"; };
-		2AC91E6150DB06D8103824DDD64A373F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		2C571C98BE946B00E7BE5BCE5A7C6207 /* MSDKDnsReachability.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MSDKDnsReachability.m; sourceTree = "<group>"; };
 		301933613795F65E1DA9CDC535189B0C /* AFSecurityPolicy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFSecurityPolicy.h; path = AFNetworking/AFSecurityPolicy.h; sourceTree = "<group>"; };
 		3185C8B3303FD3FBD7ABBAAE0BE70C64 /* AFURLSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLSessionManager.h; path = AFNetworking/AFURLSessionManager.h; sourceTree = "<group>"; };
-		31A00BD99CB2FC7E9C8CF2034ABDE257 /* MSDKDnsResolver.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MSDKDnsResolver.m; sourceTree = "<group>"; };
-		3232A59B2233EC09936AFA2B1A08BF0F /* msdkdns_local_ip_stack.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = msdkdns_local_ip_stack.h; sourceTree = "<group>"; };
-		32D514B4D72CA1AD7BE5EF670D2B40C5 /* MSDKDnsService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MSDKDnsService.h; path = MSDKHttpDNS/Classes/MSDKDnsService.h; sourceTree = "<group>"; };
 		332CAE3D1B7CA582D78F6EC1CFA81EB5 /* AFCompatibilityMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFCompatibilityMacros.h; path = AFNetworking/AFCompatibilityMacros.h; sourceTree = "<group>"; };
 		34F75B6A57AD7263ADAE2575DC6FA2DB /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkActivityIndicatorManager.m; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.m"; sourceTree = "<group>"; };
 		35DD48A5ED9ED73B8DFB5220735FDFBA /* WKWebView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "WKWebView+AFNetworking.h"; path = "UIKit+AFNetworking/WKWebView+AFNetworking.h"; sourceTree = "<group>"; };
-		4513C938380C6AB029D5F8031C5282D5 /* msdkdns_local_ip_stack.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; path = msdkdns_local_ip_stack.mm; sourceTree = "<group>"; };
+		3C70E030D1B373C8A61FE36C88E74F91 /* LocalDnsResolver.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = LocalDnsResolver.m; sourceTree = "<group>"; };
 		4627F3193F42B84A50F31F33615B36C9 /* UIActivityIndicatorView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIActivityIndicatorView+AFNetworking.m"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.m"; sourceTree = "<group>"; };
+		4697BE63F0A0F4D842A49CD4E65E73CF /* MSDKDnsReachability.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MSDKDnsReachability.h; sourceTree = "<group>"; };
+		46A6A2C4C4B536C301BA5F4BE42287A7 /* MSDKDnsReachability.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MSDKDnsReachability.m; sourceTree = "<group>"; };
+		486589990A3EC6C3E3B87BA8D10C6BA0 /* MSDKHttpDNS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MSDKHttpDNS.debug.xcconfig; sourceTree = "<group>"; };
+		48B35DF0AF8F803E4FC4FE5814D8CF4C /* MSDKDnsPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MSDKDnsPrivate.h; path = MSDKHttpDNS/Classes/MSDKDnsPrivate.h; sourceTree = "<group>"; };
 		4977CDA2A22FB2F2360D19DF35404E6F /* UIButton+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+AFNetworking.m"; path = "UIKit+AFNetworking/UIButton+AFNetworking.m"; sourceTree = "<group>"; };
 		49E9CE68E1AD6C329D0E7EBC90D71B94 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPSessionManager.h; path = AFNetworking/AFHTTPSessionManager.h; sourceTree = "<group>"; };
 		49F9E8DD0D8E81032405BBBFCCC0179D /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkReachabilityManager.h; path = AFNetworking/AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
-		4B710AED9715029CD694BF1CD7DFF5E5 /* MSDKDnsNetworkManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MSDKDnsNetworkManager.h; sourceTree = "<group>"; };
+		4C57A25A3A149248FF6DF333A191C38C /* msdkdns_local_ip_stack.mm */ = {isa = PBXFileReference; includeInIndex = 1; path = msdkdns_local_ip_stack.mm; sourceTree = "<group>"; };
 		4C6E958D52C8BA2EEC2C46610CA58B78 /* UIProgressView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIProgressView+AFNetworking.m"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.m"; sourceTree = "<group>"; };
-		54C895F3CE46A825BC81517BC8A0C6DD /* MSDKDnsParamsManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MSDKDnsParamsManager.h; sourceTree = "<group>"; };
+		4C7825174A7C2065FCDCB7FA242FEA9D /* MSDKDnsResolver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MSDKDnsResolver.h; sourceTree = "<group>"; };
+		4D7A3F3DA9C0083A2ABCAF49D858FF2A /* MSDKDnsHttpMessageTools.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MSDKDnsHttpMessageTools.m; path = MSDKHttpDNS/Classes/MSDKDnsHttpMessageTools.m; sourceTree = "<group>"; };
+		501185D48B40C0DE4BAB11EC8E9544FD /* HTTPDNSORM.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HTTPDNSORM.h; sourceTree = "<group>"; };
+		5399123F62CC71A56DCA3E9C76C02185 /* MSDKDnsHttpMessageTools.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MSDKDnsHttpMessageTools.h; path = MSDKHttpDNS/Classes/MSDKDnsHttpMessageTools.h; sourceTree = "<group>"; };
 		560D676A28F93FC7CC8F9BC53ED279F5 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+AFNetworking.m"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		58CCD2FBCA5681FD6FA9A170FE61DBF2 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLResponseSerialization.m; path = AFNetworking/AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		5A5ED34F076B14106D1005B927C2486E /* MSDKDnsSpeedTester.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MSDKDnsSpeedTester.h; sourceTree = "<group>"; };
+		5A9B022C901F97F810CE763DC5F0D7EC /* HTTPDNSORM+WCTTableCoding.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HTTPDNSORM+WCTTableCoding.h"; sourceTree = "<group>"; };
 		5C28135DCBE71497BB52CE3CF8A1E536 /* AFNetworking-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AFNetworking-dummy.m"; sourceTree = "<group>"; };
 		5EDAFEDB5C3A086D44D49E2514307C3E /* AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworking.h; path = AFNetworking/AFNetworking.h; sourceTree = "<group>"; };
-		5F18E3CDF1DADD820C02583C9F886C1B /* MSDKDnsInfoTool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MSDKDnsInfoTool.h; sourceTree = "<group>"; };
+		5EFEC9AC4C87B10B8F7BAF113CA15082 /* MSDKDnsNetworkManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MSDKDnsNetworkManager.h; sourceTree = "<group>"; };
 		64C9C4403D49A8F0D4BEDF84EBAE5291 /* AFURLSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLSessionManager.m; path = AFNetworking/AFURLSessionManager.m; sourceTree = "<group>"; };
-		693CE794132353A5CC0B1AF5AFF694D8 /* MSDKHttpDNS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MSDKHttpDNS-dummy.m"; sourceTree = "<group>"; };
+		66EAC50B4C9A61BBA0E9789453330622 /* MSDKDnsService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MSDKDnsService.h; path = MSDKHttpDNS/Classes/MSDKDnsService.h; sourceTree = "<group>"; };
 		6B93FFCFCFD816B3DE4A403338B1FDFC /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+AFNetworking.h"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
-		6DA5106047C5793ADE971A6DD2E70851 /* MSDKDnsNetworkManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MSDKDnsNetworkManager.m; sourceTree = "<group>"; };
+		6D4C25044D7FDC84BEE78FE14BB3DBF2 /* MSDKDnsInfoTool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MSDKDnsInfoTool.m; sourceTree = "<group>"; };
+		733429E1CCF08D811AF4F16FFCEB3278 /* AttaReport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AttaReport.h; sourceTree = "<group>"; };
+		74DD525E602643E495EF1458A2935369 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		75D3F76453FC42C5F6679BAF4BF7CF0C /* MSDKDnsLog.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MSDKDnsLog.m; sourceTree = "<group>"; };
 		75DECD20D16A04BA8229FE1A84D541BD /* Pods-DNSDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DNSDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
-		7A41F5510EC6EC8B611C98A72F13ED71 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		7EE2AF87C969F4E3B972420B3C2109D1 /* HTTPDNSORM.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HTTPDNSORM.h; sourceTree = "<group>"; };
-		8B4473B03A523C552B38E8017A055DAB /* AttaReport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AttaReport.h; sourceTree = "<group>"; };
-		8C2948100ACF59A45FA4278CA138400F /* MSDKDnsDB.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; path = MSDKDnsDB.cpp; sourceTree = "<group>"; };
+		8510896610A40B21692A96609AEA35FD /* MSDKDnsTCPSpeedTester.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MSDKDnsTCPSpeedTester.m; sourceTree = "<group>"; };
+		87A9B22A1C003AA4AAE2E019A19ED309 /* MSDKDns.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = MSDKDns.mm; path = MSDKHttpDNS/Classes/MSDKDns.mm; sourceTree = "<group>"; };
 		8C66A37A59100AC7B70357D9143D803A /* UIKit+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIKit+AFNetworking.h"; path = "UIKit+AFNetworking/UIKit+AFNetworking.h"; sourceTree = "<group>"; };
-		8CA036A74CEB28E38842EB36E6EB89A6 /* HttpsDnsResolver.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HttpsDnsResolver.m; sourceTree = "<group>"; };
-		9449E17EE424A5327F43689061936207 /* HttpsDnsResolver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HttpsDnsResolver.h; sourceTree = "<group>"; };
+		8DB6755508C16E661EBC57F5C13733A5 /* MSDKDnsResolver.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MSDKDnsResolver.m; sourceTree = "<group>"; };
+		938A14C46C55B78F642196BEB82C6FCE /* MSDKHttpDNS.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = MSDKHttpDNS.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9A64C87705EB5E4C3977EB6954D326F5 /* MSDKDnsNetworkManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MSDKDnsNetworkManager.m; sourceTree = "<group>"; };
 		9D70E6B3241DBAE4FF1DE67D65F8C4A8 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkReachabilityManager.m; path = AFNetworking/AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9EB8941118CC63E044E536130C1E925B /* WKWebView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "WKWebView+AFNetworking.m"; path = "UIKit+AFNetworking/WKWebView+AFNetworking.m"; sourceTree = "<group>"; };
-		9F1E0B8E5D764597A6F0ECE22C535780 /* MSDKHttpDNS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MSDKHttpDNS.release.xcconfig; sourceTree = "<group>"; };
+		A11B8BD8E64517F31D898520E425FFC3 /* MSDKDns.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MSDKDns.h; path = MSDKHttpDNS/Classes/MSDKDns.h; sourceTree = "<group>"; };
 		A363BC49DC18F1B5969BBFCD38D9CF30 /* Pods-DNSDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DNSDemo.release.xcconfig"; sourceTree = "<group>"; };
 		A39F92AC2F967465209571235EE89469 /* UIProgressView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIProgressView+AFNetworking.h"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.h"; sourceTree = "<group>"; };
-		A44C509B7102206875C4FD95B7373CFF /* MSDKHttpDNS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MSDKHttpDNS.debug.xcconfig; sourceTree = "<group>"; };
 		A4FA15D44DF6BAC7550EDEED10862AA3 /* AFNetworking */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = AFNetworking; path = libAFNetworking.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		A8B4A3C3078FF34DAA394A65E08F25AB /* MSDKDnsTCPSpeedTester.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MSDKDnsTCPSpeedTester.h; sourceTree = "<group>"; };
-		A9A84F6EDBCCE6DD047D569EC8DAF904 /* MSDKDnsTCPSpeedTester.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MSDKDnsTCPSpeedTester.m; sourceTree = "<group>"; };
-		AB5352D1066739CB302AC01FAC3B4171 /* MSDKDnsDB.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MSDKDnsDB.h; sourceTree = "<group>"; };
-		ABED5599CC81F6C8E86CD2D9114ABAB7 /* MSDKDnsHttpMessageTools.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MSDKDnsHttpMessageTools.m; path = MSDKHttpDNS/Classes/MSDKDnsHttpMessageTools.m; sourceTree = "<group>"; };
 		AFFE28FD03CF9731B29E0362FF4EE819 /* AFImageDownloader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFImageDownloader.m; path = "UIKit+AFNetworking/AFImageDownloader.m"; sourceTree = "<group>"; };
 		B2E3DD40450BEBDBDAFBDAC61423775B /* Pods-DNSDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DNSDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		B46A762AD25B69D861854EA1471EF1C0 /* aes.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = aes.mm; path = MSDKHttpDNS/Classes/aes.mm; sourceTree = "<group>"; };
-		B46E0AA6A53AE9F28520FEEE34EB1954 /* MSDKDns.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = MSDKDns.mm; path = MSDKHttpDNS/Classes/MSDKDns.mm; sourceTree = "<group>"; };
-		B7BF1719ECC0C957CEBA5D25202B5C77 /* MSDKDnsPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MSDKDnsPrivate.h; path = MSDKHttpDNS/Classes/MSDKDnsPrivate.h; sourceTree = "<group>"; };
+		B34041A61E598D7551A1D97AF5F75524 /* MSDKHttpDNS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MSDKHttpDNS-prefix.pch"; sourceTree = "<group>"; };
 		B80424CF8DEF643CDCB20AD0CFF2491A /* UIButton+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+AFNetworking.h"; path = "UIKit+AFNetworking/UIButton+AFNetworking.h"; sourceTree = "<group>"; };
-		BB4E58BD36B9DBEAA4F7BDF86D557F9F /* AttaReport.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = AttaReport.m; sourceTree = "<group>"; };
-		BEF1320A0E45937E79CFED5DA3A9D53E /* MSDKHttpDNS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MSDKHttpDNS-prefix.pch"; sourceTree = "<group>"; };
-		BF376F788C6F96BEE3D2606D6E7649CF /* MSDKDnsService.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MSDKDnsService.m; path = MSDKHttpDNS/Classes/MSDKDnsService.m; sourceTree = "<group>"; };
-		C66C2223D27A96AC28D94035BC1979E6 /* LocalDnsResolver.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = LocalDnsResolver.m; sourceTree = "<group>"; };
+		B8AA7B979104FF1097CCFF079496E4FD /* AttaReport.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = AttaReport.m; sourceTree = "<group>"; };
+		B992EC1AC47EA586BB6FE885039CDE95 /* msdkdns_local_ip_stack.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = msdkdns_local_ip_stack.h; sourceTree = "<group>"; };
+		C0E5D53F184F70D055181E00D451BA64 /* MSDKDnsManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MSDKDnsManager.m; sourceTree = "<group>"; };
+		C78221315710EBF5D86F72F849D5E544 /* MSDKHttpDNS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MSDKHttpDNS-dummy.m"; sourceTree = "<group>"; };
 		C7E868AED79C53BFC32C144D98C62C8C /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLRequestSerialization.m; path = AFNetworking/AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		C7E93276D12CAF14C218F1B2135209D0 /* MSDKDnsParamsManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MSDKDnsParamsManager.m; sourceTree = "<group>"; };
 		C977B44012B152508C5C742BC1FCB675 /* AFImageDownloader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFImageDownloader.h; path = "UIKit+AFNetworking/AFImageDownloader.h"; sourceTree = "<group>"; };
-		CC6254AD3C993AF978E437699DE6951D /* MSDKDnsLog.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MSDKDnsLog.m; sourceTree = "<group>"; };
-		D0E6FF79756F5C22E043108B1D99F800 /* MSDKDnsParamsManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MSDKDnsParamsManager.m; sourceTree = "<group>"; };
-		D18D598CA104AB45904D387A2462C986 /* MSDKDnsHttpMessageTools.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MSDKDnsHttpMessageTools.h; path = MSDKHttpDNS/Classes/MSDKDnsHttpMessageTools.h; sourceTree = "<group>"; };
 		D26277F2B724F784873EAEDFBE08DF2A /* MSDKHttpDNS */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = MSDKHttpDNS; path = libMSDKHttpDNS.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		D7A10922D87358C7535C032A683AD425 /* LocalDnsResolver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = LocalDnsResolver.h; sourceTree = "<group>"; };
 		D7E87CC0942E1DD203A1A4306FD15C18 /* UIRefreshControl+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIRefreshControl+AFNetworking.h"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.h"; sourceTree = "<group>"; };
-		D8BD3732D601AC1C5AB7AEF2B4A7286A /* MSDKDnsReachability.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MSDKDnsReachability.h; sourceTree = "<group>"; };
-		E32846DD63EFCF1907721E2A7225D18F /* MSDKDnsSpeedTester.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MSDKDnsSpeedTester.h; sourceTree = "<group>"; };
-		E43F9CAC5C21F795950501AA0D7EBB0A /* MSDKDnsResolver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MSDKDnsResolver.h; sourceTree = "<group>"; };
-		E46131A0F95591D8306D3E0A57CA6996 /* MSDKHttpDNS.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = MSDKHttpDNS.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		EDA5D35BEE467ED7C05390A8E3A6BF1E /* MSDKDns.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MSDKDns.h; path = MSDKHttpDNS/Classes/MSDKDns.h; sourceTree = "<group>"; };
-		EE9517C55939DEC0BE38ACF10FDCC8A4 /* MSDKDnsManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MSDKDnsManager.h; sourceTree = "<group>"; };
+		DE0C2C41D4597E45F3073F847D11CEAD /* MSDKDnsParamsManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MSDKDnsParamsManager.h; sourceTree = "<group>"; };
+		E3CF76E3C6A027B4B9E0669533C94040 /* HttpsDnsResolver.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HttpsDnsResolver.m; sourceTree = "<group>"; };
+		E94EED23A37F0ECEBCD4384ABF744C1B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		E9C2DF52CAFC513A4E2EBF632CA4A83B /* MSDKDnsInfoTool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MSDKDnsInfoTool.h; sourceTree = "<group>"; };
+		ECC94F8AB230A084FB38A771B84AA5E4 /* MSDKDnsDB.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; path = MSDKDnsDB.cpp; sourceTree = "<group>"; };
 		F31B24708A31C79968BBAF498C13D873 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFSecurityPolicy.m; path = AFNetworking/AFSecurityPolicy.m; sourceTree = "<group>"; };
-		F62F7D724FAAA6593D6B78DC6D16A6D3 /* MSDKDnsManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MSDKDnsManager.m; sourceTree = "<group>"; };
 		F7B44CEBA0DD2AD32CD150D7E867CF66 /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLResponseSerialization.h; path = AFNetworking/AFURLResponseSerialization.h; sourceTree = "<group>"; };
 		FAD479A032813D44F38F2666EB459C81 /* Pods-DNSDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DNSDemo-acknowledgements.plist"; sourceTree = "<group>"; };
-		FB4F509F36409BEB1B3B3D440011125C /* HTTPDNSORM.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HTTPDNSORM.m; sourceTree = "<group>"; };
 		FBF1DD48080932968D6535F5EFE9947D /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLRequestSerialization.h; path = AFNetworking/AFURLRequestSerialization.h; sourceTree = "<group>"; };
-		FD5C06F1E89B0729C9A430C8500AACE6 /* HTTPDNSORM+WCTTableCoding.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HTTPDNSORM+WCTTableCoding.h"; sourceTree = "<group>"; };
+		FD53CB9CB33ACAD37D0DE07C92C99B0D /* MSDKDnsService.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MSDKDnsService.m; path = MSDKHttpDNS/Classes/MSDKDnsService.m; sourceTree = "<group>"; };
 		FE0C31A933499A49E2F0881F26B4B726 /* UIActivityIndicatorView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIActivityIndicatorView+AFNetworking.h"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.h"; sourceTree = "<group>"; };
+		FED4E40B8D1E409B13007B164250C4BC /* aes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = aes.h; path = MSDKHttpDNS/Classes/aes.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,14 +230,14 @@
 			name = Security;
 			sourceTree = "<group>";
 		};
-		1B2AC6E57CC3BAEC47AB703706883ABF /* Reporter */ = {
+		1FF8C6FF124D60B9810E4D21D715FD20 /* Reachability */ = {
 			isa = PBXGroup;
 			children = (
-				8B4473B03A523C552B38E8017A055DAB /* AttaReport.h */,
-				BB4E58BD36B9DBEAA4F7BDF86D557F9F /* AttaReport.m */,
+				4697BE63F0A0F4D842A49CD4E65E73CF /* MSDKDnsReachability.h */,
+				46A6A2C4C4B536C301BA5F4BE42287A7 /* MSDKDnsReachability.m */,
 			);
-			name = Reporter;
-			path = MSDKHttpDNS/Classes/Reporter;
+			name = Reachability;
+			path = MSDKHttpDNS/Classes/Reachability;
 			sourceTree = "<group>";
 		};
 		337060ACDD726BBC9BDEEBB0F9B7E7F3 /* Serialization */ = {
@@ -249,16 +249,6 @@
 				58CCD2FBCA5681FD6FA9A170FE61DBF2 /* AFURLResponseSerialization.m */,
 			);
 			name = Serialization;
-			sourceTree = "<group>";
-		};
-		3563344E0CF61F6628C6419BF3C949C6 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				3232A59B2233EC09936AFA2B1A08BF0F /* msdkdns_local_ip_stack.h */,
-				4513C938380C6AB029D5F8031C5282D5 /* msdkdns_local_ip_stack.mm */,
-			);
-			name = Network;
-			path = MSDKHttpDNS/Classes/Network;
 			sourceTree = "<group>";
 		};
 		3862C6E0187A08E1BAA26F6B022AC387 /* Pods-DNSDemo */ = {
@@ -274,28 +264,59 @@
 			path = "Target Support Files/Pods-DNSDemo";
 			sourceTree = "<group>";
 		};
-		57566587EC4B128E0E918495E308AC82 /* CacheManager */ = {
+		497469EB4868D27E6638CBF391B6514C /* CacheManager */ = {
 			isa = PBXGroup;
 			children = (
-				EE9517C55939DEC0BE38ACF10FDCC8A4 /* MSDKDnsManager.h */,
-				F62F7D724FAAA6593D6B78DC6D16A6D3 /* MSDKDnsManager.m */,
-				4B710AED9715029CD694BF1CD7DFF5E5 /* MSDKDnsNetworkManager.h */,
-				6DA5106047C5793ADE971A6DD2E70851 /* MSDKDnsNetworkManager.m */,
-				54C895F3CE46A825BC81517BC8A0C6DD /* MSDKDnsParamsManager.h */,
-				D0E6FF79756F5C22E043108B1D99F800 /* MSDKDnsParamsManager.m */,
+				1F1FE75786F82B03810994084C0B5B2A /* MSDKDnsManager.h */,
+				C0E5D53F184F70D055181E00D451BA64 /* MSDKDnsManager.m */,
+				5EFEC9AC4C87B10B8F7BAF113CA15082 /* MSDKDnsNetworkManager.h */,
+				9A64C87705EB5E4C3977EB6954D326F5 /* MSDKDnsNetworkManager.m */,
+				DE0C2C41D4597E45F3073F847D11CEAD /* MSDKDnsParamsManager.h */,
+				C7E93276D12CAF14C218F1B2135209D0 /* MSDKDnsParamsManager.m */,
 			);
 			name = CacheManager;
 			path = MSDKHttpDNS/Classes/CacheManager;
 			sourceTree = "<group>";
 		};
-		58109B25985E286F503846ADC8E3014C /* Reachability */ = {
+		4B4CA8183B7383CF94D3DABB1063993D /* MSDKHttpDNS */ = {
 			isa = PBXGroup;
 			children = (
-				D8BD3732D601AC1C5AB7AEF2B4A7286A /* MSDKDnsReachability.h */,
-				2C571C98BE946B00E7BE5BCE5A7C6207 /* MSDKDnsReachability.m */,
+				FED4E40B8D1E409B13007B164250C4BC /* aes.h */,
+				1CAADFEC9464B7247736FE047EB5F0E4 /* aes.mm */,
+				A11B8BD8E64517F31D898520E425FFC3 /* MSDKDns.h */,
+				87A9B22A1C003AA4AAE2E019A19ED309 /* MSDKDns.mm */,
+				5399123F62CC71A56DCA3E9C76C02185 /* MSDKDnsHttpMessageTools.h */,
+				4D7A3F3DA9C0083A2ABCAF49D858FF2A /* MSDKDnsHttpMessageTools.m */,
+				48B35DF0AF8F803E4FC4FE5814D8CF4C /* MSDKDnsPrivate.h */,
+				66EAC50B4C9A61BBA0E9789453330622 /* MSDKDnsService.h */,
+				FD53CB9CB33ACAD37D0DE07C92C99B0D /* MSDKDnsService.m */,
+				497469EB4868D27E6638CBF391B6514C /* CacheManager */,
+				A99FF980003F81AF208C063D2BFE71C8 /* Network */,
+				804737EDB9379E0622287CC708C6C1FD /* Pod */,
+				1FF8C6FF124D60B9810E4D21D715FD20 /* Reachability */,
+				9557F45A1EABF69C994935932F9EA3BF /* Reporter */,
+				C7120D62812BD108BB7F5C6E5167FB59 /* Resolver */,
+				CDE5B89BD7E0AA833C7743FC21A03F45 /* Support Files */,
+				52B3F08707B001A3E58E26AEB1511B61 /* Useless */,
+				C116389C9D06F21854F3D294A4C90F5E /* WCDB */,
 			);
-			name = Reachability;
-			path = MSDKHttpDNS/Classes/Reachability;
+			name = MSDKHttpDNS;
+			path = ../local_pods/MSDKHttpDNS;
+			sourceTree = "<group>";
+		};
+		52B3F08707B001A3E58E26AEB1511B61 /* Useless */ = {
+			isa = PBXGroup;
+			children = (
+				E9C2DF52CAFC513A4E2EBF632CA4A83B /* MSDKDnsInfoTool.h */,
+				6D4C25044D7FDC84BEE78FE14BB3DBF2 /* MSDKDnsInfoTool.m */,
+				264D2B6839D897021357E50FCCD2FDC9 /* MSDKDnsLog.h */,
+				75D3F76453FC42C5F6679BAF4BF7CF0C /* MSDKDnsLog.m */,
+				5A5ED34F076B14106D1005B927C2486E /* MSDKDnsSpeedTester.h */,
+				05514928B7AE7A2A0105E3789AB5574E /* MSDKDnsTCPSpeedTester.h */,
+				8510896610A40B21692A96609AEA35FD /* MSDKDnsTCPSpeedTester.m */,
+			);
+			name = Useless;
+			path = MSDKHttpDNS/Classes/Useless;
 			sourceTree = "<group>";
 		};
 		5E58BF0BCA6039327E302009EDB8849C /* AFNetworking */ = {
@@ -309,6 +330,7 @@
 				CEEDE39780A8E0822833A677F07701EF /* Support Files */,
 				9BDAC6EBFA4A41CA3DBD759CEDC59274 /* UIKit */,
 			);
+			name = AFNetworking;
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
@@ -320,30 +342,24 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		801DB61B7797A53A89D76BF61A481C15 /* Resolver */ = {
+		804737EDB9379E0622287CC708C6C1FD /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				9449E17EE424A5327F43689061936207 /* HttpsDnsResolver.h */,
-				8CA036A74CEB28E38842EB36E6EB89A6 /* HttpsDnsResolver.m */,
-				D7A10922D87358C7535C032A683AD425 /* LocalDnsResolver.h */,
-				C66C2223D27A96AC28D94035BC1979E6 /* LocalDnsResolver.m */,
-				E43F9CAC5C21F795950501AA0D7EBB0A /* MSDKDnsResolver.h */,
-				31A00BD99CB2FC7E9C8CF2034ABDE257 /* MSDKDnsResolver.m */,
+				74DD525E602643E495EF1458A2935369 /* LICENSE */,
+				938A14C46C55B78F642196BEB82C6FCE /* MSDKHttpDNS.podspec */,
+				E94EED23A37F0ECEBCD4384ABF744C1B /* README.md */,
 			);
-			name = Resolver;
-			path = MSDKHttpDNS/Classes/Resolver;
+			name = Pod;
 			sourceTree = "<group>";
 		};
-		852F3827C551E1A90AEE0534F05022AA /* Support Files */ = {
+		9557F45A1EABF69C994935932F9EA3BF /* Reporter */ = {
 			isa = PBXGroup;
 			children = (
-				693CE794132353A5CC0B1AF5AFF694D8 /* MSDKHttpDNS-dummy.m */,
-				BEF1320A0E45937E79CFED5DA3A9D53E /* MSDKHttpDNS-prefix.pch */,
-				A44C509B7102206875C4FD95B7373CFF /* MSDKHttpDNS.debug.xcconfig */,
-				9F1E0B8E5D764597A6F0ECE22C535780 /* MSDKHttpDNS.release.xcconfig */,
+				733429E1CCF08D811AF4F16FFCEB3278 /* AttaReport.h */,
+				B8AA7B979104FF1097CCFF079496E4FD /* AttaReport.m */,
 			);
-			name = "Support Files";
-			path = "../../Pods/Target Support Files/MSDKHttpDNS";
+			name = Reporter;
+			path = MSDKHttpDNS/Classes/Reporter;
 			sourceTree = "<group>";
 		};
 		9BDAC6EBFA4A41CA3DBD759CEDC59274 /* UIKit */ = {
@@ -372,67 +388,14 @@
 			name = UIKit;
 			sourceTree = "<group>";
 		};
-		A601D52DAC0018F4664D85324C33A8C5 /* WCDB */ = {
+		A99FF980003F81AF208C063D2BFE71C8 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				7EE2AF87C969F4E3B972420B3C2109D1 /* HTTPDNSORM.h */,
-				FB4F509F36409BEB1B3B3D440011125C /* HTTPDNSORM.m */,
-				FD5C06F1E89B0729C9A430C8500AACE6 /* HTTPDNSORM+WCTTableCoding.h */,
-				8C2948100ACF59A45FA4278CA138400F /* MSDKDnsDB.cpp */,
-				AB5352D1066739CB302AC01FAC3B4171 /* MSDKDnsDB.h */,
+				B992EC1AC47EA586BB6FE885039CDE95 /* msdkdns_local_ip_stack.h */,
+				4C57A25A3A149248FF6DF333A191C38C /* msdkdns_local_ip_stack.mm */,
 			);
-			name = WCDB;
-			path = MSDKHttpDNS/Classes/WCDB;
-			sourceTree = "<group>";
-		};
-		A639B6E2ACC5BD77AF7A202E5B9BB6C8 /* MSDKHttpDNS */ = {
-			isa = PBXGroup;
-			children = (
-				046CD02FAD2B558A3DA06E40F8B9AF51 /* aes.h */,
-				B46A762AD25B69D861854EA1471EF1C0 /* aes.mm */,
-				EDA5D35BEE467ED7C05390A8E3A6BF1E /* MSDKDns.h */,
-				B46E0AA6A53AE9F28520FEEE34EB1954 /* MSDKDns.mm */,
-				D18D598CA104AB45904D387A2462C986 /* MSDKDnsHttpMessageTools.h */,
-				ABED5599CC81F6C8E86CD2D9114ABAB7 /* MSDKDnsHttpMessageTools.m */,
-				B7BF1719ECC0C957CEBA5D25202B5C77 /* MSDKDnsPrivate.h */,
-				32D514B4D72CA1AD7BE5EF670D2B40C5 /* MSDKDnsService.h */,
-				BF376F788C6F96BEE3D2606D6E7649CF /* MSDKDnsService.m */,
-				57566587EC4B128E0E918495E308AC82 /* CacheManager */,
-				3563344E0CF61F6628C6419BF3C949C6 /* Network */,
-				B27A40B0DA400706149C239D2876A18D /* Pod */,
-				58109B25985E286F503846ADC8E3014C /* Reachability */,
-				1B2AC6E57CC3BAEC47AB703706883ABF /* Reporter */,
-				801DB61B7797A53A89D76BF61A481C15 /* Resolver */,
-				852F3827C551E1A90AEE0534F05022AA /* Support Files */,
-				A601D52DAC0018F4664D85324C33A8C5 /* WCDB */,
-			);
-			name = MSDKHttpDNS;
-			path = ../local_pods/MSDKHttpDNS;
-			sourceTree = "<group>";
-		};
-		AAF377B229C390C8001A7076 /* Useless */ = {
-			isa = PBXGroup;
-			children = (
-				159E124A293C536844C2DF420811341F /* MSDKDnsLog.h */,
-				CC6254AD3C993AF978E437699DE6951D /* MSDKDnsLog.m */,
-				E32846DD63EFCF1907721E2A7225D18F /* MSDKDnsSpeedTester.h */,
-				A8B4A3C3078FF34DAA394A65E08F25AB /* MSDKDnsTCPSpeedTester.h */,
-				A9A84F6EDBCCE6DD047D569EC8DAF904 /* MSDKDnsTCPSpeedTester.m */,
-				5F18E3CDF1DADD820C02583C9F886C1B /* MSDKDnsInfoTool.h */,
-				062E0CAEE3335262C62FF018F5A03BC0 /* MSDKDnsInfoTool.m */,
-			);
-			name = Useless;
-			path = ../local_pods/MSDKHttpDNS/MSDKHttpDNS/Classes/Useless;
-			sourceTree = "<group>";
-		};
-		B27A40B0DA400706149C239D2876A18D /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				7A41F5510EC6EC8B611C98A72F13ED71 /* LICENSE */,
-				E46131A0F95591D8306D3E0A57CA6996 /* MSDKHttpDNS.podspec */,
-				2AC91E6150DB06D8103824DDD64A373F /* README.md */,
-			);
-			name = Pod;
+			name = Network;
+			path = MSDKHttpDNS/Classes/Network;
 			sourceTree = "<group>";
 		};
 		B580EA7CF70EB35BD42257A17D958932 /* Pods */ = {
@@ -452,6 +415,45 @@
 			name = Reachability;
 			sourceTree = "<group>";
 		};
+		C116389C9D06F21854F3D294A4C90F5E /* WCDB */ = {
+			isa = PBXGroup;
+			children = (
+				501185D48B40C0DE4BAB11EC8E9544FD /* HTTPDNSORM.h */,
+				1CF6D3264C1CB9A825A00D7739DFE07E /* HTTPDNSORM.m */,
+				5A9B022C901F97F810CE763DC5F0D7EC /* HTTPDNSORM+WCTTableCoding.h */,
+				ECC94F8AB230A084FB38A771B84AA5E4 /* MSDKDnsDB.cpp */,
+				1F5124E3719ECC31A45FAACB6A486128 /* MSDKDnsDB.h */,
+			);
+			name = WCDB;
+			path = MSDKHttpDNS/Classes/WCDB;
+			sourceTree = "<group>";
+		};
+		C7120D62812BD108BB7F5C6E5167FB59 /* Resolver */ = {
+			isa = PBXGroup;
+			children = (
+				2996DF988151945047DC0CB98BFC42A6 /* HttpsDnsResolver.h */,
+				E3CF76E3C6A027B4B9E0669533C94040 /* HttpsDnsResolver.m */,
+				09D44015434C5525D27415E5CC9D653B /* LocalDnsResolver.h */,
+				3C70E030D1B373C8A61FE36C88E74F91 /* LocalDnsResolver.m */,
+				4C7825174A7C2065FCDCB7FA242FEA9D /* MSDKDnsResolver.h */,
+				8DB6755508C16E661EBC57F5C13733A5 /* MSDKDnsResolver.m */,
+			);
+			name = Resolver;
+			path = MSDKHttpDNS/Classes/Resolver;
+			sourceTree = "<group>";
+		};
+		CDE5B89BD7E0AA833C7743FC21A03F45 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C78221315710EBF5D86F72F849D5E544 /* MSDKHttpDNS-dummy.m */,
+				B34041A61E598D7551A1D97AF5F75524 /* MSDKHttpDNS-prefix.pch */,
+				486589990A3EC6C3E3B87BA8D10C6BA0 /* MSDKHttpDNS.debug.xcconfig */,
+				0BE0F024AF97285E530DF040AE413509 /* MSDKHttpDNS.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../../Pods/Target Support Files/MSDKHttpDNS";
+			sourceTree = "<group>";
+		};
 		CEEDE39780A8E0822833A677F07701EF /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -468,7 +470,7 @@
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				E5F9B932729094B1FAB3311AF3A2882A /* Development Pods */,
+				F3F4DF23ECBD55796295912F05D6BA07 /* Development Pods */,
 				D89477F20FB1DE18A04690586D7808C4 /* Frameworks */,
 				B580EA7CF70EB35BD42257A17D958932 /* Pods */,
 				DA06B0DF4BD436CDC20CEA01B0245B99 /* Products */,
@@ -505,11 +507,10 @@
 			name = NSURLSession;
 			sourceTree = "<group>";
 		};
-		E5F9B932729094B1FAB3311AF3A2882A /* Development Pods */ = {
+		F3F4DF23ECBD55796295912F05D6BA07 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				AAF377B229C390C8001A7076 /* Useless */,
-				A639B6E2ACC5BD77AF7A202E5B9BB6C8 /* MSDKHttpDNS */,
+				4B4CA8183B7383CF94D3DABB1063993D /* MSDKHttpDNS */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -517,34 +518,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		4B664FBFD3477E761EC9F72525A65D68 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0349BBAF4ED1337D95CBAC84DC087E80 /* AttaReport.h in Headers */,
-				46C5A55B85ACECAADD3F6EE9C2C0F894 /* HTTPDNSORM.h in Headers */,
-				2EFB8B3A5710802BF510EF51BD406871 /* HTTPDNSORM+WCTTableCoding.h in Headers */,
-				D5D04AC6DEAE0653A2F2EF45FA7B012F /* HttpsDnsResolver.h in Headers */,
-				F00D066CDBFE615F2A61BCFE4EE47C1F /* LocalDnsResolver.h in Headers */,
-				79EBBDD4BD9FFF541D6A41F5FF8BD60F /* MSDKDns.h in Headers */,
-				AAF847FA29C23F0000403892 /* aes.h in Headers */,
-				D6254425C515D7FB2FEDFC088B252DB7 /* msdkdns_local_ip_stack.h in Headers */,
-				88E58677302E87F032CB1FF78BA6633F /* MSDKDnsDB.h in Headers */,
-				8BB626B23DE066E93062FE595BED734E /* MSDKDnsHttpMessageTools.h in Headers */,
-				421D66154320DD76383316B299F1184C /* MSDKDnsInfoTool.h in Headers */,
-				53C6655A3EE580A561A822CF00B34590 /* MSDKDnsLog.h in Headers */,
-				C5C1F52B6929EEF159050D1AAC6614D7 /* MSDKDnsManager.h in Headers */,
-				45AFD7E1A7C7EB1BEFE20EEC52B67682 /* MSDKDnsNetworkManager.h in Headers */,
-				D6DB38CC07D6CAC033B3587DD8B7D08A /* MSDKDnsParamsManager.h in Headers */,
-				8AB3F30D16507A2EE66865EBF5DFA87C /* MSDKDnsPrivate.h in Headers */,
-				1A499AD1EF7DAD60CF84E50D589E6FA9 /* MSDKDnsReachability.h in Headers */,
-				F147EBF8E07B276A0C7BF7B732A6E4F2 /* MSDKDnsResolver.h in Headers */,
-				0A5BE8C9496480C74BE8D79FC4CCD3B9 /* MSDKDnsService.h in Headers */,
-				5A550239BE2A6DEE0489549981F0FD99 /* MSDKDnsSpeedTester.h in Headers */,
-				7C9729F038070230687264DB1CA3DB5B /* MSDKDnsTCPSpeedTester.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		948D70DEE026B2EF19B951D3D30BBB02 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -577,6 +550,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B7B09E0875D704E442FD33BEE9D2C36A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95E2A1E58E0F46CA1437FF2B9850FA5F /* aes.h in Headers */,
+				217DD03ABD00FF511ACEC007F11472BE /* AttaReport.h in Headers */,
+				FFFEB2E767CE64226701C951E0E180D0 /* HTTPDNSORM.h in Headers */,
+				1E0FBBDE0ADF166003E390BCD0099E1F /* HTTPDNSORM+WCTTableCoding.h in Headers */,
+				0A8611EB6EF67D085F06355D9010015F /* HttpsDnsResolver.h in Headers */,
+				9B591A70301BD8880BAB89F36494ED66 /* LocalDnsResolver.h in Headers */,
+				4A6E28726403D314E474B41C5293787A /* MSDKDns.h in Headers */,
+				6B5F86FE1642A719BE40819C5757BC74 /* msdkdns_local_ip_stack.h in Headers */,
+				0BFD3AED10B677F57B3AC9E9894CA82A /* MSDKDnsDB.h in Headers */,
+				F937D5642B40BB29C17B021613E3E37A /* MSDKDnsHttpMessageTools.h in Headers */,
+				5DFEA8A685CD920847E0612E3E303928 /* MSDKDnsInfoTool.h in Headers */,
+				E355080CFD3597E0FB833322A524BE98 /* MSDKDnsLog.h in Headers */,
+				B5F096676376E7B505BB55F99D39A2AA /* MSDKDnsManager.h in Headers */,
+				9B8F809CC7145DBB7448ABF6273C6E55 /* MSDKDnsNetworkManager.h in Headers */,
+				88CA3E957AA8AACA06C3FA078EA41788 /* MSDKDnsParamsManager.h in Headers */,
+				E13FC245C936B37B149C4F19D927E658 /* MSDKDnsPrivate.h in Headers */,
+				B73ED2095319705BAAE772B404B8F180 /* MSDKDnsReachability.h in Headers */,
+				1BA5F377F5DA05F2CA1132F1DE837B3C /* MSDKDnsResolver.h in Headers */,
+				4F7B4F2FD716D758EABA9D9DEC32FC32 /* MSDKDnsService.h in Headers */,
+				20D9024DD6C73410BCBE844D542D42D2 /* MSDKDnsSpeedTester.h in Headers */,
+				4D31CFEC83F5D15A62F96AB905478FF9 /* MSDKDnsTCPSpeedTester.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -601,8 +602,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E4E265214B49E05593919C35F0AF0903 /* Build configuration list for PBXNativeTarget "MSDKHttpDNS" */;
 			buildPhases = (
-				4B664FBFD3477E761EC9F72525A65D68 /* Headers */,
-				16D6B96F9E575CE4F4D7888064980B76 /* Sources */,
+				B7B09E0875D704E442FD33BEE9D2C36A /* Headers */,
+				796FA1E8211AD662154A8C3F9F95EDF8 /* Sources */,
 				1553FCA74AD9FB9F45378A34E5845373 /* Frameworks */,
 			);
 			buildRules = (
@@ -625,8 +626,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				9010BE0207884136DBBB7E601BFC340C /* PBXTargetDependency */,
-				6D64498C59C06842EF909FF65DE0EE93 /* PBXTargetDependency */,
+				A06279C567158F77D2386384E42418F3 /* PBXTargetDependency */,
+				09D4C796C49954C1E0A9CF0B031AE3B9 /* PBXTargetDependency */,
 			);
 			name = "Pods-DNSDemo";
 			productName = "Pods-DNSDemo";
@@ -663,32 +664,6 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		16D6B96F9E575CE4F4D7888064980B76 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A080C37FA4CFBFCE0E5B605689CEA8C3 /* AttaReport.m in Sources */,
-				A3126A46364AFADF7472293D7E2ECD59 /* HTTPDNSORM.m in Sources */,
-				3C849C96A433BF45697CB7F7A6D8A06D /* HttpsDnsResolver.m in Sources */,
-				A4D91AA56A9B74912FD51832B97F9979 /* LocalDnsResolver.m in Sources */,
-				CB89FE9F9DAA27DFA74F5E5246E23966 /* MSDKDns.mm in Sources */,
-				2C5812FAA5CAEB8C4F4BCA83336487A7 /* msdkdns_local_ip_stack.mm in Sources */,
-				6A76A56C06F40101EB13C7A5F5F9352D /* MSDKDnsDB.cpp in Sources */,
-				E4F34289D24F0B57A2107DDC3827A97A /* MSDKDnsHttpMessageTools.m in Sources */,
-				AAF847FB29C23F0500403892 /* aes.mm in Sources */,
-				42CC9F9BB65C8B21A9A3DA6A782E55D3 /* MSDKDnsInfoTool.m in Sources */,
-				D1A35143DAC8B89AE26F339EBFF24A63 /* MSDKDnsLog.m in Sources */,
-				E4E1581FF8C587327A4B8DB785DD6E0E /* MSDKDnsManager.m in Sources */,
-				AF4ED356C9EAA2937CE0193C024E4036 /* MSDKDnsNetworkManager.m in Sources */,
-				B872BC9AD6A6DC22A4657450B5522A0E /* MSDKDnsParamsManager.m in Sources */,
-				FDBE9E1855A338772F0B282A505CAB2F /* MSDKDnsReachability.m in Sources */,
-				E146C4787A031B45959B0B308FA5324F /* MSDKDnsResolver.m in Sources */,
-				F454F51D29731B25D9CBC1FA1D3F8FFB /* MSDKDnsService.m in Sources */,
-				E00F78C478FEB0D3B6F0F1EBD4D7B6FE /* MSDKDnsTCPSpeedTester.m in Sources */,
-				39D8DF9E5ABEAF251F93E78D67ECB040 /* MSDKHttpDNS-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		47008DAA8E09590A1B8A83A1E4935975 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -712,6 +687,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		796FA1E8211AD662154A8C3F9F95EDF8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E2D861A8AA72FE5C8E203F0904690DE /* aes.mm in Sources */,
+				EF7DD24A6C6B4687B84D403A508DDD00 /* AttaReport.m in Sources */,
+				91AFCE0FD8CE01ABE107C53D996A02F0 /* HTTPDNSORM.m in Sources */,
+				CB131D7237148ECE47D4A444FC4D282B /* HttpsDnsResolver.m in Sources */,
+				548740325960C7AC2A6BEDD3D926C315 /* LocalDnsResolver.m in Sources */,
+				9D1D190F7C7319295E8516C37440733F /* MSDKDns.mm in Sources */,
+				AB241ABBAB8F110664F7926CE479810C /* msdkdns_local_ip_stack.mm in Sources */,
+				1A87D174F16A812176FE2A708C808CB1 /* MSDKDnsDB.cpp in Sources */,
+				7243AE03B4B6C27B99CEE875AC9DC601 /* MSDKDnsHttpMessageTools.m in Sources */,
+				39423D0B2E8C91B6058D28CDBE1EA617 /* MSDKDnsInfoTool.m in Sources */,
+				4493BB187F4E77689BCA88014904A604 /* MSDKDnsLog.m in Sources */,
+				4BE8E69ADDDA5D427F7922E343FF7660 /* MSDKDnsManager.m in Sources */,
+				658C67113BA354347B3C648ED4537046 /* MSDKDnsNetworkManager.m in Sources */,
+				E25D7AE0BFD755C0B9B3F9CF25ED23BF /* MSDKDnsParamsManager.m in Sources */,
+				6404C122EF16120ABDE8806395408C77 /* MSDKDnsReachability.m in Sources */,
+				1059CDB250643352D11D849B7219A80B /* MSDKDnsResolver.m in Sources */,
+				42B688222C4D7B964A71E74D255C68E7 /* MSDKDnsService.m in Sources */,
+				A7338367445D5433D4C17B183281711E /* MSDKDnsTCPSpeedTester.m in Sources */,
+				1DE3FA63B32017400729598B3C5830DB /* MSDKHttpDNS-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A5A04403AC570C30006D823D3308EB28 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -723,17 +724,17 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		6D64498C59C06842EF909FF65DE0EE93 /* PBXTargetDependency */ = {
+		09D4C796C49954C1E0A9CF0B031AE3B9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MSDKHttpDNS;
 			target = 06F5E61C1F2FAE1043D614AC1E782DDB /* MSDKHttpDNS */;
-			targetProxy = F6C01FE8AF1CBB2AE6531C208DB0230A /* PBXContainerItemProxy */;
+			targetProxy = 86D589F0386267BB20F511974AB530DC /* PBXContainerItemProxy */;
 		};
-		9010BE0207884136DBBB7E601BFC340C /* PBXTargetDependency */ = {
+		A06279C567158F77D2386384E42418F3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = AFNetworking;
 			target = 0130B3724283586C0E9D2A112D4F2AA1 /* AFNetworking */;
-			targetProxy = F23FBE7BA614F2DAF150E588BAAB90EC /* PBXContainerItemProxy */;
+			targetProxy = A4FA06B06DFE972B099F58B81EB5DB6A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -785,7 +786,7 @@
 		};
 		376E4264777E6A0A7D86131B387D2E70 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9F1E0B8E5D764597A6F0ECE22C535780 /* MSDKHttpDNS.release.xcconfig */;
+			baseConfigurationReference = 0BE0F024AF97285E530DF040AE413509 /* MSDKHttpDNS.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -979,7 +980,7 @@
 		};
 		C0632526EA1A4D661D6E9401EC3579A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A44C509B7102206875C4FD95B7373CFF /* MSDKHttpDNS.debug.xcconfig */;
+			baseConfigurationReference = 486589990A3EC6C3E3B87BA8D10C6BA0 /* MSDKHttpDNS.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";

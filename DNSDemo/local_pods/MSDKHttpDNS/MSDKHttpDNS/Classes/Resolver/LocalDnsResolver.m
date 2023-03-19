@@ -38,6 +38,7 @@
     for(int i = 0; i < [domains count]; i++) {
         NSString *domain = [domains objectAtIndex:i];
         // LocalDNS 查询, 就在 [self addressesForHostname:domain NetStack:netStack] 中.
+        // addressesForHostname 这个函数调用, 应该是同步的. 
         NSArray * ipsArray = [self addressesForHostname:domain NetStack:netStack];
         NSString *timeConsuming = [NSString stringWithFormat:@"%d", [self dnsTimeConsuming]];
         [domainInfo setObject:@{kIP:ipsArray, kDnsTimeConsuming:timeConsuming} forKey:domain];
