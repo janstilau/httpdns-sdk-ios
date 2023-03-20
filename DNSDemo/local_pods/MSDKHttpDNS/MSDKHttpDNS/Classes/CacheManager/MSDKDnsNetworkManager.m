@@ -295,6 +295,7 @@ static SCNetworkConnectionFlags ana_connectionFlags;
     return waddr;
 }
 
+// 当重新进入前台, 或者网络环境发生变化之后, 会调用到这里. 所以, 超时重新刷新的逻辑, 没有在库的内部, SDK 认为这是业务端应该完成的功能. 
 - (void)refreshAllKeepAliveDomains{
     //对保活域名发送解析请求
     dispatch_async([MSDKDnsInfoTool msdkdns_queue], ^{

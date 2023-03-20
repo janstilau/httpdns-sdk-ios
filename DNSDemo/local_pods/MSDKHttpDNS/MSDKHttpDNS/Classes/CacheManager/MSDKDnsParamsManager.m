@@ -156,7 +156,7 @@ static MSDKDnsParamsManager * _sharedInstance = nil;
     });
 }
 
-- (void)msdkDnsSetPreResolvedDomains: (NSArray *)domains {
+- (void)setPreResolveDomains: (NSArray *)domains {
     dispatch_async([MSDKDnsInfoTool msdkdns_queue], ^{
         self.preResolvedDomains = [domains copy];
     });
@@ -169,7 +169,7 @@ static MSDKDnsParamsManager * _sharedInstance = nil;
     });
 }
 
-- (void)msdkDnsSetKeepAliveDomains: (NSArray *)domains {
+- (void)setKeepaliveDomains: (NSArray *)domains {
     dispatch_async([MSDKDnsInfoTool msdkdns_queue], ^{
         self.keepAliveDomains = [domains copy];
     });
@@ -278,7 +278,7 @@ static MSDKDnsParamsManager * _sharedInstance = nil;
     return _keepAliveDomains;
 }
 
-- (NSDictionary *)msdkDnsGetIPRankData {
+- (NSDictionary *)getIPRankData {
     return _IPRankData;
 }
 

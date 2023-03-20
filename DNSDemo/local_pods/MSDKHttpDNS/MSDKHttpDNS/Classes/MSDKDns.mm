@@ -99,14 +99,15 @@ static MSDKDns * _sharedInstance = nil;
     [[MSDKDnsManager shareInstance] switchToMainServer];
 }
 
+// 其实就是在 config 中添加了需要预先解析的 Domain, 然后赶紧进行一次解析而已.
 - (void) WGSetPreResolvedDomains:(NSArray *)domains {
-    [[MSDKDnsParamsManager shareInstance] msdkDnsSetPreResolvedDomains:domains];
+    [[MSDKDnsParamsManager shareInstance] setPreResolveDomains:domains];
     [[MSDKDnsManager shareInstance] preResolveDomains];
 }
 
 - (void) WGSetKeepAliveDomains:(NSArray *)domains {
     if (domains) {
-        [[MSDKDnsParamsManager shareInstance] msdkDnsSetKeepAliveDomains:domains];
+        [[MSDKDnsParamsManager shareInstance] setKeepaliveDomains:domains];
     }
 }
 

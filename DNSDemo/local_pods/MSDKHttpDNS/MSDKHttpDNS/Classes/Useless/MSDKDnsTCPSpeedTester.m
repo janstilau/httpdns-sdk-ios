@@ -30,7 +30,7 @@ static NSString *const ipKey = @"ip";
         return nil;
     }
     
-    NSDictionary *dataSource = [[MSDKDnsParamsManager shareInstance] msdkDnsGetIPRankData];
+    NSDictionary *dataSource = [[MSDKDnsParamsManager shareInstance] getIPRankData];
     NSArray *allHost = [dataSource allKeys];
     if (!allHost || allHost.count == 0) {
         return nil;

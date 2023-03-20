@@ -158,6 +158,7 @@
 
 #pragma mark - MSDKDnsResolverDelegate
 
+// 成功的获取到了 Domain 的数据到达这里.
 - (void)resolver:(MSDKDnsResolver *)resolver didGetDomainInfo:(NSDictionary *)domainInfo {
     MSDKDNSLOG(@"%@ %@ domainInfo = %@", self.toCheckDomains, [resolver class], domainInfo);
     // 结果存缓存
@@ -169,7 +170,7 @@
         
         // 这些都是网络的获取结果.
         if (resolver == self.httpDnsResolver_A || resolver == self.httpDnsResolver_4A || resolver == self.httpDnsResolver_BOTH) {
-            // WGSetKeepAliveDomains
+            // 这里获取 keepAliveDomains, 仅仅是为了进行下面的判断而已.
             NSArray *keepAliveDomains = [[MSDKDnsParamsManager shareInstance] allKeepAliveDomains];
             BOOL enableKeepDomainsAlive = [[MSDKDnsParamsManager shareInstance] shouldRefreshAllKeepAliveDomainIps];
             // 获取延迟记录字典
@@ -230,7 +231,7 @@
         
         // IPV4 的检查, 受制于 [[MSDKDnsParamsManager shareInstance] msdkDnsGetIPRankData] 的值.
         if (resolver == self.httpDnsResolver_A || resolver == self.httpDnsResolver_BOTH) {
-            NSDictionary *IPRankData = [[MSDKDnsParamsManager shareInstance] msdkDnsGetIPRankData];
+            NSDictionary *IPRankData = [[MSDKDnsParamsManager shareInstance] getIPRankData];
             if (IPRankData) {
                 [domainInfo enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull domain, id  _Nonnull obj, BOOL * _Nonnull stop) {
                     if (!domain) {
@@ -324,6 +325,7 @@
 }
 
 - (void)syncUpdateIPRankingWithResult:(NSArray *)IPStrings forHost:(NSString *)host {
+    // 在这里, 使用了 MSDKDnsTCPSpeedTester 进行真正的测速. 
     NSArray *sortedIps = [[MSDKDnsTCPSpeedTester new] ipRankingWithIPs:IPStrings host:host];
     [self updateHostManagerDictWithIPs:sortedIps host:host];
 }

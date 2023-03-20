@@ -25,9 +25,9 @@
 // 设置备份ip
 - (void)msdkDnsSetBackupServerIps: (NSArray *)ips;
 - (void)msdkDnsSetEnableReport: (BOOL)enableReport;
-- (void)msdkDnsSetPreResolvedDomains: (NSArray *)domains;
+- (void)setPreResolveDomains: (NSArray *)domains;
 - (void)msdkDnsSetAddressType: (HttpDnsAddressType)addressType;
-- (void)msdkDnsSetKeepAliveDomains: (NSArray *)domains;
+- (void)setKeepaliveDomains: (NSArray *)domains;
 - (void)msdkDnsSetIPRankData: (NSDictionary *)IPRankData;
 - (void)msdkDnsSetEnableKeepDomainsAlive: (BOOL)enableKeepDomainsAlive;
 - (void)msdkDnsSetExpiredIPEnabled: (BOOL)enable;
@@ -50,7 +50,7 @@
 - (NSArray *)msdkDnsGetPreResolvedDomains;
 - (HttpDnsAddressType)msdkDnsGetAddressType;
 - (NSArray *)allKeepAliveDomains;
-- (NSDictionary *)msdkDnsGetIPRankData;
+- (NSDictionary *)getIPRankData;
 - (BOOL)shouldRefreshAllKeepAliveDomainIps;
 - (BOOL)msdkDnsGetExpiredIPEnabled;
 - (BOOL)msdkDnsGetPersistCacheIPEnabled;
